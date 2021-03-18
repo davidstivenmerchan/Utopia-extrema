@@ -19,7 +19,7 @@ if($fila){
 }else{
     ?>
     <?php
-    include('index.html');
+    include('../index.html');
     ?>
     <h1>error</h1>
     <?php
