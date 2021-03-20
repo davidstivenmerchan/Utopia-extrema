@@ -9,12 +9,10 @@
 <body>
 
 <h1>Enviar QR</h1>
-    <form method="POST" action="enviarcorreo.php">
+    <form method="POST" action="enviandoelhptacorreo/Correo.php">
 
     <input type="text" name="nom" id="" placeholder="ingresa tu nombre" required=>
     <input type="text" name="correo" id="" placeholder="ingresa tu correo" required>
-    <input type="text" name="asun" id="" placeholder="ingresa el asunto" required>
-    <input type="text" name ="men" placeholder="ingresa el mensaje" required>
     
         
     <input type="submit" value="ENVIAR" name="enviar">
