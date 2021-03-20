@@ -1,3 +1,14 @@
+<?php
+require_once("php/conexion.php");
+
+$sql = "SELECT * FROM tipo_docu";
+$query = mysqli_query($conexion, $sql);
+
+$sql2 = "SELECT * FROM card";
+$query2 = mysqli_query($conexion, $sql2);
+$info = mysqli_fetch_assoc($query2);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
