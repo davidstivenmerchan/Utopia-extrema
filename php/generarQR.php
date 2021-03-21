@@ -10,7 +10,7 @@
     $filename = $QR.'prueba.png';
 
     $tamanio = 5;
-    $level = 'H';
+    $level = 'M';
     $frimeSize = 3;
     $contenido = 'que honda';
 
