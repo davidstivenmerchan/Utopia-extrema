@@ -37,7 +37,7 @@ if($conexion->query($cadena_final)):
     $in=$conexion->query($caon);
     $info = mysqli_fetch_assoc($in);
     $id_card = $info['id_card'];
-    $tickest = $info['tickets'];
+    $tickest = $info['tickets']; 
     $valor = $info['precio'];
 
 
