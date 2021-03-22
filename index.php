@@ -18,6 +18,7 @@ $info = mysqli_fetch_assoc($query2);
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
     <title>INGRESAR</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -169,5 +170,7 @@ $info = mysqli_fetch_assoc($query2);
             <input type="submit" value="INGRESAR">
         </form>
     </div>   -->
+
+    
 
 </html>
