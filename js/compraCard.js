@@ -1,7 +1,7 @@
 jQuery(document).on('submit',' #form_insert', function(event){
     event.preventDefault();
     jQuery.ajax({
-        url: '../php/insertar.php',
+        url: 'php/insertar.php',
         type: 'POST',
         dataType: 'json',
         data: $(this).serialize() ,
@@ -9,7 +9,7 @@ jQuery(document).on('submit',' #form_insert', function(event){
     .done(function(respuesta){
         console.log(respuesta);
         if(!respuesta.error){
-            alert("Su compra se ha realizado correctamente");
+            alert("Su Compra Ha Sido Exitosa");
 
         }else{
             alert("ERROR, INTENTE NUEVAMENTE");

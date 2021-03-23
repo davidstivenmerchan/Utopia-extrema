@@ -37,20 +37,34 @@ if($conexion->query($cadena_final)):
     $in=$conexion->query($caon);
     $info = mysqli_fetch_assoc($in);
     $id_card = $info['id_card'];
-    $tickest = $info['tickets']; 
+    $tickest = $info['tickets'];
     $valor = $info['precio'];
 
 
     $factura = "INSERT INTO compra (id_compra, id_card, cedula, date, id_estados,tickest,date_vcto, number_of_card,date_vcto_card, cod_card,valor ) VALUES ('','$id_card','".$cedula[0]."','$fechaHoy',1,'$tickest','$lol','$num_card','$date_vto','$cod_card','$valor')";
     $insertarCard=$conexion->query($factura); 
+
+    $docu = $cedula[0];
+
+    $compracodigo = "SELECT * FROM compra WHERE cedula = '$docu' ";
+    $query2 = mysqli_query($conexion, $compracodigo);
+    $fila = mysqli_fetch_assoc($query2);
+
+    $qr = "INSERT INTO codigo (id_qr, id_compra, cedula) VALUES";
+    for ($ar=0; $ar < count($cedula); $ar++) { 
+        $qr.="('', '".$fila['id_compra']."','".$cedula[$ar]."'),";
+    }
+    $cade = substr($qr, 0, -1);
+    $cade.=";";
+    $conexion->query($cade);
+
     echo json_encode(array('ERROR' => false));
 
 else:
     echo json_encode(array('ERROR' => true));
 
 endif;
-  
 
-$conexion->close(); 
+
 
 ?>
