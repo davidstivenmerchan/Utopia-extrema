@@ -2,10 +2,10 @@
 
 $correo = $_POST['correo'];
 
-$nombre = $_POST['nom'];
+$nom = $_POST['nombre'];
 
 
-
+require_once('../insertar.php');
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -16,6 +16,8 @@ require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
 
+
+for ($i=0; $i < count($correo); $i++) { 
 
  
 
@@ -35,7 +37,7 @@ try {
 
     //Recipients
     $mail->setFrom('extremautopia@gmail.com', 'Utopia Extrema');
-    $mail->addAddress($correo, $nombre);     //Add a recipient
+    $mail->addAddress($correo[$i], $nom[$i]);     //Add a recipient
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -112,15 +114,15 @@ try {
       <div class='container'>
         <div class='bg-dark'>
           <div class='alert alert-primary'>
-            <strong>Mensaje para: </strong> $nombre
+            <strong>Mensaje para: </strong> '".$fila['id_compra']."'
           </div>
-    
+     
           <div class='mensaje'>
             
             <div class='texto'>Tu codigo para ingresar al parque es el siguiente:</div>
 
             <img class='img-fluid' src='https://es.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market/generator/dist/generator/assets/images/websiteQRCode_noFrame.png' alt='Mensaje'>
-            <img class='img-fluid' src='../../codigosQR/imgqr/shun.png' alt='Mensaje'>
+         
             
           </div>
     
@@ -133,10 +135,10 @@ try {
     </html>
   ";
 
-    $mail->send();
-    echo 'El mensaje de envio correctamente';
-} catch (Exception $e) {
-    echo "Error Presentado: {$mail->ErrorInfo}";
+      $mail->send();
+      
+  } catch (Exception $e) {
+      echo "Error Presentado: {$mail->ErrorInfo}";
+  }
 }
-
 ?>

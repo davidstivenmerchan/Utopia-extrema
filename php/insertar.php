@@ -15,6 +15,11 @@ $num_card = $_POST['num_card'];
 $date_vto = $_POST['date_vto'];
 $cod_card = $_POST['cod_card'];
 
+
+
+
+
+
 $consul = "INSERT INTO usuarios (cedula, tipo_docu, tipo_user, nombre,apellido, celular, correo, edad) VALUES ";
 
 for ($i=0; $i < count($cedula); $i++) { 
@@ -24,6 +29,9 @@ $cadena_final = substr($consul, 0, -1);
 $cadena_final.=";";
 
 if($conexion->query($cadena_final)):
+
+    
+
     
     //fecha de vencimiento
     $fechaHoy = date("Y-m-d");
@@ -60,10 +68,15 @@ if($conexion->query($cadena_final)):
 
     echo json_encode(array('ERROR' => false));
 
+
+
 else:
     echo json_encode(array('ERROR' => true));
 
 endif;
+
+
+
 
 
 
