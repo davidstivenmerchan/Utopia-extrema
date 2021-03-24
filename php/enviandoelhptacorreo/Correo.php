@@ -1,9 +1,9 @@
 <?php
+require '../conexion.php';
 
-$correo = $_POST['correo'];
 $cedula = $_POST['id_user'];
+$correo = $_POST['correo'];
 $nom = $_POST['nombre'];
-
 
 
 
@@ -14,7 +14,12 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
+$docu = $cedula[0];
 
+$compracodigo = "SELECT id_compra, cedula, date, date_vcto, valor, tickest, N_person, name_card FROM compra, card WHERE compra.cedula = '$docu' and compra.id_card = card.id_card and compra.tickest = card.tickets and compra.valor = card.precio ";
+
+$query2 = mysqli_query($conexion, $compracodigo);
+$fila = mysqli_fetch_assoc($query2);
 
 for ($i=0; $i < count($correo); $i++) { 
 
@@ -86,7 +91,7 @@ try {
         }
     
         .img-fluid {
-          max-width: 100%;
+          max-width: 60%;
           height: auto;
         }
     
@@ -99,6 +104,11 @@ try {
     
         .texto {
           margin-top: 20px;
+          color:#ffffff;
+        }
+
+        .con{
+          color:#ffffff;
         }
     
         .footer {
@@ -119,11 +129,41 @@ try {
       <div class='container'>
         <div class='bg-dark'>
           <div class='alert alert-primary'>
-            <strong>Mensaje para: </strong> '".$fila['id_compra']."'
+            <strong>Mensaje para: </strong> '".$nom[$i]."'
           </div>
-     
+
           <div class='mensaje'>
-            
+            <h1>FACTURA</h1>
+            <table>
+              <tr>
+                <td><label>Nº DE FACTURA: </label></td>
+                <td><label>".$fila['id_compra']."</label></td>
+              </tr>
+              <tr>
+                <td><h3>PLAN SELECCIONADO</h3></td>
+                <td><label>".$fila['name_card']."</label></td>
+              </tr>
+              <tr>
+                <td><label>Nº de Tickest Disponibles: </label></td>
+                <td><label>".$fila['tickest']."</label></td>
+              </tr>
+              <tr>
+                <td><h3>VALOR TOTAL: </h3></td>
+                <td><label>".$fila['valor']."</label></td>
+              </tr>
+              <tr></tr>
+              <tr>
+                <td><label>Fecha de Compra: </label></td>
+                <td><label>".$fila['date']."</label></td>
+              </tr>
+              <tr>
+                <td><label>Fecha de Vencimiento de la Compra: </label></td>
+                <td><label> ".$fila['date_vcto']."</label></td>
+              </tr>
+            </table>
+            <h3class='con'>RECORDAR</h3>
+            <p class= 'con'>Con el número de su factura usted o cualquiera de sus acompañantes registrados podrán recargar la tarjeta desde los puntos de recarga del parque. </p>
+        
             <div class='texto'>Tu codigo para ingresar al parque es el siguiente:</div>
 
             <img class='img-fluid' src='https://es.qr-code-generator.com/wp-content/themes/qr/new_structure/markets/core_market/generator/dist/generator/assets/images/websiteQRCode_noFrame.png' alt='Mensaje'>
