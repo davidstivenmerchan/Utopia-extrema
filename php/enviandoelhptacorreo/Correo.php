@@ -24,7 +24,7 @@ $fila = mysqli_fetch_assoc($query2);
 for ($i=0; $i < count($correo); $i++) { 
 
  
-  require_once "../codigosQR/phpqrcode/qrlib.php";
+ 
 
     
 
