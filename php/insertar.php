@@ -71,7 +71,7 @@ if($conexion->query($cadena_final)):
 
     echo json_encode(array('ERROR' => false));
 
-    header("location: ../index.php");
+    
 
 else:
     echo json_encode(array('ERROR' => true));

@@ -8,7 +8,7 @@ session_start();
 
 include('conexion.php');
 
-$consulta = "SELECT * FROM codigo WHERE id_qr = '$idc' and cedula = '$cc'";
+$consulta = "SELECT * FROM codigo WHERE id_compra = '$idc' and cedula = '$cc'";
 $resultado = mysqli_query($conexion, $consulta);
 
 $fila=mysqli_num_rows($resultado);
@@ -19,7 +19,7 @@ $fila=mysqli_num_rows($resultado);
 
 if ($fila){
 $_SESSION['idq'] = $arreglo['id_qr'];
-$_SESSION['idc'] = $arreglo['id_compra'];
+$_SESSION['idc'] = $idc;
 $_SESSION['cc'] =  $cc;
 
 

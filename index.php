@@ -18,6 +18,7 @@ $info = mysqli_fetch_assoc($query2);
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="icon" href="imagenes/PRIMERLOGO.ico">
     
     <title>UTOPIA EXTREMA</title>
     <link rel="stylesheet" href="css/index.css">
@@ -50,7 +51,7 @@ $info = mysqli_fetch_assoc($query2);
     <form action="php/validar.php" method="POST" class="iniciar">
         <label for="usu">Ingrese su Cedula</label>
         <input type="text" id="usu" autocomplete="off" name="cc"></a>
-        <label for="pass">Ingrese su id_codigo</label>
+        <label for="pass">Ingrese su codigo de compra</label>
         <input type="password" id="pass" autocomplete="off" name="idc">
         <input type="submit" value="INGRESAR" class="envio">
     </form>
