@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    font-size: 16px;  
+}
+
+header{
+    background-color: rgba(18, 28, 161, 0.534);
+    overflow: hidden; 
+}
+.logo{
+    padding: 10px;
+}
+
+.logo img{
+    width: 80px;
+    height: 60px;
+    margin-left: 30px;
+    padding: 2px;
+}
+
+.logo h2{
+    margin-top: -60px;
+    color: #080808;
+    margin-left: 7%;
+    padding: 5px;
+}
+
+
+.accesos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 60px;
+    height: 40px;
+    position: relative;
+    margin-left: 92%;
+    margin-top: -3%;
+    gap: 30px;
+}
+
+.exit i , .verPerfil i{
+    font-size: 25px;
+    color: rgb(3, 3, 3);
+    cursor: pointer;
+
+}
+
+.icono{
+    z-index: 100;
+}
+
+.datos{
+    position: fixed;
+    height: 100vh;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    transition: all 1s ease;
+    margin-top: 15px;
+    background: linear-gradient(to right, #5b7fe3, #7045b6); 
+    z-index:10;
+    
+}
+
+
+.uno {
+
+    -webkit-clip-path: circle(0% at 100% 0%);
+    clip-path: circle(0% at 100% 0%);
+
+}
+
+.dos {
+
+    -webkit-clip-path: circle(150% at 100% 0%);
+    clip-path: circle(150% at 100% 0%);
+
+}
+
+.info{
+    background-color: rgba(243, 241, 240, 0.87);
+    width: 60%;
+    height: 60%;
+    text-align: center;
+    padding: 20px;
+    margin-top: 8%;
+    margin-left: 20%;
+    
+}
+.img{
+    width: 250px;
+	height: 250px;
+	border-radius: 50%;
+	overflow: hidden;
+    margin:0 auto;
+}
+.img img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.tables {
+	table-layout: fixed;
+	width: 100%;
+	border-collapse: collapse;
+	border: 3px solid rgb(250, 249, 250);
+  }
+  
+  thead th:nth-child(1) {
+	width: 10%;
+  }
+  
+  thead th:nth-child(2) {
+	width: 25%;
+  }
+  
+  thead th:nth-child(3) {
+	width: 35%;
+  }
+  
+  thead th:nth-child(4) {
+	width: 35%;
+  }
+
+  thead th:nth-child(5) {
+	width: 25%;
+  }
+  th, td {
+	padding: 20px;
+  }
+
+  
+  th {
+	letter-spacing: 2px;
+  }
+  
+  td {
+	letter-spacing: 1px;
+  }
+  
+  tbody td {
+	text-align: center;
+  }
+  
+  tfoot th {
+	text-align: right;
+  }
+
+  thead, tfoot {
+	color: white;
+	text-shadow: 1px 1px 1px black;
+  }
+  
+  thead th, tfoot th, tfoot td {
+	border: 3px solid rgb(255, 255, 255);
+  }
+  tbody tr:nth-child(odd) {
+	background-color: #ceccdf;
+  }
+  
+  tbody tr:nth-child(even) {
+	background-color: #e495e4;
+  }
+ 
+  
+  table {
+	background-color: #438ce0;
+  }
