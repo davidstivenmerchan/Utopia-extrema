@@ -48,10 +48,10 @@ $info = mysqli_fetch_assoc($query2);
   <br>
   
     <form action="php/validar.php" method="POST" class="iniciar">
-        <label for="usu">Ingrese su usuario</label>
-        <input type="text" id="usu" autocomplete="off" name="usu">
-        <label for="pass">Ingrese su contraseña</label>
-        <input type="password" id="pass" autocomplete="off" name="pass">
+        <label for="usu">Ingrese su Cedula</label>
+        <input type="text" id="usu" autocomplete="off" name="cc"></a>
+        <label for="pass">Ingrese su id_codigo</label>
+        <input type="password" id="pass" autocomplete="off" name="idc">
         <input type="submit" value="INGRESAR" class="envio">
     </form>
     <br>
