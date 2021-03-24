@@ -66,9 +66,12 @@ if($conexion->query($cadena_final)):
     $cade.=";";
     $conexion->query($cade);
 
+
+
+
     echo json_encode(array('ERROR' => false));
 
-
+    header("location: ../index.php");
 
 else:
     echo json_encode(array('ERROR' => true));
