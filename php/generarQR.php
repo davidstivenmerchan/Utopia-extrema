@@ -9,7 +9,7 @@
     if(!file_exists($QR))
         mkdir($QR);
 
-    $filename = $QR.'juan.png';
+    $filename = $QR.'daniela.png';
 
     $tamanio = 5;
     $level = 'Q';

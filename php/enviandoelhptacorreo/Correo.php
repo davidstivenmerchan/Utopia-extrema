@@ -1,11 +1,10 @@
 <?php
 
 $correo = $_POST['correo'];
-
+$cedula = $_POST['id_user'];
 $nom = $_POST['nombre'];
 
 
-require_once('../insertar.php');
 
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -19,6 +18,12 @@ require 'PHPMailer/SMTP.php';
 
 for ($i=0; $i < count($correo); $i++) { 
 
+ 
+  require_once "../codigosQR/phpqrcode/qrlib.php";
+
+    
+
+  
  
 
 

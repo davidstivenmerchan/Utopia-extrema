@@ -1,8 +1,125 @@
 *{
+    margin: 0;
     font-family: 'Roboto', sans-serif;
 }
 
+body{
+
+    
+}
 .clienteC{
     width: 200px;
+
     
+}
+
+.capas{
+    width:100%;
+    height: 400px;
+    background: rgba(101, 3, 116,.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+  
+
+
+}
+.imagen1{
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+.tituloo{
+    position: absolute;
+    color: white;
+    margin-top: 195px;
+    margin-left: 550px;    
+    
+}
+.navegacion{
+    display: flex;
+    justify-content: center;
+   
+}
+.navegacion li{
+    list-style: none;
+    margin-left: 100px;
+}
+.navegacion li a{
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+    font-size: 19px;
+}
+.paubicanos{
+    display: flex;
+}
+.hiubicanos1 {
+    padding: 10px;
+}
+
+.hiubicanos1 h4{
+    margin-top: 20px;
+}
+.face{
+    width: 70px;
+    margin-top: 60px;
+    margin-left: 35px;
+}
+
+.paquienes div{
+    margin-top: 20px;
+    width: 500px;
+    margin-left: 20px;
+}
+.paquienes{
+    display: flex;
+}
+.paquienes div img{
+    width: 100%;
+    height: 100%;
+}
+
+.paquienes div p{
+    font-size: 19px;
+}
+h1{
+    text-align: center;
+}
+.iniciar{
+    margin-left: 600px;
+    width: 200px;
+    display: block;
+    justify-content: center;
+    
+    
+}
+.iniciar input{
+    margin: 5px;
+}
+.iniciar label{
+    text-align: center;
+}
+.envio{
+margin-left: 10px;
+background: rgba(101, 3, 116);
+color: white;
+border: none;
+width: 73%;
+cursor: pointer;
+}
+
+.envio:hover{
+    background: black;
+}
+.envior{
+    margin-left: 10px;
+background: rgba(101, 3, 116);
+color: white;
+border: none;
+cursor: pointer;
+}
+
+.envior:hover{
+    background: black;
 }

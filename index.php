@@ -19,21 +19,120 @@ $info = mysqli_fetch_assoc($query2);
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     
-    <title>INGRESAR</title>
+    <title>UTOPIA EXTREMA</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    
+      
+    <img src="imagenes/feria.jpg" alt="encabezado" class="imagen1">
+       
+    <div class="capas">
+      <h1 class="tituloo">UTOPIA EXTREMA</h1>
+    </div>
+    <nav>
+      <ul class="navegacion">
+        <li><a href=""> INICIAR SESSION</a></li>
+        <li><a href=""> UBICANOS</a></li>
+        <li><a href=""> QUIENES SOMOS</a></li>
+        <li><a href=""> COMPRAR TARJETA</a></li>
+      
+      </ul>
+    </nav>
+    <hr>
+    <br>
+    <br>
+    <br>
+
     <h1>INICIAR SESION</h1>
-    <form action="php/validar.php" method="POST">
+  <br>
+  
+    <form action="php/validar.php" method="POST" class="iniciar">
         <label for="usu">Ingrese su usuario</label>
         <input type="text" id="usu" autocomplete="off" name="usu">
         <label for="pass">Ingrese su contraseña</label>
         <input type="password" id="pass" autocomplete="off" name="pass">
-        <input type="submit" value="INGRESAR">
+        <input type="submit" value="INGRESAR" class="envio">
     </form>
     <br>
     <br>
     <br>
+
+    <hr>
+    <br>
+    <br>
+    <br>
+
+
+    <h2>UBICANOS</h2>
+
+
+    <div class="paubicanos">
+      <div class="hiubicanos1">
+        <p>Lorem ipsum dolor, sit amet consectetur 
+        adipisicing elit. Voluptas velit, dolores 
+        nam eius nihil, provident quas minima sequi 
+        ratione maiores obcaecati reiciendis ex! 
+        Sint delectus eveniet eaque quo expedita 
+        architecto.Lorem ipsum dolor, sit amet consectetur 
+        adipisicing elit. Voluptas velit, dolores 
+        nam eius nihil, provident quas minima sequi 
+        ratione maiores obcaecati reiciendis ex! 
+        Sint delectus eveniet eaque quo expedita 
+        architecto.</p> 
+
+        <h4>NUESTROS NUMERO: +57 3156254560, +57 445432134 </h4>
+        <h4>NUESTRO CORREO: extremautopia@gmail.com </h4>
+        <div class="iconos">
+        <img src="imagenes/facebook.png" alt="" class="face">
+        <img src="imagenes/insta.jpg" alt="" class="face">
+        <img src="imagenes/twitter.png" alt="" class="face">
+        <img src="imagenes/you.png" alt="" class="face">
+        </div>
+        
+      </div>
+      <div class="hiubicanos2">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.602058065169!2d-74.09416458573685!3d4.664824943267698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzknNTYuNiJOIDc0wrAwNSczMS44Ilc!5e0!3m2!1ses!2sco!4v1616545514558!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </div>
+    </div>
+
+    <hr>
+    <br>
+    <br>
+    <br>
+
+
+    <h2>QUIENES SOMOS</h2>
+    <div class="paquienes">
+        <div><img src="imagenes/mexico.jpg" alt=""></div>
+        <div><p>Lorem ipsum dolor, sit amet consectetur 
+            adipisicing elit. Voluptas velit, dolores 
+            nam eius nihil, provident quas minima sequi 
+            ratione maiores obcaecati reiciendis ex! 
+            Sint delectus eveniet eaque quo expedita 
+            architecto.Lorem ipsum dolor, sit amet consectetur 
+            adipisicing elit. Voluptas velit, dolores 
+            nam eius nihil, provident quas minima sequi 
+            ratione maiores obcaecati reiciendis ex! 
+            Sint delectus eveniet eaque quo expedita 
+            architecto.Lorem ipsum dolor, sit amet consectetur 
+            adipisicing elit. Voluptas velit, dolores 
+            nam eius nihil, provident quas minima sequi 
+            ratione maiores obcaecati reiciendis ex! 
+            Sint delectus eveniet eaque quo expedita 
+            architecto.Lorem ipsum dolor, sit amet consectetur 
+            adipisicing elit.</p> </div>
+        <div><img src="imagenes/_mv2.jpg" alt=""></div>
+    
+    </div>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+
+
     <div class="card">
       <form method="post">
           <h2>DATOS TARJETA</h2>
@@ -45,7 +144,7 @@ $info = mysqli_fetch_assoc($query2);
             <?php echo $card['name_card'] ?></option>
             <?php endforeach;?>
           </select>
-          <input type="submit" name="insertar" value="Seleccionar"/>
+          <input class="envior" type="submit" name="insertar" value="Seleccionar"/>
       </form>
     </div>
 
@@ -124,15 +223,22 @@ $info = mysqli_fetch_assoc($query2);
        
       </form>
     </div>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
 
-    <h1>COMPRAR BOLETOS</h1>
+    <!-- <h1>COMPRAR BOLETOS</h1>
 
 
     <a href="php/generarQR.php">Comprar</a>
 
 
 
-    <a href="php/correo.php">ENVIAR CORREO</a>
+    <a href="php/correo.php">ENVIAR CORREO</a> -->
 
 
    <!--  <div class="clienteC">
