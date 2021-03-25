@@ -10,12 +10,11 @@ jQuery(document).on('submit',' #form_insert', function(event){
         console.log(respuesta);
         if(!respuesta.error){
             alert("Su Compra Ha Sido Exitosa");
-            
+            location.reload();
 
         }else{
             alert("ERROR, INTENTE NUEVAMENTE");
         }
-        
     })
     .fail(function(resp){
         console.log(resp.responseText);
@@ -23,6 +22,7 @@ jQuery(document).on('submit',' #form_insert', function(event){
     .always(function(){
         console.log("complete");
     })
+    
 });
 
 jQuery(document).on('submit',' #form_insert', function(event){
