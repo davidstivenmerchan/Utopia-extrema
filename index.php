@@ -233,14 +233,14 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <h2>RECARGAR TARJETA</h2>
-    <form action="">
+    <form action="php/recargart.php" class="formtar" method="POST">
     <h4 class="recargat">INGRESA EL ID DE TU TARJETA DEL PARQUE PARA PODER RECARGARLA</h4>
-        <input type="text" name="" id="" placeholder="Introduce el numero de tu tarjeta a recargar">
+        <input  class="inputrecarga" type="text" name="n_tarjeta" id="" placeholder="Introduce el id de tu tarjeta a recargar">
     <h4 class="recargat">INGRESA LOS DATOS DE TU TARJETA CREDITO PARA PROCEDER A RECARGAR TU TARJETA</h4>
-        <input type="text" name="" id="" placeholder="Introduce el numero de tu tarjeta">
-        <input type="text" name="" id="" placeholder="Introduce la fecha de vencimiento">
-        <input type="text" name="" id="" placeholder="Introduce el codigo de seguridad">
-        <input type="submit" value="RECARGAR">
+        <input class="inputrecarga" type="text" name="n_taejta_c" id="" placeholder="Introduce el numero de tu tarjeta">
+        <input class="inputrecarga" type="date" name="datevc" id="" placeholder="Introduce la fecha de vencimiento">
+        <input class="inputrecarga" type="text" name="cod" id="" placeholder="Introduce el codigo de seguridad">
+        <input type="submit" value="RECARGAR" name="recargar" class="enviarrecarga">
     </form>
 
     <!-- <h1>COMPRAR BOLETOS</h1>
