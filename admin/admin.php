@@ -1,5 +1,14 @@
 <?php
-require_once("../php/conexion.php");
+session_start();
+
+$c = $_SESSION['cc'];
+
+include('../php/conexion.php');
+
+
+$sql ="SELECT * from usuarios WHERE cedula='$c'";
+$resul = mysqli_query($conexion, $sql);
+$fila=mysqli_fetch_array($resul);
 
 $sql2 = "SELECT * FROM card";
 $query2 = mysqli_query($conexion, $sql2);
@@ -39,9 +48,9 @@ $query3 = mysqli_query($conexion, $sal);
                         <div class="img">
                             <img src="../imagenes/admin.jpg">
                         </div>
-                            <h2>Nombres:<?php //echo $full ['nomOne']; echo $full ['nomTwo'];?></h2>
-                            <h2>Apellidos: <?php// echo $full ['apeOne']; echo $full ['apeTwo'];?></h2>
-                            <h2>Correo: <?php //echo $full ['correo']?></h2>
+                            <h2>Nombres:<?php echo $fila ['nombre'];?></h2>
+                            <h2>Apellidos: <?php echo $fila ['apellido'];?></h2>
+                            <h2>Correo: <?php echo $fila ['correo']?></h2>
                              
                         </div>
                     </div>
