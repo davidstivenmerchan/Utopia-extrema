@@ -1,7 +1,8 @@
+
 <?php
 session_start();
 
-$c = $_SESSION['cc'];
+$c=$_SESSION['cc'];
 
 include('../php/conexion.php');
 
@@ -57,7 +58,7 @@ $query3 = mysqli_query($conexion, $sal);
                 </div>
 
             <div class="exit">
-                <a href=""><i class="fas fa-sign-out-alt"></i></a>
+                <a href="../php/cerrar.php"><i class="fas fa-sign-out-alt"></i></a>
             </div>
 
         </div>
