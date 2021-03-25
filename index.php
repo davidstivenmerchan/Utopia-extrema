@@ -37,6 +37,7 @@ $info = mysqli_fetch_assoc($query2);
         <li><a href=""> UBICANOS</a></li>
         <li><a href=""> QUIENES SOMOS</a></li>
         <li><a href=""> COMPRAR TARJETA</a></li>
+        <li><a href=""> RECARGA TU TARJETA</a></li>
       
       </ul>
     </nav>
@@ -46,7 +47,7 @@ $info = mysqli_fetch_assoc($query2);
     <br>
 
     <h1>INICIAR SESION</h1>
-  <br>
+  <br> 
   
     <form action="php/validar.php" method="POST" class="iniciar">
         <label for="usu">Ingrese su Cedula</label>
@@ -231,6 +232,16 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <br>
+    <h2>RECARGAR TARJETA</h2>
+    <form action="php/recargart.php" class="formtar" method="POST">
+    <h4 class="recargat">INGRESA EL ID DE TU TARJETA DEL PARQUE PARA PODER RECARGARLA</h4>
+        <input  class="inputrecarga" type="text" name="n_tarjeta" id="" placeholder="Introduce el id de tu tarjeta a recargar">
+    <h4 class="recargat">INGRESA LOS DATOS DE TU TARJETA CREDITO PARA PROCEDER A RECARGAR TU TARJETA</h4>
+        <input class="inputrecarga" type="text" name="n_taejta_c" id="" placeholder="Introduce el numero de tu tarjeta">
+        <input class="inputrecarga" type="date" name="datevc" id="" placeholder="Introduce la fecha de vencimiento">
+        <input class="inputrecarga" type="text" name="cod" id="" placeholder="Introduce el codigo de seguridad">
+        <input type="submit" value="RECARGAR" name="recargar" class="enviarrecarga">
+    </form>
 
     <!-- <h1>COMPRAR BOLETOS</h1>
 
@@ -265,6 +276,16 @@ $info = mysqli_fetch_assoc($query2);
     </div>   -->
 
     <script src="js/compraCard.js" ></script>
+
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+    
+
 
 </body>
 

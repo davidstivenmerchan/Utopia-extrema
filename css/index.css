@@ -43,7 +43,7 @@ body{
 }
 .navegacion li{
     list-style: none;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 .navegacion li a{
     text-decoration: none;
@@ -114,12 +114,36 @@ cursor: pointer;
 }
 .envior{
     margin-left: 10px;
-background: rgba(101, 3, 116);
-color: white;
-border: none;
-cursor: pointer;
+    background: rgba(101, 3, 116);
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .envior:hover{
+    background: black;
+}
+.recargat{
+    text-align: center;
+    margin: 20px;
+}
+.formtar{
+    width: 400px;
+    margin-left: 500px;
+}
+.inputrecarga{
+    width: 400px;
+    margin: 10px;
+}
+.enviarrecarga{
+    border: none;
+    background: rgb(101, 3, 116);
+    width: 405px;
+    height: 20px;
+    margin: 10px;
+    cursor: pointer;
+    color: white;
+}
+.enviarrecarga:hover{
     background: black;
 }
