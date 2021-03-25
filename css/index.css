@@ -43,7 +43,7 @@ body{
 }
 .navegacion li{
     list-style: none;
-    margin-left: 100px;
+    margin-left: 50px;
 }
 .navegacion li a{
     text-decoration: none;
@@ -114,12 +114,16 @@ cursor: pointer;
 }
 .envior{
     margin-left: 10px;
-background: rgba(101, 3, 116);
-color: white;
-border: none;
-cursor: pointer;
+    background: rgba(101, 3, 116);
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 .envior:hover{
     background: black;
+}
+.recargat{
+    text-align: center;
+    margin: 20px;
 }
