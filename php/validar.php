@@ -25,7 +25,7 @@ if($fila1){
         $fila=mysqli_num_rows($resultado);
         
     
-        $_SESSION['idq'] = $arreglo['id_qr'];
+        $_SESSION['idq'] = $fila['id_qr'];
         $_SESSION['idc'] = $idc;
         $_SESSION['cc'] =  $cc;
         
@@ -49,6 +49,14 @@ if($fila1){
         $consulta = "SELECT * FROM usuarios WHERE password='$idc' and cedula = '$cc'";
         $resultado = mysqli_query($conexion, $consulta);
         $fila=mysqli_num_rows($resultado);
+
+
+            /* $_SESSION['cceduu']= $fila['cedula'];
+
+            $_SESSION['pass']=$fila['password']; */
+
+            $_SESSION['idc'] = $idc;
+            $_SESSION['cc'] =  $cc;
         
 
       

@@ -1,6 +1,8 @@
-
 <?php
-session_start();
+require_once("../php/valiadmi.php");
+?>
+<?php
+
 
 $c=$_SESSION['cc'];
 
