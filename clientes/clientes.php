@@ -1,7 +1,7 @@
 <?php
-    session_start();
+require_once("../php/validacion.php");
+?>
 
-    ?>
 <?php
 
     $id_compraa = $_SESSION['idc'];
@@ -107,6 +107,9 @@
        
        <input type="submit" value="MONTAR" name="enviar">
    </form>
+
+
+   <a href="../php/cerrar.php">Cerrar Sesion</a>
 
 
 </body>
