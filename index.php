@@ -174,7 +174,7 @@ $info = mysqli_fetch_assoc($query2);
                     <td><label>'.$info["tickets"].'</label></td>
                     </tr>
                     <td>PRECIO: </td>
-                    <td><label >'.$info["precio"].'</label></td>
+                    <td><label >$'.$info["precio"].'</label></td>
                   </table>
                   <input type="hidden" name="Eliminar" value=""/>
                   <h2>REGISTRO DE USUARIOS</h2>

@@ -1,5 +1,5 @@
 <?php
-require_once("../php/valiadmi.php");
+    require_once("../php/valiadmi.php");
 ?>
 <?php
 

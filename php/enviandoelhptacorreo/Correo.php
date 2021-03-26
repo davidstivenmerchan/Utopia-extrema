@@ -18,6 +18,8 @@ $docu = $cedula[0];
 
 $compracodigo = "SELECT compra.id_compra, compra.cedula, compra.date, compra.date_vcto, compra.valor, compra.tickest, card.N_person, card.name_card FROM compra, card WHERE compra.cedula = '$docu' and compra.id_card = card.id_card and compra.tickest = card.tickets and compra.valor = card.precio ";
 
+
+
 $query2 = mysqli_query($conexion, $compracodigo);
 $fila = mysqli_fetch_assoc($query2);
 
