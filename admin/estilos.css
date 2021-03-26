@@ -113,23 +113,30 @@ header{
   }
   
   thead th:nth-child(1) {
-	width: 10%;
+	width: 12%;
   }
   
   thead th:nth-child(2) {
-	width: 25%;
+	width: 20%;
   }
   
   thead th:nth-child(3) {
-	width: 35%;
+	width: 30%;
   }
   
   thead th:nth-child(4) {
-	width: 35%;
+	width: 20%;
   }
 
   thead th:nth-child(5) {
-	width: 25%;
+	width: 20%;
+  }
+
+  thead th:nth-child(6) {
+    width: 20%;
+  }
+  thead th:nth-child(7) {
+    width: 20%;
   }
   th, td {
 	padding: 20px;
@@ -170,5 +177,5 @@ header{
  
   
   table {
-	background-color: #438ce0;
+	background-color: #e04350;
   }
