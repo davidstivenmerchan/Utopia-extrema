@@ -21,7 +21,7 @@ $compracodigo = "SELECT compra.id_compra, compra.cedula, compra.date, compra.dat
 
 
 $query2 = mysqli_query($conexion, $compracodigo);
-$fila = mysqli_fetch_assoc($query2);
+$fila = mysqli_fetch_array($query2);
 
 for ($i=0; $i < count($correo); $i++) { 
 
@@ -139,28 +139,28 @@ try {
             <table>
               <tr>
                 <td><label>Nº DE FACTURA: </label></td>
-                <td><label>".$fila['id_compra']."</label></td>
+                <td><label>".$fila[0]."</label></td>
               </tr>
               <tr>
                 <td><h3>PLAN SELECCIONADO</h3></td>
-                <td><label>".$fila['name_card']."</label></td>
+                <td><label>".$fila[7]."</label></td>
               </tr>
               <tr>
                 <td><label>Nº de Tickest Disponibles: </label></td>
-                <td><label>".$fila['tickest']."</label></td>
+                <td><label>".$fila[5]."</label></td>
               </tr>
               <tr>
                 <td><h3>VALOR TOTAL: </h3></td>
-                <td><label>".$fila['valor']."</label></td>
+                <td><label>".$fila[4]."</label></td>
               </tr>
               <tr></tr>
               <tr>
                 <td><label>Fecha de Compra: </label></td>
-                <td><label>".$fila['date']."</label></td>
+                <td><label>".$fila[2]."</label></td>
               </tr>
               <tr>
                 <td><label>Fecha de Vencimiento de la Compra: </label></td>
-                <td><label> ".$fila['date_vcto']."</label></td>
+                <td><label> ".$fila[3]."</label></td>
               </tr>
             </table>
             <h3class='con'>RECORDAR</h3>
