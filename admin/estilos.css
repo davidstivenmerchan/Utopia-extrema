@@ -113,7 +113,7 @@ header{
   }
   
   thead th:nth-child(1) {
-	width: 12%;
+	width: 1%;
   }
   
   thead th:nth-child(2) {
@@ -155,16 +155,13 @@ header{
 	text-align: center;
   }
   
-  tfoot th {
-	text-align: right;
-  }
 
-  thead, tfoot {
+  thead {
 	color: white;
 	text-shadow: 1px 1px 1px black;
   }
   
-  thead th, tfoot th, tfoot td {
+  thead th{
 	border: 3px solid rgb(255, 255, 255);
   }
   tbody tr:nth-child(odd) {
@@ -175,7 +172,44 @@ header{
 	background-color: #e495e4;
   }
  
-  
-  table {
+  .tables {
 	background-color: #e04350;
   }
+
+.form_maquinas{
+  width: 450px;
+  margin-left: 500px;
+  padding: 20px;
+  background: #ceccdf;
+  border:  #e495e4 2px solid;
+  border-radius: 10px;
+  
+}
+.form_maquinas input{
+  margin: 5px;
+  width: 150px;
+}
+
+.form_maquinas select{
+  margin: 5px;
+  
+}
+.form_maquinas div{
+  width: 700px;
+}
+.rmaquinas{
+  width: 700px;
+  height: 35px;
+  background: #7045b6;
+  margin-left: 60px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+.bm{
+  margin-left: 110px;
+}
+.rmaquinas:hover{
+  background: #5b7fe3;
+
+}
