@@ -113,7 +113,7 @@ header{
   }
   
   thead th:nth-child(1) {
-	width: 12%;
+	width: 1%;
   }
   
   thead th:nth-child(2) {
@@ -155,16 +155,13 @@ header{
 	text-align: center;
   }
   
-  tfoot th {
-	text-align: right;
-  }
 
-  thead, tfoot {
+  thead {
 	color: white;
 	text-shadow: 1px 1px 1px black;
   }
   
-  thead th, tfoot th, tfoot td {
+  thead th{
 	border: 3px solid rgb(255, 255, 255);
   }
   tbody tr:nth-child(odd) {
@@ -175,7 +172,7 @@ header{
 	background-color: #e495e4;
   }
  
-  
-  table {
+  .tables {
 	background-color: #e04350;
   }
+

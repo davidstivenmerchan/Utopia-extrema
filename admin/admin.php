@@ -17,8 +17,9 @@ $sql2 = "SELECT * FROM card";
 $query2 = mysqli_query($conexion, $sql2);
 $info = mysqli_fetch_assoc($query2);
 
-$sal = "SELECT * FROM estado";
-$query3 = mysqli_query($conexion, $sal);
+$sql3 = "SELECT * FROM estado";
+$query3 = mysqli_query($conexion, $sql3);
+
 ?> 
 <!DOCTYPE html>
 <html lang="en">
@@ -103,18 +104,18 @@ $query3 = mysqli_query($conexion, $sal);
             
              
             echo "<table  class = 'tables'>";
-            echo "<caption>Registros encontrados</caption>";
-            echo "<thead>";
-            echo "<tr>";
-            echo "<th scope='col'>Codigo de compra</th>";
-            echo "<th scope='col'>Tipo tarjeta</th>";
-            echo "<th scope='col'>Nombre cliente</th>";
-            echo "<th scope='col'>Telefono de contacto</th>";
-            echo "<th scope='col'>Correo</th>";
-            echo "<th scope='col'>Fecha compra</th>";
-            echo "<th scope='col'>Dias restantes</th>";
-            echo "</tr>";
-            echo "</thead>";
+                echo "<caption>Registros encontrados</caption>";
+                echo "<thead>";
+                    echo "<tr>";
+                        echo "<th scope='col'>Codigo de compra</th>";
+                        echo "<th scope='col'>Tipo tarjeta</th>";
+                        echo "<th scope='col'>Nombre cliente</th>";
+                        echo "<th scope='col'>Telefono de contacto</th>";
+                        echo "<th scope='col'>Correo</th>";
+                        echo "<th scope='col'>Fecha compra</th>";
+                        echo "<th scope='col'>Dias restantes</th>";
+                    echo "</tr>";
+                echo "</thead>";
 
 
         ?>
@@ -130,15 +131,15 @@ $query3 = mysqli_query($conexion, $sal);
                    
 
                 echo "<tbody>";
-                echo "<tr>";
-                echo "<th scope='row'>$columna[0]</th>";
-                echo "<td>$columna[2]</td>";
-                echo "<td>$columna[3]$columna[4]</td>";
-                echo "<td>$columna[5]</td>";
-                echo "<td>$columna[6]</td>";
-                echo "<td>$columna[1]</td>";
-                echo "<td>$dia</td>";
-                echo "</tr>";
+                    echo "<tr>";
+                        echo "<th scope='row'>$columna[0]</th>";
+                        echo "<td>$columna[2]</td>";
+                        echo "<td>$columna[3]$columna[4]</td>";
+                        echo "<td>$columna[5]</td>";
+                        echo "<td>$columna[6]</td>";
+                        echo "<td>$columna[1]</td>";
+                        echo "<td>$dia</td>";
+                    echo "</tr>";
                 echo "</tbody>";
             }
         }
@@ -147,30 +148,48 @@ $query3 = mysqli_query($conexion, $sal);
     </div>
 
     <div class="planificacion">
-        <h2>PLANIFICACION</h2>
-        <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p><br>
-        <?php 
-            $sql3 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atr, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi ";
-            $query3 = mysqli_query($conexion, $sql3);
-        ?>
-        <?php 
-            while($column=mysqli_fetch_array($query3))
-            {
-                echo "<div>";
-                echo"<input type='checkbox' id=$column[0] name=''>";
-                echo"<label>Tipo de atraccion: $column[1] -- </label>";
-                echo"<label>Nombre: $column[2] -- </label>";
-                echo"<label>Ubicacion: $column[3]</label>";
-                echo"</div>";
-            }
-        ?>  
-        <div class="horas">
-            <label for="appt">HORA INICIO:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
-            <label for="appt">HORA FIN:</label>
-            <input type="time" id="appt" name="appt" min="09:00" max="18:00" required>
-        </div>
-        <input type="submit" name="Registrar" value="Registrar"/>
+        <form action="">
+            <h2>PLANIFICACION</h2>
+            <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p><br>
+            <?php 
+                $sql4 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atr, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi ";
+                $query4 = mysqli_query($conexion, $sql4);
+            ?>
+            <table >
+                <thead>
+                    <tr>
+                        <th>Tipo de atracción</th>
+                        <th>Nombre</th>
+                        <th>Ubicación</th>
+                        <th>Seleccionar</th>
+                    </tr>
+                </thead>
+
+            <?php 
+                while($column=mysqli_fetch_array($query4))
+                {
+                    echo'<tbody>';
+                        echo'<tr>';
+                            echo'<td>'.$column[1].'</td>';
+                            echo'<td>'.$column[2].'</td>';
+                            echo'<td>'.$column[3].'</td>';
+                            echo'<td><input type="checkbox" id='.$column[0].'></td>';
+                        echo'</tr>';
+                    echo'</tbody>';
+
+                    
+                }
+            ?>  
+            </table><br>
+            <div class="horas">
+                <label>HORA INICIO:</label>
+                <input type="time"  min="04:00" max="24:00" required>
+                <label>HORA FIN:</label>
+                <input type="time"  min="04:00" max="24:00" required>
+            </div><br>
+            <input type="submit" name="Registrar" value="Registrar"/>
+
+        </form>
     </div>   
 
 
