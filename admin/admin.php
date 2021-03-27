@@ -150,7 +150,7 @@ $query3 = mysqli_query($conexion, $sal);
         <h2>PLANIFICACION</h2>
         <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p><br>
         <?php 
-            $sql3 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atr, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi ";
+            $sql3 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi ";
             $query3 = mysqli_query($conexion, $sql3);
         ?>
         <?php 
