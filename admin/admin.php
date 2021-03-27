@@ -1,5 +1,5 @@
 <?php
-require_once("../php/valiadmi.php");
+    require_once("../php/valiadmi.php");
 ?>
 <?php
 
@@ -152,7 +152,7 @@ $query3 = mysqli_query($conexion, $sql3);
             <h2>PLANIFICACION</h2>
             <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p><br>
             <?php 
-                $sql4 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atr, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi ";
+                $sql4 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi ";
                 $query4 = mysqli_query($conexion, $sql4);
             ?>
             <table >
@@ -192,6 +192,74 @@ $query3 = mysqli_query($conexion, $sql3);
         </form>
     </div>   
 
+<?php
+
+   $query5=mysqli_query($conexion,"SELECT * FROM tipo_atraccion");
+
+   $query6=mysqli_query($conexion,"SELECT * FROM ubicacion");
+
+    
+
+
+
+?>
+
+    <div class="form_maquinas">
+                <h4>FORMULARIO PARA REGISTRAR ATRACIONES</h4>
+        <form action="regi_atracciones.php" method="POST">
+
+            <label for="id_tipo_atraccion">Selecciona el Tipo de Atracccion</label>
+
+            <select name="tip_atraccion" id="id_tipo_atraccion">
+                <option value="">--</option>
+
+                <?php
+                  
+                    while($dcta=mysqli_fetch_array($query5)){
+                
+                ?>
+                    
+                <option value="<?php echo $dcta['id_tip_atraccion'] ?>"><?php echo $dcta['nom_tip_atraccion'] ?></option>
+                    
+                <?php
+                    }
+                ?>
+
+            </select>
+            <div>
+            <label for="nom_atraccion">Escriba el Nombre de la Atraccion</label>
+            <input type="text" name="nom_atraccion" id="nom_atraccion">
+            </div>
+            <div>
+            <label for="capa">Capacidad</label>
+            <input type="text" name="capa" id="capa">
+            </div>
+            
+            
+            <label for="id_tipo_atraccion">Selecciona la Ubicacion de la Atracccion</label>
+
+            <select name="ubicacion" id="id_tipo_ubicacion">
+                <option value="">--</option>
+
+                <?php
+                  
+                    while($dctu=mysqli_fetch_array($query6)){
+                
+                ?>
+                    
+                <option value="<?php echo $dctu['id_ubi'] ?>"><?php echo $dctu['nom_ubi'] ?></option>
+                    
+                <?php
+                    }
+                ?>
+                
+            </select>
+            <div class="bm">
+            <input type="submit" value="REGISTRAR" class="rmaquinas" name="registrar_atracciones">
+            </div>
+            
+        </form>
+    </div>
 
     <script src="app.js"></script>
 </body>
