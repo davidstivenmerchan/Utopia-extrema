@@ -3,6 +3,9 @@ require_once("../php/validacion.php");
 ?>
 
 <?php
+    
+
+    $fecha = strftime('%d-%m-%Y %H:%M:%S');
 
     $id_compraa = $_SESSION['idc'];
 
@@ -91,6 +94,7 @@ require_once("../php/validacion.php");
     <h2>Cliente: <?php echo $fila['nombre'] ?>  <?php echo $fila['apellido'] ?></h2>
     <div class="exit">
                 <a href="../php/cerrar.php"><i class="fas fa-sign-out-alt"></i></a>
+                
     </div>
         
     </div>
@@ -162,7 +166,7 @@ require_once("../php/validacion.php");
    </form>
 
 
-
+     <p>FECHA: <?php echo $fecha ?></p>
    
 
 

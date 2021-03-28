@@ -32,6 +32,13 @@ if($fila1){
                 $_SESSION['idq'] = $fila['id_qr'];
                 $_SESSION['idc'] = $idc;
                 $_SESSION['cc'] =  $cc;
+                $qr=$fila['id_qr'];
+
+
+
+                $consulta_entrada = "INSERT INTO entry_exit(id_qr, fe_ho_exit) VALUES($qr, NULL)";
+                $exe_consulta_entra=mysqli_query($conexion,$consulta_entrada);
+
         
         
                 header("location: ../clientes/clientes.php");
