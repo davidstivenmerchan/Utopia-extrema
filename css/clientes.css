@@ -2,3 +2,41 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+body{
+    overflow: hidden;
+}
+.encabezado{
+    width: 100%;
+    background: rgba(18, 28, 161, 0.534);
+    height: 40px;
+    padding: 30px;
+    display: flex;
+}
+.encabezado div img{
+    width: 90px;
+    
+}
+.exit i{
+    font-size: 50px;
+    margin-left: 900px;
+}
+.datos{
+    display: flex;
+    width: 100%;
+}
+.datos div{
+    margin-left: 250px;
+    margin-top: 15px;
+    background: rgba(243, 241, 240, 0.87);
+    padding: 10px;
+    border:  rgba(18, 28, 161, 0.534) 2px solid;
+    
+}
+.datos div *{
+    margin: 3px;
+}
+
+h3{
+    margin-top: 25px;
+    text-align: center;
+}
