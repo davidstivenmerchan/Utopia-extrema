@@ -16,10 +16,21 @@ body{
     width: 90px;
     
 }
-.exit i{
+.exit{
     font-size: 50px;
-    margin-left: 900px;
+    margin-left: 750px;
+    
 }
+.exit input{
+    background: rgba(18, 28, 161, 0.534);
+    border: none;
+    cursor: pointer;
+    color: white;
+    height: 30px;
+    width: 100px;
+    border: black solid 2px;
+}
+
 .datos{
     display: flex;
     width: 100%;

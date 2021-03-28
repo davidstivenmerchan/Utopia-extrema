@@ -104,7 +104,7 @@ require_once("../php/validacion.php");
     </div> -->
         <div class="exit">
             <form action="salida.php" method="POST">
-            <input type="text" name="id_entrada" value="<?php echo $idingreso ?>">
+            <input type="hidden" name="id_entrada" value="<?php echo $idingreso ?>">
             <input type="submit" value="Cerrar Sesion" name="salida">
         </form>
 
