@@ -9,6 +9,9 @@
         $nt = $_POST['n_taejta_c'];
         $datev = $_POST['datevc'];
         $cod = $_POST['cod'];
+        $can_tick= $_POST['Cantidad_tickest'];
+
+        $total = $can_tick * 3500;
         
 
         $sql1="SELECT tickest FROM compra  where id_compra='$idtar'";
@@ -19,13 +22,13 @@
 
             $tic=$fila1['tickest'];
 
-            $tickest = $tic + 10;
+            $tickest = $tic + $can_tick;
 
             $sql2="UPDATE compra SET tickest='$tickest' where id_compra='$idtar'";
             $resultado2=mysqli_query($conexion,$sql2);
 
 
-            $sql3="INSERT INTO carga_card (id_compra,number_of_card,date_vcto_card,cod_card) VALUES ('$idtar','$nt','$datev','$cod')";
+            $sql3="INSERT INTO carga_card (id_compra,valor_recarga,number_of_card,date_vcto_card,cod_card) VALUES ('$idtar',$total,'$nt','$datev','$cod')";
             $resultado3=mysqli_query($conexion,$sql3);
             
 

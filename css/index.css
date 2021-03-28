@@ -147,3 +147,22 @@ cursor: pointer;
 .enviarrecarga:hover{
     background: black;
 }
+.Cantidad_tickest{
+    width: 250px;
+    height: 35px;
+    margin-top: 15px;
+    margin-left: 12px;
+
+}
+.sumarestas{
+    width: 40px;
+    margin-left: 20px;
+    height: 35px;
+    background: rgb(101, 3, 116);
+    color:white;
+    border: none;
+    cursor: pointer;
+}
+.sumarestas:hover{
+    background: black;
+}

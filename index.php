@@ -233,9 +233,14 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <h2>RECARGAR TARJETA</h2>
-    <form action="php/recargart.php" class="formtar" method="POST">
+    <form action="php/recargart.php" class="formtar" method="POST" name="form_recargar_tickest">
     <h4 class="recargat">INGRESA EL ID DE TU TARJETA DEL PARQUE PARA PODER RECARGARLA</h4>
         <input  class="inputrecarga" type="text" name="n_tarjeta" id="" placeholder="Introduce el id de tu tarjeta a recargar">
+        <p>Informacion: Cada ticket Tiene un Costo de $3.500 pesos</p>
+        <input type="number" placeholder="Cantidad de Tickest que deseas comprar" name="Cantidad_tickest" class="Cantidad_tickest" min="1" max="50">
+        <input type="button" value="+" onclick="form_recargar_tickest.Cantidad_tickest.value++" class="sumarestas">
+        <input type="button" value="-" onclick="form_recargar_tickest.Cantidad_tickest.value--" class="sumarestas">
+        
     <h4 class="recargat">INGRESA LOS DATOS DE TU TARJETA CREDITO PARA PROCEDER A RECARGAR TU TARJETA</h4>
         <input class="inputrecarga" type="text" name="n_taejta_c" id="" placeholder="Introduce el numero de tu tarjeta">
         <input class="inputrecarga" type="date" name="datevc" id="" placeholder="Introduce la fecha de vencimiento">
