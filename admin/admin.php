@@ -206,7 +206,7 @@ $query3 = mysqli_query($conexion, $sql3);
 
     <div class="form_maquinas">
                 <h4>FORMULARIO PARA REGISTRAR ATRACIONES</h4>
-        <form action="regi_atracciones.php" method="POST">
+        <form action="regi_atracciones.php" method="POST" id="formumaquinas">
 
             <label for="id_tipo_atraccion">Selecciona el Tipo de Atracccion</label>
 

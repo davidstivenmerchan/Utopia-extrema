@@ -5,7 +5,12 @@ require_once("../php/validacion.php");
 <?php
 
     $id_compraa = $_SESSION['idc'];
+
     $c = $_SESSION['cc'];
+
+    $id_qr = $_SESSION['idq'];
+
+    
 
     include('../php/conexion.php');
 
@@ -29,6 +34,8 @@ require_once("../php/validacion.php");
 
         if(isset($_POST['enviar'])){
 
+            $id_atra = $_POST['id_atraccionn'];
+
             $rtic = $ti - 1;
 
             if($rtic>-1){
@@ -36,10 +43,21 @@ require_once("../php/validacion.php");
              
 
 
-            
-            
+            $consul_para_ingresar = "INSERT INTO game ( id_atraccion, id_qr) VALUES( $id_atra, $id_qr)";
+            $resuu= mysqli_query($conexion, $consul_para_ingresar);
+
+            if($resuu){
+                echo "<script> alert('esta funcionando esta chimbada'); </script>";
+            }
+            else {
+                echo "<script> alert('NO esta funcionando esta chimbada'); </script>";
+            }
+        
             $consuk = "UPDATE compra SET tickest='$rtic' where  id_compra = '$id_compraa' ";
             $resultadosos = mysqli_query($conexion, $consuk);
+
+
+            
 
             }else{
                 echo "<script> alert('Lo sentimos no tiene mas tickest por favor recargue su tarjeta'); </script>";
@@ -99,6 +117,7 @@ require_once("../php/validacion.php");
 
     <form action="" method="POST">
        <p>maquina 1</p>
+       <input type="hidden" name="id_atraccionn" value="1">
       
        <input type="submit" value="MONTAR" name="enviar" >
    </form>
@@ -110,6 +129,9 @@ require_once("../php/validacion.php");
 
 
    <a href="../php/cerrar.php">Cerrar Sesion</a>
+
+
+   
 
 
 </body>

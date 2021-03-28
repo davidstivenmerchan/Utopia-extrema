@@ -21,16 +21,18 @@ if($fila1){
    if($tipousu==1){
 
         $consulta = "SELECT * FROM codigo WHERE id_compra = '$idc' and cedula = '$cc'";
-        $resultado = mysqli_query($conexion, $consulta);
-        $fila=mysqli_num_rows($resultado);
+        $resultado48 = mysqli_query($conexion, $consulta);
+        $fila=mysqli_fetch_array($resultado48);
         
-    
-        $_SESSION['idq'] = $fila['id_qr'];
-        $_SESSION['idc'] = $idc;
-        $_SESSION['cc'] =  $cc;
+           
         
         
             if($fila){
+
+                $_SESSION['idq'] = $fila['id_qr'];
+                $_SESSION['idc'] = $idc;
+                $_SESSION['cc'] =  $cc;
+        
         
                 header("location: ../clientes/clientes.php");
             }else{
@@ -41,8 +43,7 @@ if($fila1){
                 <h1>error</h1>
                 <?php
             }
-            mysqli_free_result($resultado);
-            mysqli_close($conexion);
+            
     
    }elseif($tipousu==2){
 
@@ -73,8 +74,7 @@ if($fila1){
                 <h1>error</h1>
                 <?php
             }
-            mysqli_free_result($resultado);
-            mysqli_close($conexion);
+           
 
    }
 
