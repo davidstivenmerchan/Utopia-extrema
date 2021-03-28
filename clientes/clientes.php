@@ -136,22 +136,28 @@ require_once("../php/validacion.php");
 
      $consul_mostrar_atrac = "SELECT * FROM planeacion";
      $respues = mysqli_query($conexion,$consul_mostrar_atrac);
-     $fila1 = mysqli_fetch_array($respues);
+    # $fila1 = mysqli_fetch_array($respues);
+
+     while($i = mysqli_fetch_array($respues)){
+
+     
 
 ?>
     
-    
-   
-
     <form action="" method="POST">
-       <p>maquina 1</p>
-       <input type="hidden" name="id_atraccionn" value="1">
+       <p><?php echo $i['id_atraccion']?></p>
+       <input type="hidden" name="id_atraccionn" value="<?php $i['id_atraccion'] ?>">
       
        <input type="submit" value="MONTAR" name="enviar" >
    </form>
+<?php
+     }
+?>
+
+
    <form action="" method="POST">
-       <p>maquina 2</p>
-       
+       <p>SIRVIENDO</p>
+       <input type="hidden" name="id_atraccionn" value="1">
        <input type="submit" value="MONTAR" name="enviar">
    </form>
 
