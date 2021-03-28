@@ -5,7 +5,7 @@ require_once("../php/validacion.php");
 <?php
     
 
-    $fecha = strftime('%d-%m-%Y %H:%M:%S');
+   
 
     $id_compraa = $_SESSION['idc'];
 
@@ -13,9 +13,14 @@ require_once("../php/validacion.php");
 
     $id_qr = $_SESSION['idq'];
 
+    $idingreso = $_SESSION['ingreso'] ;
+
     
 
     include('../php/conexion.php');
+
+    
+    
 
 
     $sql ="SELECT codigo.id_compra, codigo.cedula, usuarios.nombre, usuarios.apellido, usuarios.correo, usuarios.celular, estado.nom_estado, card.name_card, compra.tickest , compra.date_vcto from codigo, usuarios, estado, compra, card WHERE usuarios.cedula=codigo.cedula and estado.id_estados=compra.id_estados and compra.id_compra=codigo.id_compra and card.id_card=compra.id_card and codigo.id_compra='$id_compraa' and codigo.cedula='$c'";
@@ -92,11 +97,18 @@ require_once("../php/validacion.php");
             <img src="../imagenes/PRIMERLOGO.png" alt="">
         </div>    
     <h2>Cliente: <?php echo $fila['nombre'] ?>  <?php echo $fila['apellido'] ?></h2>
-    <div class="exit">
+   <!--  <div class="exit">
+    
                 <a href="../php/cerrar.php"><i class="fas fa-sign-out-alt"></i></a>
-                
-    </div>
-        
+
+    </div> -->
+        <div class="exit">
+            <form action="salida.php" method="POST">
+            <input type="text" name="id_entrada" value="<?php echo $idingreso ?>">
+            <input type="submit" value="Cerrar Sesion" name="salida">
+        </form>
+
+        </div>
     </div>
     
 
@@ -166,7 +178,7 @@ require_once("../php/validacion.php");
    </form>
 
 
-     <p>FECHA: <?php echo $fecha ?></p>
+     
    
 
 

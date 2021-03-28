@@ -38,8 +38,16 @@ if($fila1){
 
                 $consulta_entrada = "INSERT INTO entry_exit(id_qr, fe_ho_exit) VALUES($qr, NULL)";
                 $exe_consulta_entra=mysqli_query($conexion,$consulta_entrada);
+                
+                $consulta_id_entrada = "SELECT * FROM entry_exit where id_ingreso  =  (SELECT max(id_ingreso) FROM entry_exit)";
+                $resul_consulta_id_entrada=mysqli_query($conexion,$consulta_id_entrada);
+                $fila32=mysqli_fetch_array($resul_consulta_id_entrada);
 
-        
+                if($fila32){
+
+                    
+                    $_SESSION['ingreso'] = $fila32['id_ingreso']; 
+                }
         
                 header("location: ../clientes/clientes.php");
             }else{
