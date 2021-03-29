@@ -15,14 +15,23 @@ if(isset($_POST['registrar_atracciones'])){
     $query=mysqli_query($conexion,$consul);
 
     if($query){
-        echo "<script> alert('REGISTRO DE ATRACCIONES CORRECTAMENTE!'); 
-        
+
+        $consul2 = "SELECT * FROM atraccion WHERE nom_atraccion = '$nom_atra' ";
+        $query2=mysqli_query($conexion,$consul2);
+        $fila = mysqli_fetch_assoc($query2);
+
+        $consul3 = "INSERT INTO horas_trabajo(id_horas_t, id_atraccion, total_h) VALUES ('','".$fila['id_atraccion']."','')";
+        $query3=mysqli_query($conexion,$consul3);
+
+        echo "<script> alert('REGISTRO DE ATRACCIONES CORRECTAMENTE!');
+        window.location= 'admin.php';
         </script>";
-        header("location: admin.php");
         exit;
-        
-    }else {
-        echo "<script> alert('algo fallo'); </script>";
+    }
+    else {
+    echo "<script> alert('ERROR DE INSERCION, PORFAVOR INTENTE NUEVAMENTE');
+        window.location= 'admin.php'</script>";
+    exit;
     }
 }
 
