@@ -18,6 +18,7 @@ $info = mysqli_fetch_assoc($query2);
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="icon" href="imagenes/PRIMERLOGO.ico">
     
     <title>UTOPIA EXTREMA</title>
@@ -316,6 +317,70 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <br>
+    <footer>
+      <div class="fopa">
+          <div class="fo1">
+            <h4>LIKS DE INTERES</h4>
+            <p>-Ubicanos</p>
+            <p>-Quienes somos</p>
+            <p>-Nuestros aliados</p>
+            <p>-Trabaja con nosotros</p>
+            <p>-Politicas del parque</p>
+          </div>
+      
+          <div class="fo2">
+            <h4>AYUDA</h4>
+            <p>extremautopia@gmail.com</p>
+            <p>+57 3156254560</p>
+            <p>+57 3109875689</p>
+            <h5>Servicio al cliente</h5>
+          </div>
+
+          <div class="fo3">
+            <h4>OTROS</h4>
+              <div class="otroi">
+                <i class="fas fa-map-marked-alt"></i> <p>Como llegar</p>
+              </div >
+              <div class="otroi">
+                <i class="fas fa-check-square"></i><p>Tips del Parque</p>
+              </div >
+              <div class="otroi">
+                <i class="far fa-calendar-alt"></i><p>Horarios</p>
+              </div>
+          </div>
+          <div class="fo4">
+            <h4>SIGUENOS</h4>
+            <div class="otroi segui1">
+              <i class="fab fa-twitter-square facebook"></i>
+              <i class="fab fa-facebook-square facebook"></i>
+              <i class="fab fa-youtube-square facebook"></i>
+
+            </div>
+            <div class="otroi segui2">
+              <i class="fab fa-instagram facebook"></i>
+              <i class="fab fa-google-plus-square facebook"></i>
+            </div>
+          </div>
+      </div>
+      <div class="imgfooter">
+        <img src="imagenes/footer1.png" alt="">
+        <img src="imagenes/footer5.png" alt="">
+        <img src="imagenes/footer3.jpg" alt="">
+        <img src="imagenes/footer4.png" alt="">
+      </div>
+      <div class="footerp">
+        <p>Terminos y condiciones tienda virtual |</p>
+        <p>Aviso de Privacidad |</p>
+        <p>Todos los derechos reservados &copy; UTOPIA EXTREMA 2021 |</p>
+        <p>#TuMundoIdealDeDiversion</p>
+      </div>
+
+
+      
+
+        <!-- h5>&copy; UTOPIA EXTREMA</h5>
+        <p>#TuMundoIdealDeDiversion</p> -->
+    </footer>
 
 
 </body>
