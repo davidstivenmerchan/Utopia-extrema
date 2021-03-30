@@ -166,3 +166,20 @@ cursor: pointer;
 .sumarestas:hover{
     background: black;
 }
+.papacontador{
+    width: 200px;
+    height: 140px;
+    border: rgb(101, 3, 116) solid 2px;
+    margin-top: 40px;
+    margin-left: 580px;
+}
+.minicontador{
+    margin: 10px;
+    background: rgb(101, 3, 116);
+    color: white;
+    height: 120px;
+}
+.ncontador{
+    text-align: center;
+    font-size: 100px;
+}

@@ -279,6 +279,17 @@ $info = mysqli_fetch_assoc($query2);
             <input type="submit" value="INGRESAR">
         </form>
     </div>   -->
+    <?php
+        $consultarcontador = "SELECT COUNT(id_ingreso) from entry_exit where fe_ho_exit='En el parque'";
+        $ejecucioncontador = mysqli_query($conexion,$consultarcontador);
+        $contadorfila= mysqli_fetch_assoc($ejecucioncontador);
+
+        if($contadorfila){
+          $personas = $contadorfila['COUNT(id_ingreso)'];
+        }
+    
+    
+    ?>
 
     <script src="js/compraCard.js" ></script>
 
@@ -289,12 +300,24 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <br>
-    
+    <h2>NUMERO DE CLIENTES EN EL PARQUE EN ESTE MOMENTO</h2>
+    <div class="papacontador">
+
+      <div class="minicontador">
+        <p class="ncontador"> <?php echo $personas ?></p>
+
+
+      </div>
+
+        
+    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
 
 
 </body>
-
-
-    
 
 </html>

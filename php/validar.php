@@ -33,10 +33,11 @@ if($fila1){
                 $_SESSION['idc'] = $idc;
                 $_SESSION['cc'] =  $cc;
                 $qr=$fila['id_qr'];
+                $salidamientras = "En el parque";
 
 
 
-                $consulta_entrada = "INSERT INTO entry_exit(id_qr, fe_ho_exit) VALUES($qr, NULL)";
+                $consulta_entrada = "INSERT INTO entry_exit(id_qr, fe_ho_exit) VALUES($qr,'$salidamientras')";
                 $exe_consulta_entra=mysqli_query($conexion,$consulta_entrada);
                 
                 $consulta_id_entrada = "SELECT * FROM entry_exit where id_ingreso  =  (SELECT max(id_ingreso) FROM entry_exit)";
