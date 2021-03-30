@@ -17,7 +17,7 @@ $sql2 = "SELECT * FROM card";
 $query2 = mysqli_query($conexion, $sql2);
 $info = mysqli_fetch_assoc($query2);
 
-$sql3 = "SELECT * FROM estado";
+$sql3 = "SELECT * FROM estado WHERE id_estados != 3";
 $query3 = mysqli_query($conexion, $sql3);
 
 ?> 
@@ -146,14 +146,14 @@ $query3 = mysqli_query($conexion, $sql3);
         }
         echo "</table>";
         ?>
-    </div>
+    </div><br><br>
 
     <div id="planeacion">
         <form action="planeacion.php" method="POST">
             <h2>PLANEACION</h2>
             <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p><br>
             <?php 
-                $sql4 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi ";
+                $sql4 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi and atraccion.id_estado != 3 ";
                 $query4 = mysqli_query($conexion, $sql4);
             ?>
             <table >
@@ -185,9 +185,9 @@ $query3 = mysqli_query($conexion, $sql3);
             </table><br>
             <div class="horas">
                 <label>HORA INICIO:</label>
-                <input type="time" name="h_inicio" min="04:00" max="24:00" required>
+                <input type="time" name="h_inicio" required>
                 <label>HORA FIN:</label>
-                <input type="time" name="h_fin" min="04:00" max="24:00" required>
+                <input type="time" name="h_fin" required>
             </div><br>
             <div class="botones">
               <input type="submit" name="planeacion"  value="Programar" />
@@ -195,7 +195,7 @@ $query3 = mysqli_query($conexion, $sql3);
             </div>
 
         </form>
-    </div>   
+    </div><br><br><br>
 
     <div class="control">
         <h2>CONTROL DE MAQUINARIA</h2>
@@ -206,7 +206,10 @@ $query3 = mysqli_query($conexion, $sql3);
         </form>
       
         <?php 
-            $buscardor = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion, planeacion.fecha_reg, planeacion.h_inicio, planeacion.h_fin FROM atraccion,planeacion WHERE  atraccion.id_atraccion = planeacion.id_atraccion"); 
+        if (@$_POST['Buscar']){
+
+            $fecha_reg= $_POST['fecha'];
+            $buscardor = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion, planeacion.fecha_reg, planeacion.h_inicio, planeacion.h_fin, horas_trabajo.total_h FROM atraccion,planeacion,horas_trabajo WHERE  atraccion.id_atraccion = planeacion.id_atraccion and  horas_trabajo.id_atraccion = atraccion.id_atraccion and planeacion.fecha_reg = '$fecha_reg' "); 
             
         ?>
         <table>
@@ -224,52 +227,87 @@ $query3 = mysqli_query($conexion, $sql3);
         <?php
 
             while($row=mysqli_fetch_array($buscardor)){
+                
             date_default_timezone_set('America/Bogota');
 
-            $hora1 = new DateTime(date("H:i:s"));//hora actual
-            $hora2 = new DateTime($row[4]);//hora de cierre
+            $hora1 = new DateTime(date("H:i:s"));//Hora actual
+            $hora2 = new DateTime($row[4]);//Hora de cierre
+            $hora3 = new DateTime($row[3]);//Hora de inicio
+            $horaA = $row[5]; // Horas de trabajo acumuladas en bd
 
             $intervalo = $hora1->diff($hora2);
             $tiempoR = $intervalo->format('%R %H horas %i minutos %s segundos');
-            $busca = strpos($tiempoR, "+");
-     
-            if($busca === false){
-
-               /*  $horasT = "SELECT total_h FROM horas_trabajo WHERE id_atraccion = '$row[0]' ";
-                $ejecutar1 = mysqli_query($conexion, $horasT); */
-
-                $hora3 = new DateTime($row[3]);//hora de inicio
-                $intervalo2 = $hora2->diff($hora3);
-                $tiempo = $intervalo2->format('%H:%i:%s');
-
-                /* $total = $hello->date_interval_create_from_date_string($tiempo);
-                $totalH = $total->format("%H:%i:%s"); */
-                
-
-                $consultica = "UPDATE horas_trabajo SET total_h = '$tiempo' WHERE  id_atraccion = '$row[0]' ";
-                $ejecutar2 = mysqli_query($conexion, $consultica);
-                
-        
-
+           
         ?>
             <tbody>
                 <tr>
                     <td><?php echo $row[0]; ?> </td>
                     <td><?php echo $row[1]; ?> </td>
                     <td><?php echo $row[3];?> </td>
-                    <td><?php echo $row[4];?> </td>
-                    <td><?php echo $tiempoR;?> </td>
-                    <td><?php echo $tiempo;?> </td>
-                </tr>
-            </tbody>
+                    <td><?php echo $row[4];?> </td> 
+        <?php
 
-        <?php         
-          }else{
+        $busca = strpos($tiempoR, "+");
+
+        //rango de horas a trabajar
+        $intervalo2 = $hora2->diff($hora3);
+        $tiempo = $intervalo2->format('%h');
+
+        //Acumular horas
+        $horas_t = $horaA + $tiempo;
+        
+        //comprabar si ya termino horas a trabajar
+        if($busca === false){
+            
+            $consultica = "UPDATE horas_trabajo SET total_h = '$horas_t' WHERE  id_atraccion = '$row[0]' ";
+            $ejecutar2 = mysqli_query($conexion, $consultica);
+
+            $tiempoR = "Fin de Jornada";
+            echo "<td>$tiempoR</td>";
+            echo "<td>$horaA</td>";
+            echo "</tr>";
+            echo "</tbody>";
+
+        }else{
+            echo "<td>$tiempoR</td>";
+            echo "<td>$horaA</td>";
+            echo "</tr>";
+            echo "</tbody>";
         }
     }
-        ?>  
+}
+        ?>
+            
       </table>
 
+    </div><br><br>
+
+
+    <div class="mantenimiento">
+        <h2>MAQUINARIA EN MANTENIMIENTO</h2><br>
+        <?php 
+
+            $mantenimiento = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion FROM atraccion WHERE atraccion.id_estado = 3" ); 
+              
+        ?>
+        <table>
+        <caption>Resultados encontrados</caption>
+            <tr>
+                <th>Codigo</th>
+                <th>Nombre</th>
+            </tr>
+            
+        <?php
+            while($filas=mysqli_fetch_array($mantenimiento)){
+        ?>
+            <tr>
+                <td><?php echo $filas[0]; ?> </td>
+                <td><?php echo $filas[1]; ?> </td>
+            </tr>
+        <?php 
+            } 
+        ?>
+        </table>
     </div>
 <?php
 

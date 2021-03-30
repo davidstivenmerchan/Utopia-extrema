@@ -10,7 +10,7 @@ $ubicacion = $_POST['ubicacion'];
 
 if(isset($_POST['registrar_atracciones'])){
 
-    $consul = "INSERT INTO atraccion(id_tip_atraccion,nom_atraccion,capacidad,id_ubi) VALUES ($tip_atra,'$nom_atra',$capacidad,$ubicacion)";
+    $consul = "INSERT INTO atraccion(id_tip_atraccion,nom_atraccion,capacidad,id_ubi,id_estado) VALUES ($tip_atra,'$nom_atra',$capacidad,$ubicacion,1)";
 
     $query=mysqli_query($conexion,$consul);
 
