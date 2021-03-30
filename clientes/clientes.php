@@ -46,14 +46,14 @@ require_once("../php/validacion.php");
 
             $rtic = $ti - 1;
 
-            $salidamientras = "En el parque";
+           
 
             if($rtic>-1){
 
              
 
 
-            $consul_para_ingresar = "INSERT INTO game ( id_atraccion, id_qr, fe_ho_exit) VALUES( $id_atra, $id_qr,'$salidamientras')";
+            $consul_para_ingresar = "INSERT INTO game ( id_atraccion, id_qr) VALUES( $id_atra, $id_qr)";
             $resuu= mysqli_query($conexion, $consul_para_ingresar);
 
             if($resuu){
