@@ -23,7 +23,7 @@ if($fila1){
         $consulta = "SELECT * FROM codigo WHERE id_compra = '$idc' and cedula = '$cc'";
         $resultado48 = mysqli_query($conexion, $consulta);
         $fila=mysqli_fetch_array($resultado48);
-        
+         
            
         
         
@@ -35,9 +35,11 @@ if($fila1){
                 $qr=$fila['id_qr'];
                 $salidamientras = "En el parque";
 
+                $date = strftime('%Y-%m-%d %H:%M:%S');
 
 
-                $consulta_entrada = "INSERT INTO entry_exit(id_qr, fe_ho_exit) VALUES($qr,'$salidamientras')";
+
+                $consulta_entrada = "INSERT INTO entry_exit(id_qr, fe_ho_entry ,fe_ho_exit) VALUES($qr,'$date','$salidamientras')";
                 $exe_consulta_entra=mysqli_query($conexion,$consulta_entrada);
                 
                 $consulta_id_entrada = "SELECT * FROM entry_exit where id_ingreso  =  (SELECT max(id_ingreso) FROM entry_exit)";
