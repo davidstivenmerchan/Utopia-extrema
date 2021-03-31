@@ -83,7 +83,7 @@ if($conexion->query($cadena_final)):
     
     $mail = new PHPMailer(true);
     
-    try {
+    try { 
         //Server settings
         $mail->SMTPDebug = 0;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
