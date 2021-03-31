@@ -99,7 +99,7 @@ require_once("../php/validacion.php");
 <body>
     <div class="encabezado">
     <div class="logo">
-            <img src="../imagenes/PRIMERLOGO.png" alt="">
+            <img src="../imagenes/PRIMERLOGO.png" alt="" class="icono">
         </div>    
     <h2>Cliente: <?php echo $fila['nombre'] ?>  <?php echo $fila['apellido'] ?></h2>
    <!--  <div class="exit">
@@ -161,31 +161,42 @@ require_once("../php/validacion.php");
 
      $consul_mostrar_atrac = "SELECT * FROM planeacion, atraccion where atraccion.id_atraccion=planeacion.id_atraccion";
      $respues = mysqli_query($conexion,$consul_mostrar_atrac);
+
+     
+
+    
     # $fila1 = mysqli_fetch_array($respues);
 
      while($i = mysqli_fetch_array($respues)){
-
       
-
 ?>
     
-    <form action="" method="POST" class="formumaquinas">
-       <p>id atraccion: <?php echo $i['id_atraccion']?></p>
-       <p>nombre de la atraccion: <?php echo $i['nom_atraccion']?></p>
-       <input type="hidden" name="id_atraccionn" value="<?php $i['id_atraccion'] ?>">
+            <form action="" method="POST" class="formumaquinas">
+          <?php if($i['id_atraccion']==3):?>
+          <img src="../imagenes/atracciones/air.jpeg" alt="" class="cicloform"> <div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==2): ?>
+          <img src="../imagenes/atracciones/rusa.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php else: ?>
+          <h5>NO EXISTE IMAGEN</h5>
+          <?php endif ?>
+         
+     
+      
+       <h3><?php echo $i['nom_atraccion']?></h3>
+       <input type="hidden" name="id_atraccionn" value="<?php echo $i['id_atraccion'] ?>">
       
        <input type="submit" value="MONTAR" name="enviar" >
    </form>
 <?php
      }
 ?>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 
-   <form action="" method="POST">
-       <p>SIRVIENDO</p>
-       <input type="hidden" name="id_atraccionn" value="1">
-       <input type="submit" value="MONTAR" name="enviar">
-   </form>
 
 
 
