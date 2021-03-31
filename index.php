@@ -35,7 +35,7 @@ $info = mysqli_fetch_assoc($query2);
     <nav>
       <ul class="navegacion">
         <li><a href=""> INICIAR SESSION</a></li>
-        <li><a href=""> UBICANOS</a></li>
+        <li><a href=""> UBICANOS-CONTACTANOS</a></li>
         <li><a href=""> QUIENES SOMOS</a></li>
         <li><a href=""> COMPRAR TARJETA</a></li>
         <li><a href=""> RECARGA TU TARJETA</a></li>
@@ -66,37 +66,81 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
 
+    <h2>QUIENES SOMOS</h2>
+    <div class="paquienes">
+        <div class="quienes mision">
+          <h4 class="misi">MISION</h4>
+          <p class="textoq">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed aliquam doloremque, nobis totam fuga modi aperiam earum maxime autem voluptatibus id aspernatur! Omnis quidem ea consequatur repudiandae quaerat est quibusdam.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed aliquam doloremque, nobis totam fuga modi aperiam earum maxime autem voluptatibus id aspernatur! Omnis quidem ea consequatur repudiandae quaerat est quibusdam.
+          </p>
 
-    <h2>UBICANOS</h2>
+        </div>
+        <div  class="quienes vision">
+          <h4 class="misi">VISION</h4>
+          <p class="textoq">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ipsa deserunt blanditiis eligendi soluta magni, velit molestiae saepe illum aut. Odio eaque ad ipsa perspiciatis vitae nihil natus nulla obcaecati!
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed aliquam doloremque, nobis totam fuga modi aperiam earum maxime autem voluptatibus id aspernatur! Omnis quidem ea consequatur repudiandae quaerat est quibusdam.
+          </p>
+
+        </div>
+    
+    </div>
+    <div class="historias">
+      <h4 >NUESTRA HISTORIA</h4>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt laudantium incidunt totam alias deleniti, libero officiis unde facere assumenda explicabo eaque velit temporibus odio nulla beatae voluptatem necessitatibus laboriosam eum?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt laudantium incidunt totam alias deleniti, libero officiis unde facere assumenda explicabo eaque velit temporibus odio nulla beatae voluptatem necessitatibus laboriosam eum?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt laudantium incidunt totam alias deleniti, libero officiis unde facere assumenda explicabo eaque velit temporibus odio nulla beatae voluptatem necessitatibus laboriosam eum?
+    </p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <br>
+    <br>
+
+
+    <h2>UBICANOS-CONTACTANOS</h2>
 
 
     <div class="paubicanos">
       <div class="hiubicanos1">
-        <p>Lorem ipsum dolor, sit amet consectetur 
-        adipisicing elit. Voluptas velit, dolores 
-        nam eius nihil, provident quas minima sequi 
-        ratione maiores obcaecati reiciendis ex! 
-        Sint delectus eveniet eaque quo expedita 
-        architecto.Lorem ipsum dolor, sit amet consectetur 
-        adipisicing elit. Voluptas velit, dolores 
-        nam eius nihil, provident quas minima sequi 
-        ratione maiores obcaecati reiciendis ex! 
-        Sint delectus eveniet eaque quo expedita 
-        architecto.</p> 
-
-        <h4>NUESTROS NUMERO: +57 3156254560, +57 445432134 </h4>
-        <h4>NUESTRO CORREO: extremautopia@gmail.com </h4>
-        <div class="iconos">
-        <img src="imagenes/facebook.png" alt="" class="face">
-        <img src="imagenes/insta.jpg" alt="" class="face">
-        <img src="imagenes/twitter.png" alt="" class="face">
-        <img src="imagenes/you.png" alt="" class="face">
+        <div class="lmapa">
+          <p>Lorem ipsum dolor, sit amet consectetur 
+          adipisicing elit. Voluptas velit, dolores 
+          nam eius nihil, provident quas minima sequi 
+          ratione maiores obcaecati reiciendis ex! 
+          Sint delectus eveniet eaque quo expedita 
+          architecto.Lorem ipsum dolor, sit amet consectetur 
+          adipisicing elit. Voluptas velit, dolores 
+          nam eius nihil, provident quas minima sequi 
+          ratione maiores obcaecati reiciendis ex! 
+          Sint delectus eveniet eaque quo expedita 
+          architecto.</p> 
         </div>
-        
-      </div>
-      <div class="hiubicanos2">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.602058065169!2d-74.09416458573685!3d4.664824943267698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzknNTYuNiJOIDc0wrAwNSczMS44Ilc!5e0!3m2!1ses!2sco!4v1616545514558!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </div>
+        <div class="mapa">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.602058065169!2d-74.09416458573685!3d4.664824943267698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzknNTYuNiJOIDc0wrAwNSczMS44Ilc!5e0!3m2!1ses!2sco!4v1616545514558!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </div>
+        </div>
+        <div class="p2ubicanos">
+        <h4>NUESTROS NUMEROS: +57 3156254560, +57 445432134 </h4>
+        <h4 class="correosconta">NUESTRO CORREO: extremautopia@gmail.com </h4>
+
+        <h3>ENVIANOS UN MENSAJE</h3>
+        <div class="iconos">
+          <form action="">
+            <div>
+              <input type="text" placeholder="Escribe tu nombre" class="mensajein">
+              <input type="text" placeholder="Escribe tu correo" class="mensajein"> 
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Escribe aqui tu Mensaje" class="mensajeta"></textarea>
+            <div>
+              <input type="submit" class="mensajesub">  
+            </div>
+          </form>
+          </div>
+      </div>  
     </div>
+      
 
     <hr>
     <br>
@@ -104,36 +148,7 @@ $info = mysqli_fetch_assoc($query2);
     <br>
 
 
-    <h2>QUIENES SOMOS</h2>
-    <div class="paquienes">
-        <div><img src="imagenes/mexico.jpg" alt=""></div>
-        <div><p>Lorem ipsum dolor, sit amet consectetur 
-            adipisicing elit. Voluptas velit, dolores 
-            nam eius nihil, provident quas minima sequi 
-            ratione maiores obcaecati reiciendis ex! 
-            Sint delectus eveniet eaque quo expedita 
-            architecto.Lorem ipsum dolor, sit amet consectetur 
-            adipisicing elit. Voluptas velit, dolores 
-            nam eius nihil, provident quas minima sequi 
-            ratione maiores obcaecati reiciendis ex! 
-            Sint delectus eveniet eaque quo expedita 
-            architecto.Lorem ipsum dolor, sit amet consectetur 
-            adipisicing elit. Voluptas velit, dolores 
-            nam eius nihil, provident quas minima sequi 
-            ratione maiores obcaecati reiciendis ex! 
-            Sint delectus eveniet eaque quo expedita 
-            architecto.Lorem ipsum dolor, sit amet consectetur 
-            adipisicing elit.</p> </div>
-        <div><img src="imagenes/_mv2.jpg" alt=""></div>
-    
-    </div>
-    <br>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <br>
+  
 
 
     <div class="card">

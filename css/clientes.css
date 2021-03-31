@@ -3,7 +3,7 @@
     font-family: 'Roboto', sans-serif;
 }
 body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .encabezado{
     width: 100%;

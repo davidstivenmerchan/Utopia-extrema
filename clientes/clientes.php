@@ -13,7 +13,7 @@ require_once("../php/validacion.php");
 
     $id_qr = $_SESSION['idq'];
 
-    $idingreso = $_SESSION['ingreso'] ;
+    $idingreso = $_SESSION['ingreso'];
 
     
 
@@ -33,7 +33,7 @@ require_once("../php/validacion.php");
 
         
 
-       /* $tir = $ti - 1; */
+       /* $tir = $ti - 1; */ 
 
     
     
@@ -55,7 +55,7 @@ require_once("../php/validacion.php");
              
 
 
-            $consul_para_ingresar = "INSERT INTO game ( id_atraccion, id_qr, fe_ho_game) VALUES( $id_atra, $id_qr,'$date')";
+            $consul_para_ingresar = "INSERT INTO game(id_atraccion,id_qr,fe_ho_game) VALUES($id_atra,$id_qr,'$date')";
             $resuu= mysqli_query($conexion, $consul_para_ingresar);
 
             if($resuu){
@@ -239,6 +239,10 @@ require_once("../php/validacion.php");
         <p>Aviso de Privacidad |</p>
         <p>Todos los derechos reservados &copy; UTOPIA EXTREMA 2021 |</p>
         <p>#TuMundoIdealDeDiversion</p>
+
+        <br>
+        <br>
+        <br>
       </div>
 
 

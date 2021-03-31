@@ -1,0 +1,804 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+.encabezado{
+    background: black;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    transition: 0.5s;
+    top:0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+ul{
+list-style: none;
+margin-left: 300px;
+margin-top: 22px;
+font-size: 22px;
+font-family: 'Open Sans Condensed', sans-serif;
+}
+.encabezado ul li{
+    display: inline-block;
+}
+nav{
+    display: flex;
+}
+.encabezado li{
+    position: relative;
+}
+.encabezado ul li a{
+    text-decoration: none;
+    color: seashell;
+    padding: 5px;
+    margin-left: 10px;
+    margin-top: 5px; 
+}
+h1{
+    color: white;
+}
+.encabezado ul li a:hover{
+    border-bottom: rgb(255, 162, 22) solid;
+
+}
+.ti{
+    height: 95px;
+    width: 250px;
+}
+hr{
+    color:rgb(255, 162, 22);
+    border: solid;
+}
+.slider{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    z-index: -20;
+}
+.slider ul{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 35s infinite alternate;
+    animation-timing-function: ease-in;
+    z-index: -20;
+    
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+    z-index: -20;
+}
+.slider img{
+    width: 100%;
+    height: 500px;
+    z-index: -20;
+} 
+@keyframes cambio{
+ 0%{margin-left: 0;}
+ 10%{margin-left: 0;}
+
+ 15%{margin-left: -100%;}
+ 25%{margin-left: -100%;}
+ 
+ 30%{margin-left: -200%;}
+ 45%{margin-left: -200%;}
+
+ 50%{margin-left: -300%;}
+ 65%{margin-left: -300%;}
+}
+footer{
+    background: black;
+}
+.info{
+    color: white;
+    padding: 10px;
+}
+.fab{
+    color: white;
+   margin-left: 15px;
+   margin-top: 15px;
+   width: 50px;
+}
+.redes{
+    color: white;
+    
+    margin-left: 800px;
+}
+.pie{
+    display: flex;
+}
+.submenu{
+    position: absolute;
+    background: rgb(94, 89, 89);
+    z-index: 100;
+    right: 1px;
+    border-radius: 10px;
+    width: 150px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    
+}
+.submenu li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    
+
+}
+.productos:hover .submenu{
+    visibility: visible;
+    opacity: 1;
+    
+}
+.submenu2{
+    position: absolute;
+    background: rgb(94, 89, 89);
+    z-index: 100;
+    right: 1px;
+    border-radius: 10px;
+    width: 150px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+}
+.submenu2 li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    
+}
+.servicios:hover .submenu2{
+    visibility: visible;
+    opacity: 1;
+    
+}
+.fab:hover{
+    color:rgb(255, 162, 22);
+
+}
+.quienes{
+    margin-left: 15px;
+    margin-top: 40px;
+    width: 700px;
+    text-align: justify;
+}
+h2{
+    /*
+    margin-left: 170px;
+    position: absolute;
+    font-size: 30px;
+    background: rgb(255, 162, 22);
+    border-radius: 100px;
+   */padding: 4px;/*
+    text-shadow:1px 1px 1px black;
+    cursor: pointer; */
+    
+    
+}
+
+.somos{
+    display: flex;
+    width: 100%;
+}
+.fondo{
+    margin-left: 200px;
+    position: relative;
+    z-index: 100;
+}
+.frase{
+    z-index: 0;
+    position: absolute;
+    width: 200px;
+    left: 560px;
+    top: 1050px;
+    border-radius: 150px;
+    transition: .5s;
+}
+.frase-activa{
+    transform: translateY(100px);
+}
+.videoo{
+    margin-left: 100px;
+}
+.merca{
+    background: black;
+    width: 100%;
+    height: 520px;
+    display: flex;
+}
+.rastrea{
+    width: 50%;
+}
+.rastre{
+    position: absolute;
+    background:rgb(255, 162, 22);
+    width: 300px; 
+    display: flex;
+    top: 150px;
+    cursor: pointer;
+    left: 100px;
+    border-radius: 100px;
+    transition: 1s;
+}
+.rastre:hover{
+    box-shadow: 0px 30px 5px -15px rgba(0, 0, 0,3);
+    transform: translateY(10px);
+}
+
+.codigo_rastrea{
+    width: 250px;
+    height: 50px;
+    margin-left: 10px;
+    border-color: rgb(94, 89, 89);
+    padding-left: 15px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 23px;
+    color: rgb(255, 162, 22);
+    background: transparent;
+    
+    
+}
+
+.codigo_rastrea:focus{
+    border: 3px solid rgb(255, 162, 22);
+    outline: none;
+}
+
+
+
+
+
+.validar_rastrea{
+    
+    width: 70px;
+    height: 52px;
+    margin-left: 50px;
+    background: rgb(255, 162, 22);
+    border-color: rgb(255, 162, 22);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top:80px;
+    
+}
+.validar_rastrea:hover{
+    background:rgb(197, 118, 0) ;
+
+}
+.subti{
+    
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-left: 35px;
+}
+
+.formu_ras{
+    background:white;
+    position: absolute;
+    top: 200px;
+    left: 60px;
+    margin-left: 0;
+    width: 380px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    border-radius: 10px;
+    height: 200px;
+    z-index: 0;
+    
+    
+}
+.rastrea:hover .formu_ras{
+    visibility: visible;
+    opacity: 1;
+    
+    
+}
+
+.som{
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+
+}
+.linea_som{
+    width:205px ;
+    margin-left:570px;
+    color: rgb(94, 89, 89);
+    
+}
+.mos{
+    top:100px;
+    font-family: 'Roboto Mono', monospace;
+    text-align: justify;
+    color: black;
+    padding: 13px;
+
+}
+
+.pru{
+    position: absolute;
+    background: red;
+    top:538px;
+    visibility: hidden;
+
+}
+.pru2{
+    position: absolute;
+    background: red;
+    top:1275px;
+    visibility: hidden;
+}
+.pru4{
+    position: absolute;
+    background: red;
+    top:2600px;
+    visibility: hidden;
+}
+
+.ser{
+    display: flex;
+    margin-left: 280px;
+    margin-top: 10px;
+}
+.serr{
+    margin-left: 100px;
+    border: rgb(94, 89, 89) solid;
+    transition: 0.4s;
+    
+    
+
+}
+.serr p{
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    
+
+}
+.serr:hover{
+    transform: translateY(10px);
+    box-shadow: 0px 30px 5px -15px rgba(0, 0, 0,3);
+    background: rgb(255, 162, 22);
+    cursor: pointer;
+}
+.pru3{
+    position: absolute;
+    background: red;
+    top:2080px;
+    visibility: hidden;
+    
+}
+.error{
+    color: black;
+    font-family:'Open Sans Condensed', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    visibility: hidden;
+    
+}
+.error-activo{
+    visibility: visible;
+    
+}
+.icono_error{
+    position: absolute;
+    bottom: 90px; 
+    left: 250px; 
+    opacity: 0;
+   
+    
+}
+.formu_ras-correcto .icono_error{
+    color:green;
+    opacity: 1;
+}
+.formu_ras-correcto .codigo_rastrea{
+    border: green solid;
+}
+.formu_ras-incorrecto .icono_error{
+    color: red;
+    opacity: 1;
+}
+.formu_ras-incorrecto .codigo_rastrea{
+    border:red solid;
+}
+.efecto_imagen_estampados{
+    width: 350px;
+    background: rgba(94, 89, 89, 0.7);
+    position: absolute;
+    font-family: 'Roboto Mono', monospace;
+    left: 490px;
+    top: 2000px;
+    color: rgb(255, 162, 22);
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    font-weight: 700;
+}
+.viernes{
+    width: 350px; 
+    height: 500px; 
+    padding: 10px; 
+    margin-left: 10px;
+}
+.efecto_imagen_estampados-activo{
+    visibility: visible;
+    opacity: 1;
+    
+}
+.efecto_imagen_gafas{
+    width: 350px;
+    background: rgba(94, 89, 89, 0.7);
+    position: absolute;
+    font-family: 'Roboto Mono', monospace;
+    left: 869px;
+    top: 2000px;
+    color: rgb(255, 162, 22);
+    visibility: hidden;
+    opacity: 0;
+    transition: 1s;
+    font-weight: 700;
+}
+.efecto_imagen_gafas-activo{
+    visibility: visible;
+    opacity: 1;
+}
+.gafas{
+    width: 350px; 
+    height: 500px; 
+    padding: 10px; 
+    margin-left: 10px;
+}
+.wrap{
+    width: 1100px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+.tarjeta_wrap{
+    margin: 10px;
+    -webkit-perspective: 800;
+    
+}
+.tarjeta{
+    width: 300px;
+    height: 350px;
+    background: rgb(255, 162, 22);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .7s ease;
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65)
+}
+.delante, .atras{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+    -webkit-backface-visibility: hidden;
+}
+.atras{
+    transform: rotateY(180deg);
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 20px;
+}
+.tarjeta_wrap:hover .tarjeta{
+    transform: rotateY(180deg);
+    
+}
+.delante{
+    height: 100%;
+    width: 100%;
+
+}
+.car1{
+    background:url('../img/productos/frida.jpeg');
+    background-size: cover;
+}
+.car2{
+    background:url('../img/productos/gris.jpeg');
+    background-size: cover;
+}
+.car3{
+    background:url('../img/productos/negra.jpeg');
+    background-size: cover;
+}
+.car4{
+    background:url('../img/productos/blanca.jpeg');
+    background-size: cover;
+}
+.confirmar_entrada{
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    width: 45%;
+}
+.titulo_entrada{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size:25px ;
+    color:black;
+}
+.foter{
+    font-family: 'Open Sans Condensed', sans-serif;
+    width: 100%;
+    text-align: center;
+}
+.boton{
+    background: black;
+}
+.pupup{
+    border-radius:0;
+}
+.label{
+    color: rgb(255, 162, 22);
+    z-index: -1;
+    position: absolute;
+    top: 85px;
+    left: 27px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 22px;
+    transition: 1s;
+}
+.label-activo{
+    top: 40px;
+    
+}
+.fijar{
+    top:40px
+}
+.robot{
+    position:absolute;
+    top:150px;
+    left:500px;
+    background: black;
+    width: 400px;
+    height: 400px;
+    position: fixed;
+    border-radius: 100px;
+    border: rgb(255, 162, 22) solid;
+    z-index: 200;
+    visibility: hidden;
+    transition: 1s;
+    opacity: 0;
+}
+.robo{
+   margin-left: 50px;
+   margin-top: 100px;
+   
+}
+.cap{
+    margin-left: 75px;
+    margin-top: 120px;
+    width: 250px;
+    height: 45px;
+    border-radius: 50px;
+    background:  rgb(255, 162, 22);
+    color: white;
+    border: rgb(255, 162, 22) solid;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 25px;
+}
+.robot-activa{
+    visibility: visible;
+    opacity: 1;
+}
+.inicio{
+    
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    top: 150px;
+    left: 35%;
+    background: black;
+    border: rgb(255, 162, 22) solid;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 1001;
+    
+}
+.inic{
+    width: 85%;
+    margin-top: 20px;
+    margin-left: 25px;
+    width: 75%;
+    height: 30px;
+    border:  rgb(255, 162, 22) solid;
+    
+}
+.fomulario_inicio{
+    margin-top: 35px;
+}
+.fomulario_inicio h2{
+    margin-left: 30px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: white;
+
+}
+.iniciar_se{
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 20px;
+    height: 35px;
+    background: rgb(255, 162, 22);
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: white;
+    border-radius: 10px;
+    border:rgb(255, 162, 22)solid;
+    font-size: 25px; 
+}
+.inicio-activo{
+    visibility: visible;
+    opacity: 1;
+}
+.registrar{
+    position: fixed;
+    top:110px;
+    background: black;
+    margin-left: 500px;
+    width: 400px;
+    border:rgb(255, 162, 22) solid;
+    height: 500px;
+    transition: 0.5s;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1001;
+}
+.inic{
+    border:rgb(255, 162, 22) solid;
+}
+.registrar h2{
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-top: 5px;
+    margin-left: 10px;
+ 
+}
+.registrar-activo{
+    visibility: visible;
+    opacity: 1;
+}
+.cancel_regi{
+    color:rgb(255, 162, 22) ; 
+    font-size: 35px; 
+    right: 5px; 
+    top: 5px;
+    position: absolute;
+    cursor: pointer;
+}
+.puro_hueso{
+    height: 432px; 
+    width:700px; 
+    background: url('../Calavera.png'); 
+    background-size: cover;
+    overflow: hidden;
+}
+.letra_hueso{
+    position: relative;
+    top:450px;
+    background: rgb(255, 162, 22);
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 10px;
+    text-shadow: rgba(0,0,0,0.5);
+    transition: 0.5s;
+    font-weight: 700;
+}
+
+.puro_hueso:hover .letra_hueso{
+    top: 340px;
+
+}
+.tienda{
+    width: 100%;
+    height: 100%;
+    background:url('../img/tienda.jpeg');
+    background-size: cover;
+    overflow: hidden;
+}
+.letra_tienda{
+    position: relative;
+    top:-85px;
+    background: rgb(255, 162, 22);
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 10px;
+    text-shadow: rgba(0,0,0,0.5);
+    transition: 0.5s;
+    font-weight: 700;
+}
+
+.tienda:hover .letra_tienda{
+    top: 10px;
+
+}
+.todas{
+    width: 100%;
+    height: 3496px;
+    background: rgba(94, 89, 89,0.5);
+    top:0;
+    position: absolute;
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+.todas-activo{
+    visibility: visible;
+    opacity: 1;
+}
+.codigo_rastreo{
+    position: absolute;
+    background:  rgb(255, 162, 22);
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    width: 400px;
+    top:3680px;
+    left:480px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.codigo_rastreo_formu input{
+    width: 50%;
+    padding: 3px;
+    margin-bottom: 5px;
+    outline: none;
+    border: solid rgb(94, 89, 89);
+    font-family: 'Open Sans Condensed', sans-serif;
+    
+
+}
+.enviar_rastreo{
+    cursor: pointer;
+    background: rgb(94, 89, 89);
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    transition: .3s;
+   
+}
+.enviar_rastreo:hover{
+    background: black;
+}
+
+.codigo_rastreo_formu{
+    background:  rgb(255, 162, 22);
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    width: 400px;
+    top:3800px;
+    left:480px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+    position: absolute;
+}
+.codigo_rastreo-activo{
+    transform: translateY(-100px);
+}
+.codigo_rastreo_formu-activo{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(-150px);
+}
+.pru6{
+    position: absolute;
+    top: 3280px;
+    background: blue;
+    width: 200px;
+    visibility: hidden;
+}

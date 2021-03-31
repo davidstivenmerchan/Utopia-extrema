@@ -5,13 +5,63 @@
 
 body{
 
-    
+    overflow-x: hidden;
 }
 .clienteC{
     width: 200px;
 
     
 }
+.mision{
+    background: url(../imagenes/feria.jpg);
+    background-size: cover;
+
+}
+.vision{
+    background: url(../imagenes/mexico.jpg);
+    background-size: cover;
+
+}
+.quienes{
+    width: 600px;
+    height: 300px;
+    padding: 10px;
+    overflow: hidden;
+}
+.quienes h4{
+    background: rgba(101, 3, 116,.8);
+    color: white;
+    font-weight: bold;
+    margin-top: 310px;
+    transition: .5s;
+    
+}
+.quienes p{
+    background: rgba(101, 3, 116,.8);
+    color: white;
+    font-weight: bold;
+    height: 280px;
+    margin-top: 310px;
+    transition: .5s;
+}
+.quienes:hover .misi{
+    margin-top: 10px;
+}
+.quienes:hover .textoq{
+    margin-top: 10px;
+
+}
+.historias{
+    margin-left: 160px;
+    margin-top: 20px;
+    width: 1040px;
+    border: rgba(101, 3, 116,.8) solid 2px;
+    padding: 10px;
+}
+
+
+
+
 
 .capas{
     width:100%;
@@ -74,6 +124,7 @@ body{
 }
 .paquienes{
     display: flex;
+    margin-left: 140px;
 }
 .paquienes div img{
     width: 100%;
@@ -93,6 +144,61 @@ h1{
     justify-content: center;
     
     
+}
+.p2ubicanos {
+    margin-left: 150px;
+}
+.p2ubicanos h3{
+    margin-top: 60px;
+}
+.iconos form{
+    margin-top: 20px;
+}
+.correosconta{
+    margin-top: 20px;
+}
+.mapa{
+    margin-left: 20px;
+    margin-top: 20px;
+    border: rgba(101, 3, 116) solid 3px;
+    
+    width: 600px;
+    
+
+}
+.mensajein{
+    margin: 20px;
+    width: 150px;
+    border: rgba(101, 3, 116) solid 2px;
+    height: 25px;
+    
+}
+.mensajeta{
+    margin-left: 20px;
+    max-width: 350px;
+    width: 350px ;
+    min-width: 350px;
+    border: rgba(101, 3, 116) solid 2px;
+    height: 200px;
+    min-height: 200px;
+    max-height: 200px;
+}
+.mensajesub{
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 360px;
+    height: 35px;
+    border: none;
+    background:rgba(101, 3, 116) ;
+    color: white;
+    cursor: pointer;
+}
+.mensajesub:hover{
+    background: black;
+}
+.lmapa{
+    width: 600px;
+    margin-left: 20px;
 }
 .iniciar input{
     margin: 5px;
@@ -258,3 +364,7 @@ footer{
 .footerp p{
     margin-left: 20px;
 }
+h2{
+    margin-left: 20px;
+}
+
