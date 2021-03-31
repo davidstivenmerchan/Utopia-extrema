@@ -2,10 +2,14 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body{
 
     overflow-x: hidden;
+    
 }
 .clienteC{
     width: 200px;
@@ -368,3 +372,9 @@ h2{
     margin-left: 20px;
 }
 
+.somoshidden{
+    position: absolute;
+    top:710px;
+    background: green;
+    visibility: hidden;
+}

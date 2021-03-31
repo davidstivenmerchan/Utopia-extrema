@@ -36,9 +36,9 @@ $info = mysqli_fetch_assoc($query2);
       <ul class="navegacion">
         <li><a href=""> INICIAR SESSION</a></li>
         <li><a href=""> UBICANOS-CONTACTANOS</a></li>
-        <li><a href=""> QUIENES SOMOS</a></li>
+        <li><a href="#somos"> QUIENES SOMOS</a></li>
         <li><a href=""> COMPRAR TARJETA</a></li>
-        <li><a href=""> RECARGA TU TARJETA</a></li>
+        <li><a href="#ct"> RECARGA TU TARJETA</a></li>
       
       </ul>
     </nav>
@@ -65,8 +65,9 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <br>
+    <p class="somoshidden" id="somos">quienes somos</p>
 
-    <h2>QUIENES SOMOS</h2>
+    <h2 >QUIENES SOMOS</h2>
     <div class="paquienes">
         <div class="quienes mision">
           <h4 class="misi">MISION</h4>
@@ -127,12 +128,12 @@ $info = mysqli_fetch_assoc($query2);
 
         <h3>ENVIANOS UN MENSAJE</h3>
         <div class="iconos">
-          <form action="">
+          <form action="php/correo.php" method="POST">
             <div>
-              <input type="text" placeholder="Escribe tu nombre" class="mensajein">
-              <input type="text" placeholder="Escribe tu correo" class="mensajein"> 
+              <input type="text" placeholder="Escribe tu nombre" class="mensajein" name="nombr">
+              <input type="text" placeholder="Escribe tu correo" class="mensajein" name="corr"> 
             </div>
-            <textarea name="" id="" cols="30" rows="10" placeholder="Escribe aqui tu Mensaje" class="mensajeta"></textarea>
+            <textarea name="tarea" id="" cols="30" rows="10" placeholder="Escribe aqui tu Mensaje" class="mensajeta"></textarea>
             <div>
               <input type="submit" class="mensajesub">  
             </div>
@@ -316,7 +317,7 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <br>
-    <h2>NUMERO DE CLIENTES EN EL PARQUE EN ESTE MOMENTO</h2>
+    <h2 id="ct">NUMERO DE CLIENTES EN EL PARQUE EN ESTE MOMENTO</h2>
     <div class="papacontador">
 
       <div class="minicontador">

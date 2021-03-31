@@ -92,6 +92,7 @@ require_once("../php/validacion.php");
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="../css/clientes.css">
+    <link rel="icon" href="../imagenes/PRIMERLOGO.ico">
     <title>Clientes</title>
 
 </head>
@@ -151,21 +152,26 @@ require_once("../php/validacion.php");
     ?>
         </div>
 </div>
+<br>
+<br>
+<hr>
+<br>
 <h3>ATRACCIONES DISPONIBLES</h3>
 <?php
 
-     $consul_mostrar_atrac = "SELECT * FROM planeacion";
+     $consul_mostrar_atrac = "SELECT * FROM planeacion, atraccion where atraccion.id_atraccion=planeacion.id_atraccion";
      $respues = mysqli_query($conexion,$consul_mostrar_atrac);
     # $fila1 = mysqli_fetch_array($respues);
 
      while($i = mysqli_fetch_array($respues)){
 
-     
+      
 
 ?>
     
-    <form action="" method="POST">
-       <p><?php echo $i['id_atraccion']?></p>
+    <form action="" method="POST" class="formumaquinas">
+       <p>id atraccion: <?php echo $i['id_atraccion']?></p>
+       <p>nombre de la atraccion: <?php echo $i['nom_atraccion']?></p>
        <input type="hidden" name="id_atraccionn" value="<?php $i['id_atraccion'] ?>">
       
        <input type="submit" value="MONTAR" name="enviar" >
