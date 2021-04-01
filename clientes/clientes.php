@@ -172,10 +172,86 @@ require_once("../php/validacion.php");
 ?>
     
             <form action="" method="POST" class="formumaquinas">
-          <?php if($i['id_atraccion']==3):?>
-          <img src="../imagenes/atracciones/air.jpeg" alt="" class="cicloform"> <div class="pciclo"><p>hola ptos</p></div>
-          <?php elseif($i['id_atraccion']==2): ?>
+          <?php if($i['id_atraccion']==12):?>
+          <img src="../imagenes/atracciones/360.jpeg" alt="" class="cicloform"> <div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==13): ?>
+          <img src="../imagenes/atracciones/agua.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==14): ?>
+          <img src="../imagenes/atracciones/air.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==15): ?>
+          <img src="../imagenes/atracciones/apoca.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==16): ?>
+          <img src="../imagenes/atracciones/araña.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==17): ?>
+          <img src="../imagenes/atracciones/aviones.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==18): ?>
+          <img src="../imagenes/atracciones/barca.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==19): ?>
+          <img src="../imagenes/atracciones/bus.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==20): ?>
+          <img src="../imagenes/atracciones/caballitos.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==21): ?>
+          <img src="../imagenes/atracciones/caidalibre.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==22): ?>
+          <img src="../imagenes/atracciones/camion.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==23): ?>
+          <img src="../imagenes/atracciones/carros.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==24): ?>
+          <img src="../imagenes/atracciones/carroschocones.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==25): ?>
+          <img src="../imagenes/atracciones/castle.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==26): ?>
+          <img src="../imagenes/atracciones/castt.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==27): ?>
+          <img src="../imagenes/atracciones/ciclon.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==28): ?>
+          <img src="../imagenes/atracciones/columpios.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==29): ?>
+          <img src="../imagenes/atracciones/dino.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==30): ?>
+          <img src="../imagenes/atracciones/doble.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==31): ?>
+          <img src="../imagenes/atracciones/extrema.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==32): ?>
+          <img src="../imagenes/atracciones/halo.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==33): ?>
+          <img src="../imagenes/atracciones/krater.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==34): ?>
+          <img src="../imagenes/atracciones/montañarusa.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==35): ?>
+          <img src="../imagenes/atracciones/motos.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==36): ?>
+          <img src="../imagenes/atracciones/ponis.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==37): ?>
+          <img src="../imagenes/atracciones/pulpo.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==38): ?>
+          <img src="../imagenes/atracciones/pulpo2.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==39): ?>
+          <img src="../imagenes/atracciones/pulponiños.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==40): ?>
+          <img src="../imagenes/atracciones/rana.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==41): ?>
+          <img src="../imagenes/atracciones/ranger.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==42): ?>
+          <img src="../imagenes/atracciones/rueda.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==43): ?>
           <img src="../imagenes/atracciones/rusa.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==44): ?>
+          <img src="../imagenes/atracciones/sonica.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==45): ?>
+          <img src="../imagenes/atracciones/suicidio.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==46): ?>
+          <img src="../imagenes/atracciones/taza.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==47): ?>
+          <img src="../imagenes/atracciones/terror.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==48): ?>
+          <img src="../imagenes/atracciones/tirar.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==49): ?>
+          <img src="../imagenes/atracciones/torre.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==50): ?>
+          <img src="../imagenes/atracciones/tren.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
+          <?php elseif($i['id_atraccion']==51): ?>
+          <img src="../imagenes/atracciones/troncos.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>hola ptos</p></div>
           <?php else: ?>
           <h5>NO EXISTE IMAGEN</h5>
           <?php endif ?>
