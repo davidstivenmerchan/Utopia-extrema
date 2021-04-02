@@ -1,0 +1,117 @@
+
+body {
+    background-image: url(../imagenes/fondoCard.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 10050%;
+    font-family: 'Slabo 27px', serif;
+}
+.capas{
+    width:100%;
+    height: 100%;
+    background: rgba(101, 3, 116, 0.651);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.logo{
+   margin-left: 41%;
+   margin-top: -3%;
+}
+.titulo{
+    text-align: center;
+}
+.formulario {
+    width: 60%;
+    height: 75%;
+    background: white;
+    color: black;
+    padding: 1% 3% 2% 4%;
+    margin: auto;
+    margin-top: 5%;
+
+}
+.filtro{
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+}
+.barra {
+    margin-left: -20px;
+    border:1px solid rgba(101, 3, 116, 0.801) ;
+    height:30px;
+    overflow: hidden;
+    width: 210px;
+    position:relative;
+    color: blanchedalmond;
+ }
+.select {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    height: 30px;
+    padding: 5px;
+    width: 230px;
+ }
+ .select:focus{ outline: none;}
+ 
+ .barra::after{
+     content:"\025be";
+     display:table-cell;
+     padding-top:7px;
+     text-align:center;
+     width:30px;
+     height:30px;
+     background-color:rgba(101, 3, 116, 0.801) ;
+     position:absolute;
+     top:0;
+     right:0px;	
+     pointer-events: none;
+ }
+
+.dar{
+    width: 100%;
+} 
+.filtro label{
+    margin-left: 20%;
+    margin-top: 4px;
+}
+
+.users{
+    width: 95%;
+    height: 55%;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 5px;
+}
+.salir a {
+    margin-left: 90%;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: none;
+}
+.boton{
+    border: none;
+    background:rgba(101, 3, 116, 0.801) ;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    margin-left: -60px;
+    width: 60%;
+}
+.boton:hover , .boton2:hover{
+    background: black;
+}
+
+.boton2{
+    margin-left: 12%;
+    border: none;
+    background:rgba(101, 3, 116, 0.801) ;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 3px;
+    font-size: medium;
+    width: 75%;
+}

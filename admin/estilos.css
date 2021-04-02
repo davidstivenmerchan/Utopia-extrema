@@ -50,8 +50,25 @@ header{
 
 }
 
-.icono{
-    z-index: 100;
+
+ul li {
+  float: left;
+  margin-left: 50px;
+  padding: 40px;
+  list-style: none;
+}
+
+
+.navegacion i{
+  font-size: 115px;
+  color: rgb(88, 17, 116);
+  cursor: pointer;
+
+}
+
+
+.icono, .panel1{
+    z-index: 200;
 }
 
 .datos{
@@ -63,7 +80,7 @@ header{
     transition: all 1s ease;
     margin-top: 15px;
     background: linear-gradient(to right, #5b7fe3, #7045b6); 
-    z-index:10;
+    z-index:1000;
     
 }
 
@@ -82,6 +99,7 @@ header{
 
 }
 
+
 .info{
     background-color: rgba(243, 241, 240, 0.87);
     width: 60%;
@@ -91,6 +109,54 @@ header{
     margin-top: 8%;
     margin-left: 20%;
     
+}
+
+.vencimiento{
+  position: fixed;
+    height: 100%;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    transition: all 1s ease;
+    margin-top: 15px;
+    
+    z-index:10;
+}
+
+.planeacion{
+  
+    height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+}
+
+.listaMaquina{
+  height: 250px;
+  overflow-y: auto;
+  width: 100%;
+}
+.verPrograma{
+  height: 100%;
+  margin-top: -200%;
+  height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+    
+    z-index:10;
+
+}
+
+.mantenimiento{
+  height: 100%;
+  height: 100%;
+    width: 100%;
+    transition: all 1s ease;
+    
+    z-index:10;
+  
+}
+.form_maquinas{
+  margin-top:-10%;
 }
 .img{
     width: 250px;
@@ -178,7 +244,7 @@ header{
 
 .form_maquinas{
   width: 450px;
-  margin-left: 500px;
+  margin-left: 100px;
   padding: 20px;
   background: #ceccdf;
   border:  #e495e4 2px solid;

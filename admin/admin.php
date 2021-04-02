@@ -28,7 +28,7 @@ $query3 = mysqli_query($conexion, $sql3);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ADMINISTRADOR</title>
     <link rel="stylesheet" href="estilos.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="icon" href="../imagenes/PRIMERLOGO.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -69,8 +69,32 @@ $query3 = mysqli_query($conexion, $sql3);
         </div>
 
     </header>
+    <nav class="navegacion">
+      <ul >
+          <div class="panel1" id="panel1">
+            <li ><i class="fas fa-credit-card"></i><br>VENCIMIENTO DE TARJETA</li>
+          </div>
 
-    <div class="filtro">
+          <div class="panel2" id="panel2">
+            <li ><i class="far fa-calendar-plus"></i><br>PLANEACION</li>
+          </div>
+
+          <div class="panel3" id="panel3">
+            <li ><i class="fas fa-sign-out-alt"></i></li>
+          </div>
+
+          <div class="panel4" id="panel4">
+            <li ><i class="fas fa-charging-station"></i></li>
+          </div>
+
+          <div class="panel5" id="panel5">
+            <li ><i class="fas fa-pencil-alt"></i></li>
+          </div>
+
+      </ul>
+    </nav>
+
+    <div class="vencimiento uno" id="vencimiento">
       <form method="post">
           <br>
           <h2>VENCIMIENTO DE TARJETAS</h2>
@@ -96,7 +120,7 @@ $query3 = mysqli_query($conexion, $sql3);
       </form>
     </div>
 
-    <div class="vencimiento">
+    <div>
         <?php 
           if(@$_POST['buscar']){
             $card = $_POST['tipo_card'];
@@ -147,43 +171,17 @@ $query3 = mysqli_query($conexion, $sql3);
         }
         echo "</table>";
         ?>
-    </div><br><br>
+    </div>
+    
 
-    <div id="planeacion">
-        <form action="planeacion.php" method="POST">
+    <div class="planeacion" id="planeacion">
+        <form action="php/planeacion.php"  class = "form_plan" method="POST">
             <h2>PLANEACION</h2>
-            <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p><br>
-            <?php 
-                $sql4 = "SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atraccion.nom_atraccion, ubicacion.nom_ubi FROM atraccion, tipo_atraccion, ubicacion WHERE atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion and atraccion.id_ubi = ubicacion.id_ubi and atraccion.id_estado != 3 ";
-                $query4 = mysqli_query($conexion, $sql4);
-            ?>
-            <table >
-                <thead>
-                    <tr>
-                        <th>Tipo de atracción</th>
-                        <th>Nombre</th>
-                        <th>Ubicación</th>
-                        <th>Seleccionar</th>
-                    </tr>
-                </thead>
-
-            <?php 
-                while($column=mysqli_fetch_array($query4))
-                {
-             ?> 
-                  <tbody>
-                      <tr>
-                          <td><?php echo $column[1]; ?> </td>
-                          <td><?php echo $column[2]; ?> </td>
-                          <td><?php echo $column[3];?> </td>
-                          <td><input type="checkbox" name="atraccion[]" value=<?php echo $column[0]; ?> ></td>
-                      </tr>
-                  </tbody>
-
-            <?php         
-                }
-            ?>  
-            </table><br>
+            <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p>
+            <section>
+			    <input type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
+		    </section><br>
+            <section id="tabla_resultado"></section><br>
             <div class="horas">
                 <label>HORA INICIO:</label>
                 <input type="time" name="h_inicio" required>
@@ -196,10 +194,10 @@ $query3 = mysqli_query($conexion, $sql3);
             </div>
 
         </form>
-    </div><br><br><br>
+    </div>
 
-    <div class="control">
-        <h2>CONTROL DE MAQUINARIA</h2>
+    <div class="verPrograma uno" id="verPrograma">
+        <h2>PROGRAMACION DE MAQUINARIA</h2>
         <form  method="POST">
             <label for="">Seleccione la fecha a buscar</label>
             <input type="date" id="fecha" name="fecha"  value="<?php echo date("Y-m-d");?>">
@@ -281,10 +279,10 @@ $query3 = mysqli_query($conexion, $sql3);
             
       </table>
 
-    </div><br><br>
+    </div>
 
 
-    <div class="mantenimiento">
+    <div class="mantenimiento uno" id = "mantenimiento">
         <h2>MAQUINARIA EN MANTENIMIENTO</h2><br>
         <?php 
 
@@ -322,9 +320,9 @@ $query3 = mysqli_query($conexion, $sql3);
 
 ?>
 
-    <div class="form_maquinas">
+    <div class="form_maquinas uno" id="form_maquinas">
                 <h4>FORMULARIO PARA REGISTRAR ATRACIONES</h4>
-        <form action="regi_atracciones.php" method="POST" id="formumaquinas">
+        <form action="php/regi_atracciones.php" method="POST" id="formumaquinas">
 
             <label for="id_tipo_atraccion">Selecciona el Tipo de Atracccion</label>
 
@@ -378,7 +376,14 @@ $query3 = mysqli_query($conexion, $sql3);
             
         </form>
     </div>
+    <!-- <section>
+			<input type="date" name="busqueda" id="busqueda" placeholder="Buscar...">
+		</section>
 
-    <script src="app.js"></script>
+		<section id="tabla_resultado">
+		AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA
+                </section> --><br><br><br><br>
+
+    <script src="main.js"></script>
 </body>
 </html>

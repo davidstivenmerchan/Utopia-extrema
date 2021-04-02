@@ -10,7 +10,7 @@ jQuery(document).on('submit',' #form_insert', function(event){
         console.log(respuesta);
         if(!respuesta.error){
             alert("Su Compra Ha Sido Exitosa");
-            location.reload();
+            window.location= 'index.php'
 
         }else{
             alert("ERROR, INTENTE NUEVAMENTE");
