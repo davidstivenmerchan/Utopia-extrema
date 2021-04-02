@@ -1,12 +1,5 @@
 <?php
 require_once("php/conexion.php");
-
-$sql = "SELECT * FROM tipo_docu";
-$query = mysqli_query($conexion, $sql);
-
-$sql2 = "SELECT * FROM card";
-$query2 = mysqli_query($conexion, $sql2);
-$info = mysqli_fetch_assoc($query2);
 ?>
 
 <!DOCTYPE html>
@@ -15,59 +8,106 @@ $info = mysqli_fetch_assoc($query2);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="icon" href="imagenes/PRIMERLOGO.ico">
-    
-    <title>UTOPIA EXTREMA</title>
     <link rel="stylesheet" href="css/index.css">
+    <title>UTOPIA EXTREMA</title>
+    
 </head>
 <body>
-    
-      
-    <img src="imagenes/feria.jpg" alt="encabezado" class="imagen1">
-       
-    <div class="capas">
-      <h1 class="tituloo">UTOPIA EXTREMA</h1>
-    </div>
+  <img src="imagenes/feria.jpg" alt="encabezado" class="imagen1">
+   
+  <div class="capas">
+    <h1 class="tituloo">UTOPIA EXTREMA</h1>
+  </div>
     <nav>
       <ul class="navegacion">
-        <li><a href=""> INICIAR SESSION</a></li>
-        <li><a href=""> UBICANOS-CONTACTANOS</a></li>
-        <li><a href="#somos"> QUIENES SOMOS</a></li>
-        <li><a href=""> COMPRAR TARJETA</a></li>
-        <li><a href="#ct"> RECARGA TU TARJETA</a></li>
+        <li><a href="#ubi"> UBICANOS-CONTACTANOS</a></li>
+        <li><a href="#nosotros"> QUIENES SOMOS</a></li>
+        <li><a href="compraCard.php"> COMPRAR TARJETA</a></li>
+        <li><a href="#recarga"> RECARGA TU TARJETA</a></li>
       
       </ul>
     </nav>
     <hr>
-    <br>
-    <br>
-    <br>
+  <span class="ir-arriba fas fa-chevron-circle-up"></span>
+  <div class="inicio">
+    <div class="login">
+      <h1>INICIAR SESION</h1>
+          <form action="php/validar.php" method="POST" class="iniciar">
+              <label for="usu" class="camposLogin">Ingrese su Cedula</label>
+              <input type="text" id="usu" autocomplete="off" name="cc" class="camposLogin"></a><br><br>
+              <label for="pass" class="camposLogin">Ingrese su codigo de compra</label>
+              <input type="password" id="pass" autocomplete="off" name="idc" class="camposLogin">
+              <input type="submit" value="INGRESAR" class="envio" >
+          </form>
+    </div>
+    <div class="contador">
+      <h2><span class= "typed"></span></h2>
+      <div class="papacontador">
+        <?php
+            $consultarcontador = "SELECT COUNT(id_ingreso) from entry_exit where fe_ho_exit='En el parque'";
+            $ejecucioncontador = mysqli_query($conexion,$consultarcontador);
+            $contadorfila= mysqli_fetch_assoc($ejecucioncontador);
 
-    <h1>INICIAR SESION</h1>
-  <br> 
-  
-    <form action="php/validar.php" method="POST" class="iniciar">
-        <label for="usu">Ingrese su Cedula</label>
-        <input type="text" id="usu" autocomplete="off" name="cc"></a>
-        <label for="pass">Ingrese su codigo de compra</label>
-        <input type="password" id="pass" autocomplete="off" name="idc">
-        <input type="submit" value="INGRESAR" class="envio">
-    </form>
-    <br>
-    <br>
-    <br>
+            if($contadorfila){
+              $personas = $contadorfila['COUNT(id_ingreso)'];
+            }
+        ?>
+      <div class="minicontador">
+        <p class="ncontador"> <?php echo $personas ?></p>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <hr>
-    <br>
-    <br>
-    <br>
-    <p class="somoshidden" id="somos">quienes somos</p>
+<hr>
 
-    <h2 >QUIENES SOMOS</h2>
+  <section class="about-us">
+        <div class="contenedor1">
+            <h1>Nuestras atarcciones mas destacadas...</h1>
+            <div class="contenedor-articulo">
+                <div class="articulo" data-aos="zoom-in-right">
+                  <div class="galeria">
+                    <a href="imagenes/atracciones/agua.jpeg" class="image">
+                      <img src="imagenes/atracciones/agua.jpeg" alt=""height="300px"width="300px " >
+                    </a>
+                  </div>
+                  <h3>LA MANTARAYA</h3>
+                  <P></P>
+                </div>
+                
+                <div class="articulo" data-aos="zoom-in-right">
+                <div class="galeria">
+                <a href="imagenes/atracciones/rueda.jpeg" class="image">
+                <img src="imagenes/atracciones/rueda.jpeg" alt="" height="300px"width="300px ">
+                    </a>
+                  </div>
+                    
+                    <h3>RUEDA DE LA FORTUNA 2.0</h3>
+                </div>
+                <div class="articulo" data-aos="zoom-in-right">
+                <div class="galeria">
+                <a href="imagenes/atracciones/dino.jpeg" class="image">
+                <img src="imagenes/atracciones/dino.jpeg" alt="" height="300px"width="300px ">
+                    </a>
+                  </div>
+                    <h3>DRAGONCITY</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <hr>
+    <br id="nosotros">
+    <br>
+    <br>
+    
+    <h2>QUIENES SOMOS</h2>
     <div class="paquienes">
         <div class="quienes mision">
           <h4 class="misi">MISION</h4>
@@ -96,17 +136,14 @@ $info = mysqli_fetch_assoc($query2);
     <br>
     <br>
     <hr>
-    <br>
-    <br>
-    <br>
+    <br id ="ubi">
+   
 
-
-    <h2>UBICANOS-CONTACTANOS</h2>
-
-
+    
     <div class="paubicanos">
       <div class="hiubicanos1">
         <div class="lmapa">
+          <h2>UBICANOS-CONTACTANOS</h2> 
           <p>Lorem ipsum dolor, sit amet consectetur 
           adipisicing elit. Voluptas velit, dolores 
           nam eius nihil, provident quas minima sequi 
@@ -120,7 +157,7 @@ $info = mysqli_fetch_assoc($query2);
           architecto.</p> 
         </div>
         <div class="mapa">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.602058065169!2d-74.09416458573685!3d4.664824943267698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzknNTYuNiJOIDc0wrAwNSczMS44Ilc!5e0!3m2!1ses!2sco!4v1616545514558!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.602058065169!2d-74.09416458573685!3d4.664824943267698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzknNTYuNiJOIDc0wrAwNSczMS44Ilc!5e0!3m2!1ses!2sco!4v1616545514558!5m2!1ses!2sco" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </div>
         </div>
         <div class="p2ubicanos">
         <h4>NUESTROS NUMEROS: +57 3156254560, +57 445432134 </h4>
@@ -139,131 +176,33 @@ $info = mysqli_fetch_assoc($query2);
             </div>
           </form>
           </div>
-      </div>  
-    </div>
+      </div> 
       
-
-    <hr>
-    <br>
-    <br>
-    <br>
-
-
+    </div>
+    <br><br>
+  <hr>
   
-
-
-    <div class="card">
-      <form method="post">
-          <h2>DATOS TARJETA</h2>
-          <label for="">Seleccione el tipo de tarjeta que desea comprar: </label>
-          <select name="tipo_card" id="">
-            <option value="0" placeholder=""></option>
-            <?php foreach ($query2 as $card) : ?>
-            <option value="<?php echo $card['id_card'] ?> ">
-            <?php echo $card['name_card'] ?></option>
-            <?php endforeach;?>
-          </select>
-          <input class="envior" type="submit" name="insertar" value="Seleccionar"/>
-      </form>
+  <div id="recarga" class="recarga">
+    <div class="capa">
+      <br><br><br><br>
+        <form action="php/recargart.php" class="formtar" method="POST" name="form_recargar_tickest">
+          <h1>¿Te quedaste sin Tickests?</h1>
+          <h4 class="recargat">INGRESA EL ID DE TU TARJETA DEL PARQUE PARA PODER RECARGARLA</h4>
+          <input  class="inputrecarga" type="text" name="n_tarjeta" id="" placeholder="Introduce el id de tu tarjeta a recargar">
+          <p>Informacion: Cada ticket Tiene un Costo de $3.500 pesos</p>
+          <input type="number" placeholder="Cantidad de Tickest que deseas comprar" name="Cantidad_tickest" class="Cantidad_tickest" min="1" max="50">
+          <input type="button" value="+" onclick="form_recargar_tickest.Cantidad_tickest.value++" class="sumarestas">
+          <input type="button" value="-" onclick="form_recargar_tickest.Cantidad_tickest.value--" class="sumarestas">
+              
+          <h4 class="recargat">INGRESA LOS DATOS DE TU TARJETA CREDITO PARA PROCEDER A RECARGAR TU TARJETA</h4>
+          <input class="inputrecarga" type="text" name="n_taejta_c" id="" placeholder="Introduce el numero de tu tarjeta">
+          <input class="inputrecarga" type="date" name="datevc" id="" placeholder="Introduce la fecha de vencimiento">
+          <input class="inputrecarga" type="text" name="cod" id="" placeholder="Introduce el codigo de seguridad">
+          <input type="submit" value="RECARGAR" name="recargar" class="enviarrecarga">
+        </form>
+      <br><br><br>
     </div>
-
-    <div class="users">
-      <form id="form_insert">
-        <?php 
-          if(isset($_POST['insertar'])){
-            $card = $_POST['tipo_card'];
-            $sql2 = "SELECT * FROM card WHERE id_card = $card";
-            $query2 = mysqli_query($conexion, $sql2);
-            $info = mysqli_fetch_assoc($query2);
-
-
-            echo('
-                <div class="infoMostrar">
-                  <h3>DATOS PAQUETE</h3>
-                  <table>
-                    <td>TIPO DE TARJETA: </td>
-                    <td><label>'.$info["name_card"].'</label></td>
-                    </tr>
-                    <td>NUMERO DE PERSONAS: </td>
-                    <td>'.$info["N_person"].'</td>
-                    </tr>
-                    <td>NUMERO DE TICKETS: </td>
-                    <td><label>'.$info["tickets"].'</label></td>
-                    </tr>
-                    <td>PRECIO: </td>
-                    <td><label >$'.$info["precio"].'</label></td>
-                  </table>
-                  <input type="hidden" name="Eliminar" value=""/>
-                  <h2>REGISTRO DE USUARIOS</h2>
-              ');
-            
-            for ($i = 1; $i <= $info["N_person"]; $i++){
-                
-        ?>
-        <table class="table">
-          <tr class="fila">
-            <td>
-              <label for="">Tipo Documento</label>
-              <select required name="tipo_docu[]" id="">
-                <option value="0" placeholder=""></option>
-                <?php foreach ($query as $tip_docu) : ?>
-                <option value="<?php echo $tip_docu['id_tipo_docu'] ?> ">
-                <?php echo $tip_docu['nom_docu'] ?></option>
-                <?php endforeach;?>
-              </select>
-            </td>
-            <td><label for="">Número de Documento</label><input type= "number" required name="id_user[]"/></td>
-            <td><label for="">Nombre</label><input type= "text" required name="nombre[]"/></td>
-            <td><label for="">Apellidos</label><input type= "text" required name="apellidos[]"/></td>
-            <td><label for="">Edad</label><input type= "number" required name="edad[]"/></td>
-            <td><label for="">Telefono</label><input type= "number" required name="cel[]"/></td>
-            <td><label for="">Correo</label><input type= "email" required name="correo[]"/></td>
-          </tr>
-        </table>
-        
-        <?php }
-        echo('
-          <div class="datosPago">
-            <h2>DATOS DE PAGO</h2>
-            <table class="table" >
-              <tr class="fila">
-                <td><label for="">Número de Tarjeta: </label><input type= "number" required name="num_card"/></td>
-                <td><label for="">Fecha de Vencimiento:</label><input type= "date" required name="date_vto"/></td>
-                <td><label for="">Código de seguridad (CVV):</label><input type= "text" required name="cod_card"/></td>
-              </tr>
-            </table>
-          </div>
-          <div class="acciones">
-              <input type="submit" value="Comprar" />
-          </div>'
-        );
-        } 
-        ?>
-       
-      </form>
-    </div>
-    <br>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <br>
-    <h2>RECARGAR TARJETA</h2>
-    <form action="php/recargart.php" class="formtar" method="POST" name="form_recargar_tickest">
-    <h4 class="recargat">INGRESA EL ID DE TU TARJETA DEL PARQUE PARA PODER RECARGARLA</h4>
-        <input  class="inputrecarga" type="text" name="n_tarjeta" id="" placeholder="Introduce el id de tu tarjeta a recargar">
-        <p>Informacion: Cada ticket Tiene un Costo de $3.500 pesos</p>
-        <input type="number" placeholder="Cantidad de Tickest que deseas comprar" name="Cantidad_tickest" class="Cantidad_tickest" min="1" max="50">
-        <input type="button" value="+" onclick="form_recargar_tickest.Cantidad_tickest.value++" class="sumarestas">
-        <input type="button" value="-" onclick="form_recargar_tickest.Cantidad_tickest.value--" class="sumarestas">
-        
-    <h4 class="recargat">INGRESA LOS DATOS DE TU TARJETA CREDITO PARA PROCEDER A RECARGAR TU TARJETA</h4>
-        <input class="inputrecarga" type="text" name="n_taejta_c" id="" placeholder="Introduce el numero de tu tarjeta">
-        <input class="inputrecarga" type="date" name="datevc" id="" placeholder="Introduce la fecha de vencimiento">
-        <input class="inputrecarga" type="text" name="cod" id="" placeholder="Introduce el codigo de seguridad">
-        <input type="submit" value="RECARGAR" name="recargar" class="enviarrecarga">
-    </form>
+  </div>
 
     <!-- <h1>COMPRAR BOLETOS</h1>
 
@@ -296,43 +235,8 @@ $info = mysqli_fetch_assoc($query2);
             <input type="submit" value="INGRESAR">
         </form>
     </div>   -->
-    <?php
-        $consultarcontador = "SELECT COUNT(id_ingreso) from entry_exit where fe_ho_exit='En el parque'";
-        $ejecucioncontador = mysqli_query($conexion,$consultarcontador);
-        $contadorfila= mysqli_fetch_assoc($ejecucioncontador);
-
-        if($contadorfila){
-          $personas = $contadorfila['COUNT(id_ingreso)'];
-        }
+   
     
-    
-    ?>
-
-    <script src="js/compraCard.js" ></script>
-
-    <br>
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
-    <br>
-    <h2 id="ct">NUMERO DE CLIENTES EN EL PARQUE EN ESTE MOMENTO</h2>
-    <div class="papacontador">
-
-      <div class="minicontador">
-        <p class="ncontador"> <?php echo $personas ?></p>
-
-
-      </div>
-
-        
-    </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
     <footer>
       <div class="fopa">
           <div class="fo1">
@@ -398,6 +302,13 @@ $info = mysqli_fetch_assoc($query2);
         <p>#TuMundoIdealDeDiversion</p> -->
     </footer>
 
+
+    <!--Enlace de biblioteca para el efecto de ecritura Typed.js-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!--Enlace de biblioteca para el efecto de ecritura Typed.js-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <!--Enlace de documento Js-->
+    <script src="main.js"></script>
 
 </body>
 
