@@ -1,13 +1,13 @@
 *{
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Slabo 27px', serif;
 }
 html{
     scroll-behavior: smooth;
 }
 
 body{
-
     overflow-x: hidden;
     
 }
@@ -19,11 +19,13 @@ body{
 .mision{
     background: url(../imagenes/feria.jpg);
     background-size: cover;
+    margin-left: 20%;
 
 }
 .vision{
     background: url(../imagenes/mexico.jpg);
     background-size: cover;
+    margin-left: -20%;
 
 }
 .quienes{
@@ -38,6 +40,7 @@ body{
     font-weight: bold;
     margin-top: 310px;
     transition: .5s;
+    
     
 }
 .quienes p{
@@ -63,31 +66,48 @@ body{
     padding: 10px;
 }
 
-
-
-
-
 .capas{
     width:100%;
-    height: 400px;
+    height: 340px;
     background: rgba(101, 3, 116,.8);
     position: absolute;
     top: 0;
     left: 0;
-  
-
+}
+.capa{
+    background: rgba(101, 3, 116,.8);
+}
+.ir-arriba{
+    display: none;
+    padding: 20px;
+    font-size: 35px;
+    color: #000000;
+    cursor: pointer;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
 
 }
+
+
+.inicio{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    padding: 70px;
+}
+
 .imagen1{
     width: 100%;
-    height: 400px;
+    height: 340px;
     position: relative;
 }
 .tituloo{
     position: absolute;
     color: white;
     margin-top: 195px;
-    margin-left: 550px;    
+    margin-left: 525px;    
     
 }
 .navegacion{
@@ -107,13 +127,17 @@ body{
 }
 .paubicanos{
     display: flex;
+    padding: 50px;
+    
 }
 .hiubicanos1 {
     padding: 10px;
 }
 
-.hiubicanos1 h4{
-    margin-top: 20px;
+.hiubicanos1 h2{
+    margin-top: -50px;
+    padding: 10px;
+    text-align: center;
 }
 .face{
     width: 70px;
@@ -124,11 +148,11 @@ body{
 .paquienes div{
     margin-top: 20px;
     width: 500px;
-    margin-left: 20px;
+    margin-left: 10%;
 }
 .paquienes{
     display: flex;
-    margin-left: 140px;
+    margin-left: 100px;
 }
 .paquienes div img{
     width: 100%;
@@ -142,12 +166,19 @@ h1{
     text-align: center;
 }
 .iniciar{
-    margin-left: 600px;
-    width: 200px;
+    width: 250px;
     display: block;
+    text-align: center;
+    margin-left: 33%;
+    margin-top: 20px;
+    
+}
+.login{
     justify-content: center;
-    
-    
+    margin-top: -40px;
+}
+.login h1{
+    margin-left: 10%;
 }
 .p2ubicanos {
     margin-left: 150px;
@@ -165,11 +196,9 @@ h1{
     margin-left: 20px;
     margin-top: 20px;
     border: rgba(101, 3, 116) solid 3px;
-    
     width: 600px;
-    
-
 }
+
 .mensajein{
     margin: 20px;
     width: 150px;
@@ -178,7 +207,7 @@ h1{
     
 }
 .mensajeta{
-    margin-left: 20px;
+    margin-left: 25px;
     max-width: 350px;
     width: 350px ;
     min-width: 350px;
@@ -189,8 +218,8 @@ h1{
 }
 .mensajesub{
     margin-top: 10px;
-    margin-left: 20px;
-    width: 360px;
+    margin-left: 25px;
+    width: 370px;
     height: 35px;
     border: none;
     background:rgba(101, 3, 116) ;
@@ -204,24 +233,43 @@ h1{
     width: 600px;
     margin-left: 20px;
 }
-.iniciar input{
-    margin: 5px;
-}
+
 .iniciar label{
     text-align: center;
 }
+
+.camposLogin{
+    color: #111111;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    background-color: transparent;
+    border-color: 2px rgb(0, 0, 0);
+    font-size: 20px;
+}
 .envio{
-margin-left: 10px;
-background: rgba(101, 3, 116);
-color: white;
-border: none;
-width: 73%;
-cursor: pointer;
+   
+    width: 73%;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 13%;
+    display: block;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-image: linear-gradient(to right, #325ebe, #af38d3, #91277f);
+    background-size: 200%;
+    font-size: 1rem;
+    color: #fff;
+    transition: .5s;
+    position: relative;
+    padding: 10px;
+}
+ 
+.envio:hover{
+    background-position: right;
 }
 
-.envio:hover{
-    background: black;
-}
 .envior{
     margin-left: 10px;
     background: rgba(101, 3, 116);
@@ -238,8 +286,13 @@ cursor: pointer;
     margin: 20px;
 }
 .formtar{
-    width: 400px;
-    margin-left: 500px;
+    width: 590px;
+    margin-left: 27%;
+    background-color: #fff;
+    padding: 50px 20px;
+    border-radius: 3px;
+    text-align: center;
+    margin-top: -2.5%;
 }
 .inputrecarga{
     width: 400px;
@@ -276,23 +329,94 @@ cursor: pointer;
 .sumarestas:hover{
     background: black;
 }
+.contador{
+    margin-top: -20px;
+    text-align: center;
+}
 .papacontador{
-    width: 200px;
+    width: 180px;
     height: 140px;
     border: rgb(101, 3, 116) solid 2px;
-    margin-top: 40px;
-    margin-left: 580px;
+    margin-top: 20px;
+    margin-left: 37%;
+  
 }
 .minicontador{
-    margin: 10px;
     background: rgb(101, 3, 116);
     color: white;
     height: 120px;
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 7%;
 }
 .ncontador{
     text-align: center;
-    font-size: 100px;
+    font-size: 80px;
 }
+/* About us */
+
+.about-us {
+    padding: 20px;
+    
+}
+.contenedor1 h1{
+    font-size:40px;
+}
+.contenedor-articulo {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    justify-content: space-around;
+}
+
+.articulo {
+    width: 25%;
+    background: #fff;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 45px ;
+    transition: 0.5s;
+    text-align: center;
+}
+.galeria{
+
+}
+.image{
+    flex: 25%;
+    overflow: hidden;
+    cursor: pointer;
+    width: 300px;
+    height: 400px;
+}
+  
+.image img{
+    width: 300px;
+    height: 250px;
+    transition: 0.4s;
+}
+
+
+.image:hover img{
+    transform: scale(1.4) rotate(-15deg);
+}
+
+.articulo:hover {
+    box-shadow: 0 6px 10px rgb(101, 3, 116) ;
+}
+
+
+.articulo h3 {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.recarga{
+    background-image: url(../imagenes/tickets.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 140%;
+}
+
+
 footer{
     width: 100%;
     background: black;
@@ -379,11 +503,45 @@ h2{
     background: green;
     visibility: hidden;
 }
-.imgfo{
-    position: absolute;
-    top: 3210px;
+
+/*Animaciones Encabezado
+
+-Elementos se mueven de Izquierda hacia Derecha*/
+@keyframes moverIzquierda 
+{
+    0%{ /*Mover X*/
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100%{ /*Hata que la animacion termine se pasara a transparencia 1*/
+        opacity: 1;
+        transform: translate(0);
+    }
 }
-.imgfo img{
-    width: 1345px;
-    height: 190px;
+
+@keyframes moverDerecha 
+{
+    0%{ /*Mover X*/
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    100%{ 
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes arriba 
+{
+    0%{ /*Mover Y*/
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100%{ 
+        opacity: 1;
+        transform: translate(0);
+    }
 }

@@ -1,5 +1,5 @@
 <?php 
-require_once("../php/conexion.php"); 
+require_once("../../php/conexion.php");
 
 if (@$_POST['planeacion']){
    
@@ -20,13 +20,13 @@ if (@$_POST['planeacion']){
     if($conexion->query($cadena_final)){
         
         echo "<script> alert('REGISTRO DE PROGAMACION EXITOSA, QUE TENGA BUEN DIA');
-            window.location= 'admin.php';
+            window.location= '../admin.php';
             </script>";
         exit;
         
     }else {
         echo "<script> alert('ERROR DE INSERCION, PORFAVOR INTENTE NUEVAMENTE');
-            window.location= 'admin.php'</script>";
+            window.location= '../admin.php'</script>";
         exit;
     }
 }

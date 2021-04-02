@@ -1,7 +1,7 @@
 <?php
 
-require_once('../php/conexion.php');
- 
+require_once('../../php/conexion.php');
+
 
 $tip_atra = $_POST['tip_atraccion'];
 $nom_atra = $_POST['nom_atraccion'];
@@ -24,13 +24,13 @@ if(isset($_POST['registrar_atracciones'])){
         $query3=mysqli_query($conexion,$consul3);
 
         echo "<script> alert('REGISTRO DE ATRACCIONES CORRECTAMENTE!');
-        window.location= 'admin.php';
+        window.location= '../admin.php';
         </script>";
         exit;
     }
     else {
     echo "<script> alert('ERROR DE INSERCION, PORFAVOR INTENTE NUEVAMENTE');
-        window.location= 'admin.php'</script>";
+        window.location= '../admin.php'</script>";
     exit;
     }
 }
