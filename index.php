@@ -235,6 +235,10 @@ require_once("php/conexion.php");
             <input type="submit" value="INGRESAR">
         </form>
     </div>   -->
+      <div class="divimgfooter">
+      <img src="imagenes/prueba4.png" alt="" class="imgfoter">
+      </div>      
+   
    
     
     <footer>
