@@ -299,6 +299,7 @@ footer{
     color: white;
     border-top: rgb(101, 3, 116) solid 5px;
     padding: 10px;
+    margin-top: 300px;
     
 
 
@@ -377,4 +378,12 @@ h2{
     top:710px;
     background: green;
     visibility: hidden;
+}
+.imgfo{
+    position: absolute;
+    top: 3210px;
+}
+.imgfo img{
+    width: 1345px;
+    height: 190px;
 }

@@ -159,7 +159,7 @@ require_once("../php/validacion.php");
 <h3>ATRACCIONES DISPONIBLES</h3>
 <?php
 
-     $consul_mostrar_atrac = "SELECT * FROM planeacion, atraccion where atraccion.id_atraccion=planeacion.id_atraccion";
+     $consul_mostrar_atrac = "SELECT * FROM planeacion, atraccion, tipo_atraccion where atraccion.id_atraccion=planeacion.id_atraccion AND tipo_atraccion.id_tip_atraccion=atraccion.id_tip_atraccion";
      $respues = mysqli_query($conexion,$consul_mostrar_atrac);
 
      
@@ -257,8 +257,9 @@ require_once("../php/validacion.php");
           <?php endif ?>
          
      
-      
+      <p>Tipo: <?php echo $i['nom_tip_atraccion']?></p>
        <h3><?php echo $i['nom_atraccion']?></h3>
+
        <input type="hidden" name="id_atraccionn" value="<?php echo $i['id_atraccion'] ?>">
       
        <input type="submit" value="MONTAR" name="enviar" >

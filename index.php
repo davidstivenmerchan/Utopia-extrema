@@ -329,10 +329,13 @@ $info = mysqli_fetch_assoc($query2);
         
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
+    
+    
+   <div class="imgfo">
+   <img src="imagenes/intento3.png" alt="">   
+   </div>
+
+
     <footer>
       <div class="fopa">
           <div class="fo1">
