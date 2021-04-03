@@ -14,7 +14,7 @@ $buscarAtraccion=$conexion->query($query);
 if ($buscarAtraccion->num_rows > 0)
 {
 	$tabla.= 
-	'<div class="listaMaquina">
+	'<div class="listaMaquina"><br>
     <table>
     <thead>
         <tr>

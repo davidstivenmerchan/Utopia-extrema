@@ -378,9 +378,7 @@ h1{
     transition: 0.5s;
     text-align: center;
 }
-.galeria{
 
-}
 .image{
     flex: 25%;
     overflow: hidden;
@@ -502,55 +500,4 @@ h2{
     top:710px;
     background: green;
     visibility: hidden;
-}
-
-/*Animaciones Encabezado
-
--Elementos se mueven de Izquierda hacia Derecha*/
-@keyframes moverIzquierda 
-{
-    0%{ /*Mover X*/
-        opacity: 0;
-        transform: translateX(-100px);
-    }
-
-    100%{ /*Hata que la animacion termine se pasara a transparencia 1*/
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-@keyframes moverDerecha 
-{
-    0%{ /*Mover X*/
-        opacity: 0;
-        transform: translateX(100px);
-    }
-
-    100%{ 
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-@keyframes arriba 
-{
-    0%{ /*Mover Y*/
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-
-    100%{ 
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-.imgfoter{
-    width: 100%;
-    height: 100px;
-
-}
-.divimgfooter{
-    position: absolute;
-    top:3375px;
 }

@@ -1,5 +1,6 @@
 <?php
     require_once("../php/valiadmi.php");
+    date_default_timezone_set('America/Bogota');
 ?>
 <?php
 
@@ -30,6 +31,7 @@ $query3 = mysqli_query($conexion, $sql3);
     <link rel="stylesheet" href="estilos.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="icon" href="../imagenes/PRIMERLOGO.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -72,31 +74,32 @@ $query3 = mysqli_query($conexion, $sql3);
     <nav class="navegacion">
       <ul >
           <div class="panel1" id="panel1">
-            <li ><i class="fas fa-credit-card"></i><br>VENCIMIENTO DE TARJETA</li>
+            <li ><i class="fas fa-credit-card"></i><br><br><strong>VENCIMIENTO DE TARJETA</strong></li>
           </div>
 
           <div class="panel2" id="panel2">
-            <li ><i class="far fa-calendar-plus"></i><br>PLANEACION</li>
+            <li ><i class="far fa-calendar-plus"></i><br><br><strong>PLANEACION</strong></li>
           </div>
 
           <div class="panel3" id="panel3">
-            <li ><i class="fas fa-sign-out-alt"></i></li>
+            <li ><i class="fas fa-sign-out-alt"></i><br><br><strong>VER PROGRAMACION</strong></li>
           </div>
 
           <div class="panel4" id="panel4">
-            <li ><i class="fas fa-charging-station"></i></li>
+            <li ><i class="fas fa-charging-station"></i><br><br><strong>MANTENIMIENTO</strong></li>
           </div>
 
           <div class="panel5" id="panel5">
-            <li ><i class="fas fa-pencil-alt"></i></li>
+            <li ><i class="fas fa-pencil-alt"></i><br><br><strong>REGISTRO DE MAQUINARIA</strong></li>
           </div>
 
       </ul>
+    
     </nav>
-
-    <div class="vencimiento uno" id="vencimiento">
-      <form method="post">
-          <br>
+    
+    <div class="vencimiento">
+      <form method="post" class="vencer">
+          <hr><br>
           <h2>VENCIMIENTO DE TARJETAS</h2>
           <label for="">Seleccione el tipo de tarjeta que desea buscar: </label>
           <select name="tipo_card" id="">
@@ -174,139 +177,153 @@ $query3 = mysqli_query($conexion, $sql3);
     </div>
     
 
-    <div class="planeacion" id="planeacion">
+    <div class="planeacion">
         <form action="php/planeacion.php"  class = "form_plan" method="POST">
-            <h2>PLANEACION</h2>
-            <p>Seleccione las maquinas que estaran en servicio el dia de hoy: </p>
-            <section>
-			    <input type="text" name="busqueda" id="busqueda" placeholder="Buscar...">
-		    </section><br>
-            <section id="tabla_resultado"></section><br>
-            <div class="horas">
-                <label>HORA INICIO:</label>
-                <input type="time" name="h_inicio" required>
-                <label>HORA FIN:</label>
-                <input type="time" name="h_fin" required>
-            </div><br>
-            <div class="botones">
-              <input type="submit" name="planeacion"  value="Programar" />
-              <input type="hidden" name="cedula" value=<?php echo $fila ['cedula'];?>>
+            <div class="cabezaP">
+            <hr><br>
+                <h2>PLANEACION</h2>
+                <div class="fechaP">
+                    <label for="">Fecha de programación </label>
+                    <input type="date" id="fecha" name="fechaP"  value="<?php echo date("Y-m-d");?>">
+                </div>
             </div>
-
+            <div class="plan">
+                <div class="tablaP">
+                    <p>Seleccione las maquinas que estaran en servicio en este dia: </p>
+                    <label>Filtro</label>
+                    <input type="text" name="busqueda" id="busqueda" placeholder="Buscar segun tipo...">
+                    <section id="tabla_resultado"></section>
+                </div>
+                <div class="contenidoP">
+                    <p>Por favor digite la hora de inicio y fin para la programación. </p><br><br>
+                    <div class="horas">
+                        <div class="ini">
+                            <strong>Hora Inicio:</strong><br>
+                            <input type="time" name="h_inicio" required>
+                        </div>
+                        <div class="fini">
+                            <strong>Hora Fin:</strong><br>
+                            <input type="time" name="h_fin" required><br><br>
+                        </div>
+                    </div><br>
+                    <div class="botones">
+                        <input type="submit" name="planeacion"  class="botonP" value="Programar" />
+                        <input type="hidden" name="cedula" value=<?php echo $fila ['cedula'];?>>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 
-    <div class="verPrograma uno" id="verPrograma">
-        <h2>PROGRAMACION DE MAQUINARIA</h2>
-        <form  method="POST">
-            <label for="">Seleccione la fecha a buscar</label>
-            <input type="date" id="fecha" name="fecha"  value="<?php echo date("Y-m-d");?>">
-            <input type="submit" name="Buscar" value= "Buscar">
-        </form>
-      
-        <?php 
-        if (@$_POST['Buscar']){
+    <div class="programa">
+        <div class="horario">
+        <hr><br>
+            <h2>PROGRAMACION DE MAQUINARIA</h2>
+            <form  method="POST">
+                <label for="">Seleccione la fecha a buscar</label>
+                <input type="date" id="fecha" name="fecha"  value="<?php echo date("Y-m-d");?>">
+                <input type="submit" name="Buscar" value= "Buscar">
+            </form>
+        
+            <?php 
+            if (@$_POST['Buscar']){
 
-            $fecha_reg= $_POST['fecha'];
-            $buscardor = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion, planeacion.fecha_reg, planeacion.h_inicio, planeacion.h_fin, horas_trabajo.total_h FROM atraccion,planeacion,horas_trabajo WHERE  atraccion.id_atraccion = planeacion.id_atraccion and  horas_trabajo.id_atraccion = atraccion.id_atraccion and planeacion.fecha_reg = '$fecha_reg' "); 
-            
-        ?>
-        <table>
-            <thead>
+                $fecha_reg= $_POST['fecha'];
+                $buscardor = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion, planeacion.fecha_reg, planeacion.h_inicio, planeacion.h_fin, horas_trabajo.total_h FROM atraccion,planeacion,horas_trabajo WHERE  atraccion.id_atraccion = planeacion.id_atraccion and  horas_trabajo.id_atraccion = atraccion.id_atraccion and planeacion.fecha_reg = '$fecha_reg' "); 
+                
+            ?>
+
+            <div class="listaPrograma">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Ubicación</th>
+                            <th>Hora de inicio</th>
+                            <th>Hora de fin</th>
+                            <th>Hora restante</th>
+                            <th>Hora acumuladas</th>
+                            
+                        </tr>
+                    </thead>
+                <?php
+
+                    while($row=mysqli_fetch_array($buscardor)){
+                        
+                    date_default_timezone_set('America/Bogota');
+
+                    $hora1 = new DateTime(date("H:i:s"));//Hora actual
+                    $hora2 = new DateTime($row[4]);//Hora de cierre
+                    $hora3 = new DateTime($row[3]);//Hora de inicio
+                    $horaBD = $row[5]; // Horas de trabajo acumuladas en bd
+
+                    $intervalo = $hora1->diff($hora2);
+                    $tiempoR = $intervalo->format('%R %H horas %i minutos %s segundos');
+                
+                ?>
+                    <tbody>
+                        <tr>
+                            <td><?php echo $row[0]; ?> </td>
+                            <td><?php echo $row[1]; ?> </td>
+                            <td><?php echo $row[3];?> </td>
+                            <td><?php echo $row[4];?> </td> 
+                <?php
+
+                $busca = strpos($tiempoR, "+");
+                
+                //comprabar si ya termino horas a trabajar
+                if($busca === false){
+
+                    $tiempoR = "Fin de Jornada";
+                    echo "<td>$tiempoR</td>";
+                    echo "<td>$horaBD</td>";
+                    echo "</tr>";
+                    echo "</tbody>";
+
+                }else{
+                    echo "<td>$tiempoR</td>";
+                    echo "<td>$horaBD</td>";
+                    echo "</tr>";
+                    echo "</tbody>";
+                }
+                }
+                }
+                ?>
+            </table>
+            </div>
+        </div>
+    
+    </div>
+
+
+    <div class="mantenimiento" >
+        <div class="infoMantenimiento">
+            <hr>
+            <h2>MAQUINARIA EN MANTENIMIENTO</h2><br>
+            <?php 
+
+                $mantenimiento = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion FROM atraccion WHERE atraccion.id_estado = 3" ); 
+                
+            ?>
+            <table>
+            <caption>Resultados encontrados</caption>
                 <tr>
                     <th>Codigo</th>
-                    <th>Ubicación</th>
-                    <th>Hora de inicio</th>
-                    <th>Hora de fin</th>
-                    <th>Hora restante</th>
-                    <th>Hora acumuladas</th>
-                    
+                    <th>Nombre</th>
                 </tr>
-            </thead>
-        <?php
-
-            while($row=mysqli_fetch_array($buscardor)){
                 
-            date_default_timezone_set('America/Bogota');
-
-            $hora1 = new DateTime(date("H:i:s"));//Hora actual
-            $hora2 = new DateTime($row[4]);//Hora de cierre
-            $hora3 = new DateTime($row[3]);//Hora de inicio
-            $horaA = $row[5]; // Horas de trabajo acumuladas en bd
-
-            $intervalo = $hora1->diff($hora2);
-            $tiempoR = $intervalo->format('%R %H horas %i minutos %s segundos');
-           
-        ?>
-            <tbody>
+            <?php
+                while($filas=mysqli_fetch_array($mantenimiento)){
+            ?>
                 <tr>
-                    <td><?php echo $row[0]; ?> </td>
-                    <td><?php echo $row[1]; ?> </td>
-                    <td><?php echo $row[3];?> </td>
-                    <td><?php echo $row[4];?> </td> 
-        <?php
-
-        $busca = strpos($tiempoR, "+");
-
-        //rango de horas a trabajar
-        $intervalo2 = $hora2->diff($hora3);
-        $tiempo = $intervalo2->format('%h');
-
-        //Acumular horas
-        $horas_t = $horaA + $tiempo;
-        
-        //comprabar si ya termino horas a trabajar
-        if($busca === false){
-            
-            $consultica = "UPDATE horas_trabajo SET total_h = '$horas_t' WHERE  id_atraccion = '$row[0]' ";
-            $ejecutar2 = mysqli_query($conexion, $consultica);
-
-            $tiempoR = "Fin de Jornada";
-            echo "<td>$tiempoR</td>";
-            echo "<td>$horaA</td>";
-            echo "</tr>";
-            echo "</tbody>";
-
-        }else{
-            echo "<td>$tiempoR</td>";
-            echo "<td>$horaA</td>";
-            echo "</tr>";
-            echo "</tbody>";
-        }
-    }
-}
-        ?>
-            
-      </table>
-
-    </div>
-
-
-    <div class="mantenimiento uno" id = "mantenimiento">
-        <h2>MAQUINARIA EN MANTENIMIENTO</h2><br>
-        <?php 
-
-            $mantenimiento = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion FROM atraccion WHERE atraccion.id_estado = 3" ); 
-              
-        ?>
-        <table>
-        <caption>Resultados encontrados</caption>
-            <tr>
-                <th>Codigo</th>
-                <th>Nombre</th>
-            </tr>
-            
-        <?php
-            while($filas=mysqli_fetch_array($mantenimiento)){
-        ?>
-            <tr>
-                <td><?php echo $filas[0]; ?> </td>
-                <td><?php echo $filas[1]; ?> </td>
-            </tr>
-        <?php 
-            } 
-        ?>
-        </table>
+                    <td><?php echo $filas[0]; ?> </td>
+                    <td><?php echo $filas[1]; ?> </td>
+                </tr>
+            <?php 
+                } 
+            ?>
+            </table>
+        </div>
     </div>
 <?php
 
@@ -320,8 +337,10 @@ $query3 = mysqli_query($conexion, $sql3);
 
 ?>
 
-    <div class="form_maquinas uno" id="form_maquinas">
-                <h4>FORMULARIO PARA REGISTRAR ATRACIONES</h4>
+    <div class="form_maquinas" >
+        <div class="registrar">
+        <hr><br>
+        <h4>FORMULARIO PARA REGISTRAR ATRACIONES</h4>
         <form action="php/regi_atracciones.php" method="POST" id="formumaquinas">
 
             <label for="id_tipo_atraccion">Selecciona el Tipo de Atracccion</label>
@@ -375,6 +394,7 @@ $query3 = mysqli_query($conexion, $sql3);
             </div>
             
         </form>
+        </div>
     </div>
     <!-- <section>
 			<input type="date" name="busqueda" id="busqueda" placeholder="Buscar...">
