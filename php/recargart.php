@@ -38,11 +38,19 @@
 
             
             
+        }else {
+            echo "<script> alert('VERIFIQUE SU ID DE TARJETA. NO SE PUDO RECARGAR');
+            window.location= '../index.php';
+            </script>";
+        exit;
         }
        
         
 
-        echo "<script> alert('RECARGO CON EXITO SU TARJETA!'); </script>";
+        echo "<script> alert('RECARGA EXITOSA, QUE TENGA BUEN DIA');
+            window.location= '../index.php';
+            </script>";
+        exit;
 
         
 

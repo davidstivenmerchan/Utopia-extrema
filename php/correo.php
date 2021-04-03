@@ -130,6 +130,11 @@ try {
   ";
 
       $mail->send();
+
+      echo "<script> alert('CORREO ENVIADO CORRECTAMENTE, QUE TENGA BUEN DIA');
+      window.location= '../index.php';
+      </script>";
+      exit;
       
   } catch (Exception $e) {
       echo "Error Presentado: {$mail->ErrorInfo}";
