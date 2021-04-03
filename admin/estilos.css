@@ -54,8 +54,11 @@ header{
 ul li {
   float: left;
   margin-left: 50px;
-  padding: 40px;
+  padding: 30px;
   list-style: none;
+}
+.navegacion{
+  margin-top: -10px;
 }
 
 
@@ -63,12 +66,9 @@ ul li {
   font-size: 115px;
   color: rgb(88, 17, 116);
   cursor: pointer;
-  
-  
 
 }
 .navegacion li{
-  padding: 35px;
   text-align: center;
 }
 
@@ -121,18 +121,30 @@ ul li {
   display: none;
   transition: all 1s ease;
   text-align: center;
-  
+  margin-top: 16%;
+}
+.row{
+  padding: 2px;
 }
 
-.vencer{
- margin-top: 18%;
+.tablaVencer{
+  height: 240px;
+  overflow-y: auto;
+  width: 80%;
+  margin:auto;
+  padding: 0px;
 }
 
-
+.tablaVencer thead{
+  background-color:#25b164a2;;
+}
 .planeacion{
   transition: all 1s ease;
   display: none;
   text-align: center;
+}
+.cabezaP{
+  margin-top: 16%;
 }
 .plan{
   display: grid;
@@ -143,7 +155,7 @@ ul li {
   text-align: center;
 }
 
-.fechaP input, .tablaP input, .horas input{
+.fechaP input, .tablaP input, .horas input,.row select{
   border-right: none;
   border-top: none;
   border-left: none;
@@ -190,7 +202,7 @@ ul li {
   background-position: right;
 }
 
-.fechaP input:hover, .tablaP input:hover, .horas input:hover{
+.fechaP input:hover, .tablaP input:hover, .horas input:hover, .row select:hover{
   border-color: #1780e2;
 }
 
@@ -208,8 +220,8 @@ ul li {
   text-align: center;
 }
 .horario{
-  margin-top: 18%;
- }
+  margin-top: 16%;
+}
 .listaPrograma{
   height: 274px;
   overflow-y: auto;
@@ -224,10 +236,6 @@ ul li {
   display: none;
   transition: all 1s ease;
   text-align: center;
-}
-
-.infoMantenimiento{
-  margin-top: 18%;
 }
 
 .img{
