@@ -43,80 +43,75 @@ boton.addEventListener("click",function(){
 })
 
 
-let panel1 = document.getElementById("panel1");
-let datosP1 = document.getElementById("vencimiento");
+let panel1 = document.querySelector("#panel1");
+let datosP1 = document.querySelector(".vencimiento");
 let contador2 = 0;
 
 panel1.addEventListener("click",function(){
     if(contador2 == 0){
-        datosP1.className = ('vencimiento dos');
+        datosP1.style.display= "block";
         contador2=1;
     }else{
-        datosP1.classList.remove('dos');
-        datosP1.className = ('vencimiento uno');
+        datosP1.style.display= "none";
         contador2 = 0;
     }
 })
 
 
-let panel2 = document.getElementById("panel2");
-let datosP2 = document.getElementById("planeacion");
+let panel2 = document.querySelector("#panel2");
+let datosP2 = document.querySelector(".planeacion");
 let contador3 = 0;
 
 panel2.addEventListener("click",function(){
     if(contador3 == 0){
-        datosP2.className = ('planeacion');
+        datosP2.style.display= "block";
         contador3=1;
     }else{
-        datosP2.className = ('planeacion');
+        datosP2.style.display= "none";
         contador3 = 0;
     }
 })
 
-
-let panel3 = document.getElementById("panel3");
-let datosP3 = document.getElementById("verPrograma");
+let panel3 = document.querySelector("#panel3");
+let datosP3 = document.querySelector(".programa");
 let contador4 = 0;
 
 panel3.addEventListener("click",function(){
     if(contador4 == 0){
-        datosP3.className = ('verPrograma dos');
+        datosP3.style.display= "block";
         contador4=1;
     }else{
-        datosP3.classList.remove('dos');
-        datosP3.className = ('verPrograma uno');
+        datosP3.style.display= "none";
         contador4 = 0;
     }
 })
 
 
-let panel4 = document.getElementById("panel4");
-let datosP4 = document.getElementById("mantenimiento");
+let panel4 = document.querySelector("#panel4");
+let datosP4 = document.querySelector(".mantenimiento");
 let contador5 = 0;
 
 panel4.addEventListener("click",function(){
     if(contador5 == 0){
-        datosP4.className = ('mantenimiento dos');
+        datosP4.style.display= "block";
         contador5=1;
     }else{
-        datosP4.classList.remove('dos');
-        datosP4.className = ('mantenimiento uno');
+        datosP4.style.display= "none";
         contador5 = 0;
     }
 })
 
 
-let panel5 = document.getElementById("panel5");
-let datosP5 = document.getElementById("form_maquinas");
+let panel5 = document.querySelector("#panel5");
+let datosP5 = document.querySelector(".form_maquinas");
 let contador6 = 0;
 
 panel5.addEventListener("click",function(){
     if(contador6 == 0){
-        datosP5.className = ('form_maquinas dos');
+        datosP5.style.display= "block";
         contador6=1;
     }else{
-        datosP5.classList.remove('dos');
-        datosP5.className = ('form_maquinas uno');
+        datosP5.style.display= "none";
         contador6 = 0;
     }
 })
