@@ -96,11 +96,11 @@ $query3 = mysqli_query($conexion, $sql3);
       </ul>
     
     </nav>
-    
     <div class="vencimiento">
-      <form method="post" class="vencer">
-          <hr><br>
-          <h2>VENCIMIENTO DE TARJETAS</h2>
+    <div class="row">
+        <hr><br>
+        <form method="post" id="form" >
+          <h2>VENCIMIENTO DE TARJETAS</h2><br>
           <label for="">Seleccione el tipo de tarjeta que desea buscar: </label>
           <select name="tipo_card" id="">
             <option value="0" placeholder=""></option>
@@ -123,7 +123,7 @@ $query3 = mysqli_query($conexion, $sql3);
       </form>
     </div>
 
-    <div>
+    <div class="tablaVencer">
         <?php 
           if(@$_POST['buscar']){
             $card = $_POST['tipo_card'];
@@ -132,19 +132,19 @@ $query3 = mysqli_query($conexion, $sql3);
             $query2 = mysqli_query($conexion, $sql2);
             
              
-            echo "<table  class = 'tables'>";
-                echo "<caption>Registros encontrados</caption>";
-                echo "<thead>";
-                    echo "<tr>";
-                        echo "<th scope='col'>Codigo de compra</th>";
-                        echo "<th scope='col'>Tipo tarjeta</th>";
-                        echo "<th scope='col'>Nombre cliente</th>";
-                        echo "<th scope='col'>Telefono de contacto</th>";
-                        echo "<th scope='col'>Correo</th>";
-                        echo "<th scope='col'>Fecha compra</th>";
-                        echo "<th scope='col'>Dias restantes</th>";
-                    echo "</tr>";
-                echo "</thead>";
+            echo '
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cod</th>
+                        <th>Tipo tarjeta</th>
+                        <th>Nombre cliente</th>
+                        <th>Telefono de contacto</th>
+                        <th>Correo</th>
+                        <th>Fecha compra</th>
+                        <th>Dias restantes</th>
+                    </tr>
+                </thead>';
 
 
         ?>
@@ -159,23 +159,23 @@ $query3 = mysqli_query($conexion, $sql3);
                     
                    
 
-                echo "<tbody>";
-                    echo "<tr>";
-                        echo "<th scope='row'>$columna[0]</th>";
-                        echo "<td>$columna[2]</td>";
-                        echo "<td>$columna[3]$columna[4]</td>";
-                        echo "<td>$columna[5]</td>";
-                        echo "<td>$columna[6]</td>";
-                        echo "<td>$columna[1]</td>";
-                        echo "<td>$dia</td>";
-                    echo "</tr>";
-                echo "</tbody>";
+                echo '<tbody>
+                    <tr>
+                        <th>'.$columna[0].'</th>
+                        <td>'.$columna[2].'</td>
+                        <td>'.$columna[3].' '.$columna[4].'</td>
+                        <td>'.$columna[5].'</td>
+                        <td>'.$columna[6].'</td>
+                        <td>'.$columna[1].'</td>
+                        <td>'.$dia.'</td>
+                    </tr>
+                </tbody>';
             }
         }
-        echo "</table>";
+        echo '</table>';
         ?>
+    </div><br>
     </div>
-    
 
     <div class="planeacion">
         <form action="php/planeacion.php"  class = "form_plan" method="POST">
@@ -290,7 +290,7 @@ $query3 = mysqli_query($conexion, $sql3);
                 }
                 ?>
             </table>
-            </div>
+            </div><br>
         </div>
     
     </div>
@@ -298,7 +298,7 @@ $query3 = mysqli_query($conexion, $sql3);
 
     <div class="mantenimiento" >
         <div class="infoMantenimiento">
-            <hr>
+            <hr><br>
             <h2>MAQUINARIA EN MANTENIMIENTO</h2><br>
             <?php 
 
