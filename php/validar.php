@@ -92,10 +92,19 @@ if($fila1){
                 <h1>error</h1>
                 <?php
             }
+
+           
            
 
    }
 
+   
+
+}else {
+    echo "<script> alert('ERROR AL INGRESAR VERIFIQUE SU CONTRASEÑA O ID DE COMPRA info: Para ingresar al parque necesita comprar su paquete.');
+   window.location= '../index.php';
+  </script>";
+  exit;
 }
 
 

@@ -104,7 +104,7 @@ footer{
 .segui2 i{
     margin-left: 15px;
     
-}
+} 
 .segui2{
     margin-left: 25px;
 }
@@ -135,8 +135,8 @@ footer{
     margin-left: 20px;
 }
 .formumaquinas{
-    margin-left: 510px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-top: 10px;
     border: black solid 2px;
     width: 300px;
     padding: 10px;
@@ -145,10 +145,13 @@ footer{
     transition: .5s;
     position: relative;
     overflow-x: hidden;
+    color: white;
+    
 }
+
 .formumaquinas:hover{
    
-    background: rgba(101, 3, 116,.6);
+    background: rgba(101, 3, 116,.7);
 }
 .formumaquinas input{
     width: 200px;
@@ -194,4 +197,121 @@ img{
     
     left: 0;
 
+}
+/*SLIDEEERRRRRRRRRRRRRRR*/
+.diiiss{
+    display: flex;
+    background: black;
+    overflow-x: hidden;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: rgba(18, 28, 161,.7)  solid 3px;
+    border-top:  rgba(18, 28, 161,.7)  solid 3px;
+}
+.mover{
+    margin-left: 10px;
+    transition: .5s;
+}
+.mover2{
+    margin-left: -1335px;
+    transition: .5s;
+}
+.mover3{
+    margin-left: -2670px;
+    transition: .5s;
+}
+.mover4{
+    margin-left: -4010px;
+    transition: .5s;
+}
+.mover5{
+    margin-left: -5350px;
+    transition: .5s;
+
+
+}
+.mover6{
+    margin-left: -6690px;
+    transition: .5s;
+}
+.mover7{
+    margin-left:-8017px;
+    transition: .5s;
+}
+.mover8{
+    margin-left: -9370px;
+    transition: .5s;
+}
+.mover9{
+    margin-left: -10690px;
+    transition: .5s;
+}
+.mover10{
+    margin-left: -12030px;
+    transition: .5s;
+}
+.mover11{
+    margin-left: -13370px;
+    transition: .5s;
+}
+.mover12{
+    margin-left: -14710px;
+    transition: .5s;
+}
+.mover13{
+    margin-left: -16050px;
+    transition: .5s;
+}
+.mover14{
+    margin-left: -17390px;
+    transition: .5s;
+}
+.decisiones{
+    display: flex;
+    justify-content: center;
+    
+}
+.bot{
+    color: black;
+    font-size: 30px;
+    display: none;
+    margin-top: 10px;
+    cursor: pointer;
+    margin: 10px;
+    
+}
+.botfuncionando{
+    display: block;
+    color: black;
+    font-size: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    margin: 10px;
+}
+.botoncolor{
+    color: rgba(18, 28, 161,.7) ;
+    font-size: 30px;
+    
+    margin-top: 10px;
+    cursor: pointer;
+    margin: 10px;
+    
+}
+/* .decisiones i{
+    font-size: 30px;
+    color: rgba(18, 28, 161,.7) ;
+    margin-top: 10px;
+    cursor: pointer;
+    margin: 10px;
+    
+    
+} */
+.imgfoter{
+    width: 100%;
+    height: 100px;
+    border: none;
+}
+.divimgfooter{
+    position: absolute;
+    top:885px;
 }
