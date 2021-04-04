@@ -8,7 +8,7 @@ $query="SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atracci
 if(isset($_POST['maquinaH']))
 {
 	$q=$conexion->real_escape_string($_POST['maquinaH']);
-	$query="SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atraccion.nom_atraccion, horas_trabajo.total_h FROM atraccion,tipo_atraccion, horas_trabajo WHERE horas_trabajo.id_atraccion = atraccion.id_atraccion and horas_trabajo.total_h < $horasM and tipo_atraccion.nom_tip_atraccion LIKE '%".$q."%'";
+	$query="SELECT atraccion.id_atraccion, tipo_atraccion.nom_tip_atraccion, atraccion.nom_atraccion, horas_trabajo.total_h FROM atraccion,tipo_atraccion, horas_trabajo WHERE horas_trabajo.id_atraccion = atraccion.id_atraccion and horas_trabajo.total_h < $horasM and atraccion.id_tip_atraccion = tipo_atraccion.id_tip_atraccion  and tipo_atraccion.nom_tip_atraccion LIKE '%".$q."%'";
 }
 
 $buscarAtraccion=$conexion->query($query);
