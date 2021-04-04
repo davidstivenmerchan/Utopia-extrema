@@ -59,7 +59,9 @@ require_once("../php/validacion.php");
             $resuu= mysqli_query($conexion, $consul_para_ingresar);
 
             if($resuu){
-                echo "<script> alert('funciona'); </script>";
+              echo "<script> alert('GRACIAS POR DISFRUTAR DE NUESTRAS ATRACCIONES');
+              window.location= 'clientes.php';
+              </script>";
             }
             else {
                 echo "<script> alert('NO esta funcionando esta chimbada'); </script>";
@@ -89,7 +91,7 @@ require_once("../php/validacion.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <link rel="stylesheet" href="../css/clientes.css">
     <link rel="icon" href="../imagenes/PRIMERLOGO.ico">
@@ -120,19 +122,19 @@ require_once("../php/validacion.php");
 <div class="datos">
     <div class="dpersonales">
         <h4>MIS DATOS:</h4>
-        <p>Cedula: <?php echo $fila['cedula'] ?></p>
-        <p>Nombre: <?php echo $fila['nombre'] ?></p>
-        <p>Apellido: <?php echo $fila['apellido'] ?></p>
-        <p>Correo: <?php echo $fila['correo'] ?></p>
-        <p>Celular: <?php echo $fila['celular'] ?></p>
+        <p><strong>Cedula: </strong> <?php echo $fila['cedula'] ?></p>
+        <p><strong>Nombre: </strong><?php echo $fila['nombre'] ?></p>
+        <p><strong>Apellido: </strong> <?php echo $fila['apellido'] ?></p>
+        <p><strong>Correo: </strong><?php echo $fila['correo'] ?></p>
+        <p><strong>Celular: </strong> <?php echo $fila['celular'] ?></p>
 
     </div>
     <div class="dtarjeta">
         <h4>DATOS TARJETA:</h4>
-        <p>ID Compra: <?php echo $fila['id_compra'] ?></p>
-        <p>Tickest Disponibles: <?php echo $ti ?> </p>
-        <p>Tipo de Tajera: <?php echo $fila['name_card'] ?> </p>
-        <p>Estado de la Tarjeta: <?php echo $fila['nom_estado'] ?></p>
+        <p><strong>ID Compra: </strong> <?php echo $fila['id_compra'] ?></p>
+        <p><strong>Tickest Disponibles: </strong>  <?php echo $ti ?> </p>
+        <p><strong>Tipo de Tajera: </strong>  <?php echo $fila['name_card'] ?> </p>
+        <p><strong>Estado de la Tarjeta: </strong>  <?php echo $fila['nom_estado'] ?></p>
 
     
      <?php 
@@ -147,7 +149,7 @@ require_once("../php/validacion.php");
          $consultica = "UPDATE compra SET id_estados = 2 WHERE  id_compra = '$id_compraa' ";
          $ejecutar = mysqli_query($conexion, $consultica);
      }else{
-        echo "<p>Su tarjeta expira en: $dia </p>";
+        echo "<p><strong>Su tarjeta expira en: </strong> $dia </p>";
      }
     ?>
         </div>
@@ -267,8 +269,8 @@ require_once("../php/validacion.php");
           <?php elseif($i['id_atraccion']==51): ?>
           <img src="../imagenes/atracciones/troncos.jpeg" alt="" class="cicloform" ><div class="pciclo"><p>En esta atraccion te mojaras ya que es una montaña rusa de agua en la cual podras disfrutar con tu familia.</p></div>
           <?php else: ?>
-          <h5>NO EXISTE IMAGEN</h5>
-          <img src="../imagenes/PRIMERLOGO.PNG" alt="" class="cicloform">
+          <h5 style="color: white">NO EXISTE IMAGEN PARA ESTA ATRACCION</h5>
+          <img src="../imagenes/nodisponible.png" alt="" class="cicloform">
           <div class="pciclo"><p>Aún no han añadido una descripcion a esta atraccion.</p></div>
           <?php endif ?>
          

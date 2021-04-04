@@ -32,7 +32,7 @@ require_once("php/conexion.php");
   </div>
     <nav>
       <ul class="navegacion">
-        <li><a href="#ubi"><strong>UBICANOS-CONTACTANOS</strong></a></li>
+      <li><a href="#ubi"><strong>UBICANOS-CONTACTANOS</strong></a></li>
         <li><a href="#nosotros"><strong>QUIENES SOMOS</strong></a></li>
         <li><a href="compraCard.php"><strong>COMPRAR TARJETA</strong></a></li>
         <li><a href="#recarga"><strong>RECARGA TU TARJETA</strong></a></li>
@@ -177,8 +177,8 @@ require_once("php/conexion.php");
         <div class="iconos">
           <form action="php/correo.php" method="POST">
             <div>
-              <input type="text" placeholder="Escribe tu nombre" class="mensajein" name="nombr">
-              <input type="text" placeholder="Escribe tu correo" class="mensajein" name="corr"> 
+              <input type="text" placeholder="Escribe tu nombre" class="mensajein" name="nombr" autocomplete="off">
+              <input type="text" placeholder="Escribe tu correo" class="mensajein" name="corr" autocomplete="off"> 
             </div>
             <textarea name="tarea" id="" cols="30" rows="10" placeholder="Escribe aqui tu Mensaje" class="mensajeta"></textarea>
             <div>
@@ -198,16 +198,16 @@ require_once("php/conexion.php");
         <form action="php/recargart.php" class="formtar" method="POST" name="form_recargar_tickest">
           <h1>¿Te quedaste sin Tickests?</h1>
           <h4 class="recargat">INGRESA EL ID DE TU TARJETA DEL PARQUE PARA PODER RECARGARLA</h4>
-          <input  class="inputrecarga" type="text" name="n_tarjeta" id="" placeholder="Introduce el id de tu tarjeta a recargar">
+          <input  class="inputrecarga" type="text" name="n_tarjeta" id="" placeholder="Introduce el id de tu tarjeta a recargar" autocomplete="off">
           <p>Informacion: Cada ticket Tiene un Costo de $3.500 pesos</p>
           <input type="number" placeholder="Cantidad de Tickest que deseas comprar" name="Cantidad_tickest" class="Cantidad_tickest" min="1" max="50">
           <input type="button" value="+" onclick="form_recargar_tickest.Cantidad_tickest.value++" class="sumarestas">
           <input type="button" value="-" onclick="form_recargar_tickest.Cantidad_tickest.value--" class="sumarestas">
               
           <h4 class="recargat">INGRESA LOS DATOS DE TU TARJETA CREDITO PARA PROCEDER A RECARGAR TU TARJETA</h4>
-          <input class="inputrecarga" type="text" name="n_taejta_c" id="" placeholder="Introduce el numero de tu tarjeta">
+          <input class="inputrecarga" type="text" name="n_taejta_c" id="" placeholder="Introduce el numero de tu tarjeta" autocomplete="off">
           <input class="inputrecarga" type="date" name="datevc" id="" placeholder="Introduce la fecha de vencimiento">
-          <input class="inputrecarga" type="text" name="cod" id="" placeholder="Introduce el codigo de seguridad">
+          <input class="inputrecarga" type="text" name="cod" id="" placeholder="Introduce el codigo de seguridad" autocomplete="off">
           <input type="submit" value="RECARGAR" name="recargar" class="enviarrecarga">
         </form>
       <br><br><br>

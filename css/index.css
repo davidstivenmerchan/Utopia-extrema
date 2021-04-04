@@ -595,3 +595,11 @@ h2{
     background: green;
     visibility: hidden;
 }
+.imgfoter{
+    width: 100%;
+}
+.divimgfooter{
+   
+    position: absolute;
+    top:3290px;
+}

@@ -222,7 +222,7 @@ $query3 = mysqli_query($conexion, $sql3);
             <form  method="POST">
                 <label for="">Seleccione la fecha a buscar</label>
                 <input type="date" id="fecha" name="fecha"  value="<?php echo date("Y-m-d");?>">
-                <button type="submit" name="Buscar"> BUSCAR </button>
+                <input type="submit" name="Buscar" value='BUSCAR'>
             </form>
         
             <?php 

@@ -95,13 +95,13 @@ $info = mysqli_fetch_assoc($query2);
               </select>
             </td>
             <td><label for="">Número de Documento</label><input type= "number" required name="id_user[]"/></td>
-            <td><label for="">Nombre</label><input type= "text" required name="nombre[]"/></td>
-            <td><label for="">Apellidos</label><input type= "text" required name="apellidos[]"/></td>
+            <td><label for="">Nombre</label><input type= "text" required autocomplete="off" name="nombre[]"/></td>
+            <td><label for="">Apellidos</label><input type= "text" required autocomplete="off" name="apellidos[]"/></td>
           </tr>
           <tr class="fila">
-            <td><label for="">Edad</label><input type= "number" required name="edad[]"/></td>
-            <td><label for="">Telefono</label><input type= "number" required name="cel[]"/></td>
-            <td><label for="">Correo</label><input type= "email" required name="correo[]"/></td>
+            <td><label for="">Edad</label><input type= "number" required autocomplete="off" name="edad[]"/></td>
+            <td><label for="">Telefono</label><input type= "number" required autocomplete="off" name="cel[]"/></td>
+            <td><label for="">Correo</label><input type= "email" required autocomplete="off" name="correo[]"/></td>
           </tr>
         </table><br><hr>
         
@@ -113,7 +113,7 @@ $info = mysqli_fetch_assoc($query2);
               <tr class="fila">
                 <td><label for="">Número de Tarjeta: </label><input type= "number" required name="num_card"/></td>
                 <td><label for="">Fecha de Vencimiento:</label><input type= "date" required name="date_vto"/></td>
-                <td><label for="">Código de seguridad (CVV):</label><input type= "text" required name="cod_card"/></td>
+                <td><label for="">Código de seguridad (CVV):</label><input type= "text" required autocomplete="off" name="cod_card"/></td>
               </tr>
             </table>
           </div><br><br>
