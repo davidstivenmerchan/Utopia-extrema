@@ -191,7 +191,7 @@ $query3 = mysqli_query($conexion, $sql3);
                 <div class="tablaP">
                     <p>Seleccione las maquinas que estaran en servicio en este dia: </p>
                     <label>Filtro</label>
-                    <input type="text" name="busqueda" id="busqueda" placeholder="Buscar segun tipo...">
+                    <input type="text" name="busqueda" id="busqueda" placeholder="Buscar segun tipo..." autocomplete="off">
                     <section id="tabla_resultado"></section>
                 </div>
                 <div class="contenidoP">
@@ -316,7 +316,6 @@ $query3 = mysqli_query($conexion, $sql3);
                     <th>Nombre</th>
                     <th>Realiazar Mantenimiento</th>
                 </tr>
-                
             <?php
                 while($filas=mysqli_fetch_array($mantenimiento)){
             ?>
@@ -324,7 +323,7 @@ $query3 = mysqli_query($conexion, $sql3);
                     <td></label><?php echo $filas[0]; ?> </td>
                     <td><?php echo $filas[1]; ?> </td>
                 <?php
-                echo "<td><a href='admin.php?id=$filas[0]&mante=2'>Realiazar</a></td>
+                echo "<td><a href='admin.php?id=$filas[0]&mante=2'>Realizar</a></td>
                       </tr>";
                 $atraccion = $filas[0];
                 }
@@ -335,7 +334,7 @@ $query3 = mysqli_query($conexion, $sql3);
 
                 $realizarMantenimiento =  mysqli_query($conexion,"UPDATE atraccion SET id_estado = 1 WHERE  id_atraccion = '$atraccion' ");
                 $horasCero =  mysqli_query($conexion,"UPDATE horas_trabajo SET total_h = 0 WHERE  id_atraccion ='$atraccion' ");
-                echo '<script>alert("Mantenimiento Realizado")</script> ';
+                echo '<script>alert("Mantenimiento Realizado con Exito")</script> ';
                 echo "<script>location.href='admin.php'</script>";
             } 
             ?>
@@ -344,7 +343,7 @@ $query3 = mysqli_query($conexion, $sql3);
         <div class="filtroMantenimiento">
             <p>Consulta el tiempo restante para el mantenimiento</p>
             <label>Filtro</label>
-            <input type="text" name="busqueda2" id="busqueda2"  placeholder="Buscar segun tipo...">
+            <input type="text" name="busqueda2" id="busqueda2"  placeholder="Buscar segun tipo..." autocomplete="off">
             <section id="tabla_resultado2"></section>
         </div>
         </div>
@@ -419,13 +418,6 @@ $query3 = mysqli_query($conexion, $sql3);
         </form>
         </div>
     </div>
-    <!-- <section>
-			<input type="date" name="busqueda" id="busqueda" placeholder="Buscar...">
-		</section>
-
-		<section id="tabla_resultado">
-		AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA
-                </section> --><br><br><br><br>
 
     <script src="main.js"></script>
   
