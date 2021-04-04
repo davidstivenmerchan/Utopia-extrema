@@ -121,7 +121,7 @@ if($conexion->query($cadena_final)):
               margin: 0 auto;
             }
             .bg-dark {
-              background: #343a40;
+              background: #232424;
               margin-top: 40px;
               padding: 20px 0;
             }
@@ -134,9 +134,8 @@ if($conexion->query($cadena_final)):
               border-radius: .25rem;
             }
             .alert-primary {
-              color: #004085;
-              background-color: #cce5ff;
-              border-color: #b8daff;
+              color: #ffffffd7;
+              background-color: #6e107ae7;
             }
         
             .img-fluid {
@@ -149,6 +148,11 @@ if($conexion->query($cadena_final)):
               font-size: 15px;
               margin: 0 auto 40px;
               color: #eee;
+            }
+
+            .tutilo{
+              font-size: 350%; 
+              text-align: center;
             }
         
             .texto {
@@ -180,8 +184,9 @@ if($conexion->query($cadena_final)):
               <div class='alert alert-primary'>
                 <strong>Mensaje para: </strong> '".$nom[$dd]."'
               </div>
-    
+
               <div class='mensaje'>
+                <h1 class='titulo'>🎪  UTOPIA EXTREMA  🎪</h1><br>
                 <h1>FACTURA</h1>
                 <table>
                   <tr>
@@ -209,8 +214,8 @@ if($conexion->query($cadena_final)):
                     <td><label>Fecha de Vencimiento de la Compra: </label></td>
                     <td><label> ".$fila[3]."</label></td>
                   </tr>
-                </table>
-                <h3class='con'>RECORDAR</h3>
+                </table><br>
+                <h3 class='con'><strong>RECORDAR</strong></h3>
                 <p class= 'con'>Con el número de su factura usted o cualquiera de sus acompañantes registrados podrán recargar la tarjeta desde los puntos de recarga del parque. </p>
             
                 <div class='texto'>Tu codigo para ingresar al parque es el siguiente:</div>
