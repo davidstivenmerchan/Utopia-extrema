@@ -222,7 +222,7 @@ $query3 = mysqli_query($conexion, $sql3);
             <form  method="POST">
                 <label for="">Seleccione la fecha a buscar</label>
                 <input type="date" id="fecha" name="fecha"  value="<?php echo date("Y-m-d");?>">
-                <input type="submit" name="Buscar" value= "Buscar">
+                <button type="submit" name="Buscar"> BUSCAR </button>
             </form>
         
             <?php 
@@ -246,6 +246,7 @@ $query3 = mysqli_query($conexion, $sql3);
                             
                         </tr>
                     </thead>
+
                 <?php
 
                     while($row=mysqli_fetch_array($buscardor)){
@@ -405,5 +406,6 @@ $query3 = mysqli_query($conexion, $sql3);
                 </section> --><br><br><br><br>
 
     <script src="main.js"></script>
+  
 </body>
 </html>

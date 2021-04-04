@@ -166,7 +166,9 @@ require_once("../php/validacion.php");
 
 <?php
 
-     $consul_mostrar_atrac = "SELECT * FROM planeacion, atraccion, tipo_atraccion where atraccion.id_atraccion=planeacion.id_atraccion AND tipo_atraccion.id_tip_atraccion=atraccion.id_tip_atraccion";
+     $fech = strftime('%Y-%m-%d');
+
+     $consul_mostrar_atrac = "SELECT * FROM planeacion, atraccion, tipo_atraccion where atraccion.id_atraccion=planeacion.id_atraccion AND tipo_atraccion.id_tip_atraccion=atraccion.id_tip_atraccion and planeacion.fecha_reg='$fech'";
      $respues = mysqli_query($conexion,$consul_mostrar_atrac);
 
      
@@ -305,7 +307,7 @@ require_once("../php/validacion.php");
   <div id="span" onclick=prueba14()><i class="fas fa-dot-circle bot" id="boton13"></i></i></div>
 
 <?php
-  $contaratracciones= "SELECT COUNT(id_plan) from planeacion";
+  $contaratracciones= "SELECT COUNT(id_plan) from planeacion where fecha_reg='$fech'";
   $ejecontar = mysqli_query($conexion,$contaratracciones);
   $con = mysqli_fetch_array($ejecontar);
 

@@ -115,3 +115,6 @@ panel5.addEventListener("click",function(){
         contador6 = 0;
     }
 })
+
+
+
