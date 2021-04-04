@@ -47,7 +47,7 @@ require_once("php/conexion.php");
       <form action="php/validar.php" method="POST" class="iniciar">
         <div class="user">
           <span class="input-item"><i class="fa fa-user-circle"></i></span>
-          <input class="form-input" id="txt-input" type="text" name="cc" placeholder="Ingrese su cedula" required> <br>
+          <input class="form-input" id="txt-input" type="text" name="cc" placeholder="Ingrese su cedula" required autocomplete="off"> <br>
         </div>
         <div class="pass">
           <span class="input-item"><i class="fa fa-key"></i></span>
