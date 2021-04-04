@@ -298,16 +298,19 @@ $query3 = mysqli_query($conexion, $sql3);
 
 
     <div class="mantenimiento" >
-        <div class="infoMantenimiento">
-            <hr><br>
-            <h2>MAQUINARIA EN MANTENIMIENTO</h2><br>
+    <hr><br>
+        <h2>MANTENIMIENTO DE MAQUINARIA</h2><br>
+        <div class="cabezaM">
+        <div>
+            
+            
             <?php 
-
+ 
                 $mantenimiento = mysqli_query($conexion,"SELECT atraccion.id_atraccion, atraccion.nom_atraccion FROM atraccion WHERE atraccion.id_estado = 3" ); 
                 
             ?>
-            <table>
-            <caption>Resultados encontrados</caption>
+            <table class="infoMantenimiento">
+            <caption>MAQUINARIA EN MANTENIMIENTO</caption>
                 <tr>
                     <th>Codigo</th>
                     <th>Nombre</th>
@@ -325,23 +328,29 @@ $query3 = mysqli_query($conexion, $sql3);
             ?>
             </table>
         </div>
+        <div class="filtroMantenimiento">
+            <p>Consulta el tiempo restante para el mantenimiento</p>
+            <label>Filtro</label>
+            <input type="text" name="busqueda2" id="busqueda2"  placeholder="Buscar segun tipo...">
+            <section id="tabla_resultado2"></section>
+        </div>
+        </div>
     </div>
 <?php
-
+ 
    $query5=mysqli_query($conexion,"SELECT * FROM tipo_atraccion");
-
+ 
    $query6=mysqli_query($conexion,"SELECT * FROM ubicacion");
-
+ 
     
 
-
-
+ 
 ?>
 
     <div class="form_maquinas" >
         <div class="registrar">
         <hr><br>
-        <h4>FORMULARIO PARA REGISTRAR ATRACIONES</h4>
+        <h1>FORMULARIO PARA REGISTRAR ATRACIONES 🎢</h1>
         <form action="php/regi_atracciones.php" method="POST" id="formumaquinas">
 
             <label for="id_tipo_atraccion">Selecciona el Tipo de Atracccion</label>

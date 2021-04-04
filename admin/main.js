@@ -27,6 +27,36 @@ $(document).on('keyup', '#busqueda', function()
 		}
 });
 
+
+$(obtener_registros2());
+
+function obtener_registros2(maquinaH)
+{
+	$.ajax({
+		url : 'php/maquinasHoras.php',
+		type : 'POST',
+		dataType : 'html',
+		data : { maquinaH: maquinaH },
+		})
+
+	.done(function(resultado2){
+		$("#tabla_resultado2").html(resultado2);
+	})
+}
+
+$(document).on('keyup', '#busqueda2', function()
+{
+	var valorBusqueda2=$(this).val();
+	if (valorBusqueda2!="")
+	{
+		obtener_registros2(valorBusqueda2);
+	}
+	else
+		{
+			obtener_registros2();
+		}
+});
+
 let boton = document.getElementById("icono");
 let datos = document.getElementById("datos");
 let contador = 0;

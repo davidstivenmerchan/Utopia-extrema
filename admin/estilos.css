@@ -155,7 +155,7 @@ ul li {
   text-align: center;
 }
 
-.fechaP input, .tablaP input, .horas input,.row select{
+.fechaP input, .tablaP input, .horas input,.row select, .filtroMantenimiento input , .horario input, .registrar input , .registrar select{
   border-right: none;
   border-top: none;
   border-left: none;
@@ -202,7 +202,14 @@ ul li {
   background-position: right;
 }
 
-.fechaP input:hover, .tablaP input:hover, .horas input:hover, .row select:hover{
+.fechaP input:hover, 
+.tablaP input:hover, 
+.horas input:hover, 
+.row select:hover , 
+.filtroMantenimiento input:hover , 
+.horario input:hover, 
+.registrar input:hover , 
+.registrar select:hover{
   border-color: #1780e2;
 }
 
@@ -236,8 +243,20 @@ ul li {
   display: none;
   transition: all 1s ease;
   text-align: center;
+  margin-top: 16%;
 }
-
+.cabezaM{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.infoMantenimiento{
+  text-align: center;
+  height: 204px;
+  width: 300px;
+  overflow-y: auto;
+  margin-top: 1%;
+  padding: 20px  200px ;
+}
 .img{
   width: 250px;
 	height: 250px;
@@ -325,8 +344,8 @@ ul li {
 .form_maquinas{
   transition: all 1s ease;
   display: none;
+  text-align: center;
 }
-
 
 .form_maquinas input{
   margin: 5px;
@@ -344,13 +363,9 @@ ul li {
   width: 700px;
   height: 35px;
   background: #7045b6;
-  margin-left: 60px;
   border: none;
   cursor: pointer;
   color: white;
-}
-.bm{
-  margin-left: 110px;
 }
 .rmaquinas:hover{
   background: #5b7fe3;
