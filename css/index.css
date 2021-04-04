@@ -105,11 +105,80 @@ body{
 }
 .tituloo{
     position: absolute;
-    color: white;
-    margin-top: 195px;
-    margin-left: 525px;    
-    
+    color: white;  
+    z-index: 10;  
+    top:50%;
+    left:35%;
+    font-size: 350%;
 }
+
+.loading {
+    width:150px;
+    height:150px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-75px;
+    margin-left:-75px;
+  }
+  
+  .loading .block {
+    width:40px;
+    height:40px;
+    /*border:5px solid #fff;*/
+    position:absolute;
+  }
+  
+  .loading .block:nth-child(1) {
+    animation: top-left 3s infinite;
+    background-color:#00a9cfd0 ;
+  }
+  
+  .loading .block:nth-child(2) {
+    animation: top-right 3s infinite;
+    background-color:#cd74f6cb ;
+  }
+  
+  .loading .block:nth-child(3) {
+    animation: bottom-left 3s infinite;
+    background-color:#525dfcc7 ;
+  }
+  
+  .loading .block:nth-child(4) {
+    animation: bottom-right 3s infinite;
+    background-color:#ac10acd3 ;
+  }
+  @-webkit-keyframes top-left {
+    0%  { left: 25px; top:25px; }
+    25% { left: 75px; top:25px; transform: rotate(90deg) }
+    50% { left: 75px; top: 75px; transform: rotate(180deg) }
+    75% { left: 25px; top: 75px; transform: rotate(270deg) }
+    100%  { left: 25px; top: 25px; transform: rotate(360deg) }
+  }
+  @-webkit-keyframes top-right {
+    0% { left: 75px; top: 25px; }
+    25% { left: 75px; top: 75px; }
+    50% { left: 25px; top: 75px; }
+    75%  { left: 25px; top: 25px; }
+    100% { left: 75px; top: 25px; }
+  }
+  @-webkit-keyframes bottom-left {
+    0% { left: 75px; top: 75px; }
+    25% { left: 25px; top: 75px; transform: rotate(90deg) }
+    50%  { left: 25px; top: 25px; transform: rotate(180deg) }
+    75%  { left: 75px; top: 25px; transform: rotate(270deg) }
+    100% { left: 75px; top: 75px; transform: rotate(360deg) }
+  } 
+  @-webkit-keyframes bottom-right {
+    0% { left: 25px; top: 75px; }
+    25%   { left: 25px; top: 25px; }
+    50% { left: 75px; top: 25px; }
+    75% { left: 75px; top: 75px; }
+    100% { left: 25px; top: 75px; }
+  }
+  
+
+
 .navegacion{
     display: flex;
     justify-content: center;
@@ -174,8 +243,12 @@ h1{
     
 }
 .login{
-    justify-content: center;
     margin-top: -40px;
+}
+.user, .pass{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: -10%;
 }
 .login h1{
     margin-left: 10%;
@@ -234,25 +307,41 @@ h1{
     margin-left: 20px;
 }
 
-.iniciar label{
-    text-align: center;
+
+.input-item {
+    background: rgba(172, 137, 218, 0.849);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: 5px 0px 0px 5px;
+    margin-top: 90%;
+}
+.form-input{
+    width: 60%;
+    height: 40%;
+    margin-top: 9%;
+    padding: 4.3px;
+    font-size: 16px;
+    color: #5E6472;
+    background: rgba(172, 137, 218, 0.575);
+    outline: none;
+    border: none;
+    border-radius: 0px 5px 5px 0px;
+    transition: 0.2s linear;
+    width: 250px;
+    
 }
 
-.camposLogin{
-    color: #111111;
-    border-right: none;
-    border-top: none;
-    border-left: none;
-    background-color: transparent;
-    border-color: 2px rgb(0, 0, 0);
-    font-size: 20px;
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
 }
+
 .envio{
    
-    width: 73%;
+    width: 63%;
     cursor: pointer;
     margin-top: 20px;
-    margin-left: 13%;
+    margin-left: 25%;
     display: block;
     border-radius: 25px;
     outline: none;

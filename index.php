@@ -23,6 +23,12 @@ require_once("php/conexion.php");
    
   <div class="capas">
     <h1 class="tituloo">UTOPIA EXTREMA</h1>
+    <div class="loading">
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+            <div class="block"></div>
+        </div>
   </div>
     <nav>
       <ul class="navegacion">
@@ -37,14 +43,18 @@ require_once("php/conexion.php");
   <span class="ir-arriba fas fa-chevron-circle-up"></span>
   <div class="inicio">
     <div class="login">
-      <h1>INICIAR SESION</h1>
-          <form action="php/validar.php" method="POST" class="iniciar">
-              <label for="usu" class="camposLogin">Ingrese su Cedula</label>
-              <input type="text" id="usu" autocomplete="off" name="cc" class="camposLogin"></a><br><br>
-              <label for="pass" class="camposLogin">Ingrese su codigo de compra</label>
-              <input type="password" id="pass" autocomplete="off" name="idc" class="camposLogin">
-              <input type="submit" value="INGRESAR" class="envio" >
-          </form>
+      <h1>Iniciar Sesion</h1>
+      <form action="php/validar.php" method="POST" class="iniciar">
+        <div class="user">
+          <span class="input-item"><i class="fa fa-user-circle"></i></span>
+          <input class="form-input" id="txt-input" type="text" name="cc" placeholder="Ingrese su cedula" required> <br>
+        </div>
+        <div class="pass">
+          <span class="input-item"><i class="fa fa-key"></i></span>
+          <input class="form-input" type="password" placeholder="Ingrese su codigo de compra" id="pwd"  name="idc" required>
+        </div>
+        <input type="submit" value="Ingresar" class="envio" >
+      </form>
     </div>
     <div class="contador">
       <h2><span class= "typed"></span></h2>
