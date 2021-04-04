@@ -82,7 +82,7 @@ $query3 = mysqli_query($conexion, $sql3);
           </div>
 
           <div class="panel3" id="panel3">
-            <li ><i class="fas fa-sign-out-alt"></i><br><br><strong>VER PROGRAMACION</strong></li>
+            <li ><i class="fas fa-eye"></i><br><br><strong>VER PROGRAMACION</strong></li>
           </div>
 
           <div class="panel4" id="panel4">
@@ -314,17 +314,30 @@ $query3 = mysqli_query($conexion, $sql3);
                 <tr>
                     <th>Codigo</th>
                     <th>Nombre</th>
+                    <th>Realiazar Mantenimiento</th>
                 </tr>
                 
             <?php
                 while($filas=mysqli_fetch_array($mantenimiento)){
             ?>
                 <tr>
-                    <td><?php echo $filas[0]; ?> </td>
+                    <td></label><?php echo $filas[0]; ?> </td>
                     <td><?php echo $filas[1]; ?> </td>
-                </tr>
+                <?php
+                echo "<td><a href='admin.php?id=$filas[0]&mante=2'>Realiazar</a></td>
+                      </tr>";
+                $atraccion = $filas[0];
+                }
+                ?>	  
             <?php 
-                } 
+            extract($_GET);
+            if(@$mante==2){
+
+                $realizarMantenimiento =  mysqli_query($conexion,"UPDATE atraccion SET id_estado = 1 WHERE  id_atraccion = '$atraccion' ");
+                $horasCero =  mysqli_query($conexion,"UPDATE horas_trabajo SET total_h = 0 WHERE  id_atraccion ='$atraccion' ");
+                echo '<script>alert("Mantenimiento Realizado")</script> ';
+                echo "<script>location.href='admin.php'</script>";
+            } 
             ?>
             </table>
         </div>
