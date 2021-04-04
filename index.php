@@ -32,10 +32,10 @@ require_once("php/conexion.php");
   </div>
     <nav>
       <ul class="navegacion">
-        <li><a href="#ubi"> UBICANOS-CONTACTANOS</a></li>
-        <li><a href="#nosotros"> QUIENES SOMOS</a></li>
-        <li><a href="compraCard.php"> COMPRAR TARJETA</a></li>
-        <li><a href="#recarga"> RECARGA TU TARJETA</a></li>
+        <li><a href="#ubi"><strong>UBICANOS-CONTACTANOS</strong></a></li>
+        <li><a href="#nosotros"><strong>QUIENES SOMOS</strong></a></li>
+        <li><a href="compraCard.php"><strong>COMPRAR TARJETA</strong></a></li>
+        <li><a href="#recarga"><strong>RECARGA TU TARJETA</strong></a></li>
       
       </ul>
     </nav>
