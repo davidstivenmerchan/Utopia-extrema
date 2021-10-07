@@ -22,7 +22,7 @@ require_once("php/conexion.php");
   <img src="imagenes/feria.jpg" alt="encabezado" class="imagen1">
    
   <div class="capas">
-    <h1 class="tituloo">UTOPIA EXTREMA</h1>
+    <h1 class="tituloo" id="hola">UTOPIA EXTREMA</h1>
     <div class="loading">
             <div class="block"></div>
             <div class="block"></div>
@@ -53,7 +53,7 @@ require_once("php/conexion.php");
           <span class="input-item"><i class="fa fa-key"></i></span>
           <input class="form-input" type="password" placeholder="Ingrese su codigo de compra" id="pwd"  name="idc" required>
         </div>
-        <input type="submit" value="Ingresar" class="envio" >
+        <input type="submit" value="Ingresar" class="envio" id="enviar" >
       </form>
     </div>
     <div class="contador">
